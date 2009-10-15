@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+  <id>distribution-linux</id>
+  <formats>
+    <format>tar.gz</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <files>
+    <file>
+      <source>src/main/scripts/SilverpeasSettings.sh</source>
+      <outputDirectory>bin</outputDirectory>
+      <filtered>true</filtered>
+    </file>
+    <file>
+      <source>src/main/scripts/appBuilder.sh</source>
+      <outputDirectory>bin</outputDirectory>
+      <filtered>true</filtered>
+    </file>
+     <file>
+      <source>src/main/scripts/dbBuilder.sh</source>
+      <outputDirectory>bin</outputDirectory>
+      <filtered>true</filtered>
+    </file>
+  </files>
+  <fileSets>
+    <fileSet>
+      <outputDirectory>bin</outputDirectory>
+      <directory>src/main/silverpeas</directory>
+      <includes>
+        <include>**/pom.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <outputDirectory>setup</outputDirectory>
+      <directory>src/main/config</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>bin/jar</outputDirectory>
+    </dependencySet>
+  </dependencySets>
+</assembly>

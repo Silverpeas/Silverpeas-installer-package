@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.silverpeas</groupId>
+    <artifactId>assembly-silverpeas</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <packaging>pom</packaging>
+  <groupId>com.silverpeas</groupId>
+  <artifactId>assembly-sdk</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Assembly SDK</name>
+
+  
+  <properties>
+    <silverpeas.home>${env.SILVERPEAS_HOME}</silverpeas.home>
+  </properties>
+  
+  <repositories>
+    <repository>
+      <id>Silverpeas</id>
+      <layout>default</layout>
+      <name>Silverpeas Repository</name>
+      <url>http://repository.silverpeas.org/nexus/content/groups/silverpeas</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+</project>
