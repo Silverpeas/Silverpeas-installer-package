@@ -87,6 +87,8 @@
               <fileSeparator>\\</fileSeparator>
               <outputFile>${windows.classpath}</outputFile>
               <outputFilterFile>true</outputFilterFile>
+              <stripVersion>true</stripVersion>
+              <regenerateFile>true</regenerateFile>
             </configuration>
           </execution>
           <execution>
@@ -101,6 +103,8 @@
               <fileSeparator>/</fileSeparator>
               <outputFile>${linux.classpath}</outputFile>
               <outputFilterFile>true</outputFilterFile>
+               <stripVersion>true</stripVersion>
+              <regenerateFile>true</regenerateFile>
             </configuration>
           </execution>
         </executions>
