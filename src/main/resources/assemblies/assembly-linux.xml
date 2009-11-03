@@ -5,24 +5,16 @@
     <format>tar.gz</format>
   </formats>
   <includeBaseDirectory>false</includeBaseDirectory>
-  <files>
-    <file>
-      <source>src/main/scripts/SilverpeasSettings.sh</source>
+   <fileSets>
+    <fileSet>
       <outputDirectory>bin</outputDirectory>
+      <directory>src/main/scripts</directory>
       <filtered>true</filtered>
-    </file>
-    <file>
-      <source>src/main/scripts/appBuilder.sh</source>
-      <outputDirectory>bin</outputDirectory>
-      <filtered>true</filtered>
-    </file>
-     <file>
-      <source>src/main/scripts/dbBuilder.sh</source>
-      <outputDirectory>bin</outputDirectory>
-      <filtered>true</filtered>
-    </file>
-  </files>
-  <fileSets>
+      <fileMode>775</fileMode>
+      <includes>
+        <include>**/*.sh</include>
+      </includes>
+    </fileSet>
     <fileSet>
       <outputDirectory>bin</outputDirectory>
       <directory>src/main/silverpeas</directory>
