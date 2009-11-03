@@ -296,10 +296,6 @@
       <parameter key="set DBURLPARAM">"${DB_URL}"</parameter>
       <parameter key="set SILVERPEAS_DATA">${SILVERPEAS_DATA_HOME_DEPENDANT}</parameter>
     </configfile>
-
-    <configfile name="appBuilder.bat">
-      <parameter key="set SILVERPEAS_HOME">${SILVERPEAS_HOME_DEPENDANT}</parameter>
-    </configfile>
   </fileset>
 
     <!-- workflowEngine settings -->
