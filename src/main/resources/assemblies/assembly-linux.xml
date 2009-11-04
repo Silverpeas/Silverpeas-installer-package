@@ -5,7 +5,7 @@
     <format>tar.gz</format>
   </formats>
   <includeBaseDirectory>false</includeBaseDirectory>
-   <fileSets>
+  <fileSets>
     <fileSet>
       <outputDirectory>bin</outputDirectory>
       <directory>src/main/scripts</directory>
@@ -28,8 +28,19 @@
       <includes>
         <include>**/*.xml</include>
       </includes>
+      <excludes>
+        <exclude>**/windows/*.xml</exclude>
+        <exclude>**/linux/*.xml</exclude>
+      </excludes>
     </fileSet>
   </fileSets>
+  <files>
+    <file>
+      <outputDirectory>setup/settings</outputDirectory>
+      <source>src/main/config/settings/linux/SilverpeasSettings.xml</source>
+      <filtered>false</filtered>
+    </file>
+  </files>
   <dependencySets>
     <dependencySet>
       <outputDirectory>bin/jar</outputDirectory>

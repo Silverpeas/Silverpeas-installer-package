@@ -21,6 +21,11 @@
       <outputDirectory>bin</outputDirectory>
       <filtered>true</filtered>
     </file>
+     <file>
+      <outputDirectory>setup/settings</outputDirectory>
+      <source>src/main/config/settings/windows/SilverpeasSettings.xml</source>
+       <filtered>false</filtered>
+    </file>
   </files>
   <fileSets>
     <fileSet>
@@ -43,6 +48,10 @@
       <includes>
         <include>**/*.xml</include>
       </includes>
+      <excludes>
+        <exclude>**/windows/*.xml</exclude>
+        <exclude>**/linux/*.xml</exclude>
+      </excludes>
     </fileSet>
   </fileSets>
   <dependencySets>

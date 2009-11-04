@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<silverpeas-settings product="Silverpeas">
+
+  <global-vars>
+
+    <!-- INSTALLATION DIRECTORY -->
+    <var name="SILVERPEAS_HOME_DEPENDANT" value="/home/silverpeas/Java/silverpeas"/>
+    <var name="SILVERPEAS_DATA_HOME" value="/home/silverpeas/Java/silverpeas"/>
+    <var name="SILVERPEAS_DATA_HOME_DEPENDANT" value="/home/silverpeas/Java/silverpeas"/>
+
+    <!-- STORED PASSWORDS FORMATS CONSTANTS -->
+    <var name="STORED_PASSWD_NOT_ENCRYPTED" value="ClearText"/>
+    <var name="STORED_PASSWD_ENCRYPTED" value="CryptUnix"/>
+
+    <!-- AUTHENTICATION FALLBACKS CONSTANTS -->
+    <var name="FALLBACK_NONE" value="none"/>
+    <var name="FALLBACK_REJECT" value="ifNotRejected"/>
+    <var name="FALLBACK_ALWAYS" value="always"/>
+
+    <!-- debut ******* variables à paramètrer ******* -->
+    <var name="STORED_PASSWD_ENCRYPTION" value="${STORED_PASSWD_ENCRYPTED}"/>
+    <var name="FALLBACK_TYPE" value="${FALLBACK_ALWAYS}"/>
+    <var name="NT_AUTHENT_ENABLED" value="true"/>
+
+	<!-- SILVERPEAS DATABASE CONNECTION INFO -->
+    <var name="DB_SERVERTYPE" value="POSTGRES"/>
+    <var name="DB_SERVER" value="localhost"/>
+    <var name="DB_USER" value="postgres"/>
+    <var name="DB_PASSWD" value="postgres"/>
+    <var name="DB_NAME" value="SilverpeasV5"/>
+    <var name="SQL_LISTEN_PORT_MSSQL" value="1433"/>
+    <var name="SQL_LISTEN_PORT_ORACLE" value="1521"/>
+    <var name="SQL_LISTEN_PORT_POSTGRES" value="5432"/>
+
+    <var name="NTRIS_SERVER" value="localhost"/>
+    <var name="NTRIS_PORT" value="9999"/>
+    <var name="NTRIS_HOST" value="%NTRIS_HOST%"/>
+
+    <!-- Silverpeas Adminitrator infos -->
+    <var name="ADMIN_LOGIN" value="SilverAdmin"/>
+    <var name="ADMIN_PASSWD" value="SilverAdmin"/>
+    <var name="ADMIN_EMAIL" value="silveradmin@localhost"/>
+    <var name="URL_SERVER" value="http://localhost"/>
+
+    <var name="EXPED_NAME" value="Silverpeas"/>
+    <var name="EXPED_EMAIL" value="silveradmin@localhost"/>
+
+    <var name="SMTP_SERVER" value="smtp.server"/>
+    <var name="SMTP_DEBUG" value="false"/>
+
+	<!-- Server LDAP configuration -->
+    <var name="LDAP_SERVER" value="%LDAP_SERVER%"/>
+    <var name="LDAP_PORT" value="%LDAP_PORT%"/>
+
+    <!-- Application Server access -->
+    <var name="PROXY_HOST" value=""/>
+    <var name="PROXY_PORT" value=""/>
+    <var name="NONPROXY_HOST" value="127.0.0.1|localhost"/>
+
+	<!-- Silvertrace error -->
+    <var name="LANGUAGE" value="fr"/>
+
+<!-- fin ******* variables à paramètrer ******* -->
+
+    <var name="DB_SERVERTYPEU" value='$eval{{value=new String("${DB_SERVERTYPE}").toUpperCase();}}'/>
+    <var name="DB_DRIVER_MSSQL" value="net.sourceforge.jtds.jdbc.Driver"/>
+    <var name="DB_DRIVER_ORACLE" value="com.inet.ora.OraDriver"/>
+    <var name="DB_DRIVER_POSTGRES" value="org.postgresql.Driver"/>
+    <var name="DB_DRIVER" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_DRIVER_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_DRIVER_POSTGRES}"; else value="${DB_DRIVER_ORACLE}";}}'/>
+
+    <var name="SQL_LISTEN_PORT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${SQL_LISTEN_PORT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${SQL_LISTEN_PORT_POSTGRES}"; else value="${SQL_LISTEN_PORT_ORACLE}";}}'/>
+
+    <var name="DB_URL_MSSQL" value="jdbc:jtds:sqlserver://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
+    <var name="DB_URL_ORACLE" value="jdbc:inetora:${DB_SERVER}:${SQL_LISTEN_PORT}:${DB_NAME}"/>
+    <var name="DB_URL_POSTGRES" value="jdbc:postgresql://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
+    <var name="DB_URL" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_URL_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_URL_POSTGRES}"; else value="${DB_URL_ORACLE}";}}'/>
+
+    <var name="HIBERNATE_DIALECT_MSSQL" value="org.hibernate.dialect.SQLServerDialect"/>
+    <var name="HIBERNATE_DIALECT_ORACLE" value="org.hibernate.dialect.OracleDialect"/>
+    <var name="HIBERNATE_DIALECT_POSTGRES" value="org.hibernate.dialect.PostgreSQLDialect"/>
+    <var name="HIBERNATE_DIALECT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${HIBERNATE_DIALECT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${HIBERNATE_DIALECT_POSTGRES}"; else value="${HIBERNATE_DIALECT_ORACLE}";}}'/>
+
+    <var name="JACKRABBIT_PERSIST_MSSQL" value="org.apache.jackrabbit.core.persistence.bundle.MSSqlPersistenceManager"/>
+    <var name="JACKRABBIT_PERSIST_ORACLE" value="org.apache.jackrabbit.core.persistence.bundle.OraclePersistenceManager"/>
+    <var name="JACKRABBIT_PERSIST_POSTGRES" value="org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager"/>
+    <var name="JACKRABBIT_PERSIST" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${JACKRABBIT_PERSIST_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${JACKRABBIT_PERSIST_POSTGRES}"; else value="${JACKRABBIT_PERSIST_ORACLE}";}}'/>
+
+<!-- INSTALLED DIRECTORIES -->
+    <var name="JAR_HOME" value="${SILVERPEAS_HOME}/jar"/>
+    <var name="TEMP_HOME" value="${SILVERPEAS_HOME}/temp"/>
+    <var name="LOG_HOME" value="${SILVERPEAS_HOME}/log"/>
+        
+  </global-vars>
+
+    <!-- PROPERTIES CONFIGURATION -->
+  <fileset root="${SILVERPEAS_HOME}/initialize/">
+    <configfile name="systemSettings.properties">
+      <parameter key="http.proxyHost">${PROXY_HOST}</parameter>
+      <parameter key="http.proxyPort">${PROXY_PORT}</parameter>
+      <parameter key="http.nonProxyHosts">${NONPROXY_HOST}</parameter>
+      <parameter key="ftp.proxyHost">${PROXY_HOST}</parameter>
+      <parameter key="ftp.proxyPort">${PROXY_PORT}</parameter>
+      <parameter key="ftp.nonProxyHosts">${NONPROXY_HOST}</parameter>
+    </configfile>
+  </fileset>
+
+		<!-- 1) COM/STRATELIA/WEBACTIV : -->
+  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/">
+
+    <configfile name="util/jcr.properties">
+      <parameter key="jcr.configuration.persistence.manager">${JACKRABBIT_PERSIST}</parameter>
+      <parameter key="jcr.home.dir.url">file:///${SILVERPEAS_DATA_HOME}/data/jackrabbit</parameter>
+    </configfile>
+
+    <configfile name="general.properties">
+      <parameter key="ApplicationURL">/silverpeas</parameter>
+      <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/data/workspaces</parameter>
+      <parameter key="uploadsIndexPath">${SILVERPEAS_DATA_HOME}/data/index</parameter>
+      <parameter key="tempPath">${TEMP_HOME}</parameter>
+    </configfile>
+        
+    <configfile name="beans/admin/admin.properties">
+      <parameter key="AdminDBDriver">${DB_DRIVER}</parameter>
+      <parameter key="WaProductionDb">${DB_URL}</parameter>
+      <parameter key="WaProductionUser">${DB_USER}</parameter>
+      <parameter key="WaProductionPswd">${DB_PASSWD}</parameter>
+      <parameter key="WaAdminDb">${DB_URL}</parameter>
+      <parameter key="WaAdminUser">${DB_USER}</parameter>
+      <parameter key="WaAdminPswd">${DB_PASSWD}</parameter>
+      <parameter key="AdministratorLogin">${ADMIN_LOGIN}</parameter>
+      <parameter key="AdministratorPassword">${ADMIN_PASSWD}</parameter>
+      <parameter key="AdministratorEMail">${ADMIN_EMAIL}</parameter>
+      <parameter key="EntrepriseClientSpaceId">1</parameter>
+      <parameter key="xmlSpaceTemplate">${SILVERPEAS_HOME}/xmlspacetemplates</parameter>
+    </configfile>
+        
+    <configfile name="beans/admin/instance/control/instanciator.properties">
+      <parameter key="xmlPackage">${SILVERPEAS_HOME}/xmlcomponents</parameter>
+    </configfile>
+
+  </fileset>
+
+		<!-- 2) COM/STRATELIA/SILVERPEAS : -->
+  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/silverpeas/">
+
+    <configfile name="domains/domainSP.properties">
+      <parameter key="database.SQLJDBCUrl">${DB_URL}</parameter>
+      <parameter key="database.SQLAccessLogin">${DB_USER}</parameter>
+      <parameter key="database.SQLAccessPasswd">${DB_PASSWD}</parameter>
+      <parameter key="database.SQLPasswordEncryption">${STORED_PASSWD_ENCRYPTION}</parameter>
+    </configfile>
+
+    <configfile name="authentication/domains.properties">
+      <parameter key="SQLDomainJDBCUrl">${DB_URL}</parameter>
+      <parameter key="SQLDomainAccessLogin">${DB_USER}</parameter>
+      <parameter key="SQLDomainAccessPasswd">${DB_PASSWD}</parameter>
+      <parameter key="SQLDomainDriverClass">${DB_DRIVER}</parameter>
+    </configfile>
+
+    <configfile name="authentication/autDomainSP.properties">
+      <parameter key="fallbackType">${FALLBACK_TYPE}</parameter>
+      <parameter key="autServer1.SQLJDBCUrl">${DB_URL}</parameter>
+      <parameter key="autServer1.SQLAccessLogin">${DB_USER}</parameter>
+      <parameter key="autServer1.SQLAccessPasswd">${DB_PASSWD}</parameter>
+      <parameter key="autServer1.SQLDriverClass">${DB_DRIVER}</parameter>
+      <parameter key="autServer1.SQLPasswordEncryption">${STORED_PASSWD_ENCRYPTION}</parameter>
+      <parameter key="autServer2.enabled">${NT_AUTHENT_ENABLED}</parameter>
+      <parameter key="autServer2.NTRISPort">${NTRIS_PORT}</parameter>
+      <parameter key="autServer2.NTRISHost">${NTRIS_SERVER}</parameter>
+    </configfile>
+
+    <configfile name="authentication/autDomainExchange2000.properties">
+      <parameter key="fallbackType">${FALLBACK_TYPE}</parameter>
+      <parameter key="autServer0.LDAPHost">${LDAP_SERVER}</parameter>
+    </configfile>
+    <configfile name="authentication/autDomainExchange55.properties">
+      <parameter key="fallbackType">${FALLBACK_TYPE}</parameter>
+      <parameter key="autServer0.NTRISHost">${NTRIS_HOST}</parameter>
+      <parameter key="autServer0.NTRISPort">${NTRIS_PORT}</parameter>
+    </configfile>
+
+    <configfile name="authentication/autDomainLDAP.properties">
+      <parameter key="fallbackType">${FALLBACK_TYPE}</parameter>
+      <parameter key="autServer0.NTRISHost">${NTRIS_HOST}</parameter>
+      <parameter key="autServer0.NTRISPort">${NTRIS_PORT}</parameter>
+    </configfile>
+
+        <!-- <configfile name="notificationserver/channel/smtp/smtpSettings.properties">
+            <parameter key="SMTPServer">${SMTP_SERVER}</parameter>
+            <parameter key="SMTPDebug">${SMTP_DEBUG}</parameter>
+        </configfile> -->
+       
+    <configfile name="silvertrace/settings/silverTrace.properties">
+      <parameter key="pathSilverTrace">${SILVERPEAS_HOME}/silvertrace</parameter>
+      <parameter key="ErrorDir">${LOG_HOME}</parameter>
+      <parameter key="language">${LANGUAGE}</parameter>
+    </configfile>
+
+    <configfile name="silvertrace/settings/silverLog.properties">
+      <parameter key="pathSilverLog">${SILVERPEAS_HOME}/log</parameter>
+      <parameter key="LogDir">${SILVERPEAS_HOME}/log</parameter>
+      <parameter key="appender0.fileName">${SILVERPEAS_HOME}/log/journal.txt</parameter>
+    </configfile>
+
+    <configfile name="_silverpeasinitialize/settings/_silverpeasinitializeSettings.properties">
+      <parameter key="pathInitialize">${SILVERPEAS_HOME}/initialize</parameter>
+    </configfile>
+        
+       <!-- <configfile name="formcommon/settings/formcommonSettings.properties">
+            <parameter key="pathFormRepository">${SILVERPEAS_DATA_HOME}/data/formRepository</parameter>
+        </configfile> -->
+
+    <configfile name="dbBuilder/settings/dbBuilderSettings.properties">
+      <parameter key="ADMINLOGIN">${ADMIN_LOGIN}</parameter>
+      <parameter key="ADMINPASSWD">${ADMIN_PASSWD}</parameter>
+      <parameter key="URLSERVER">${URL_SERVER}</parameter>
+    </configfile>
+
+    <configfile name="silverstatistics/SilverStatistics.properties">
+      <parameter key="SilverPeasDataPath0">${SILVERPEAS_DATA_HOME}/data</parameter>
+    </configfile>
+
+       
+        <!--Modifiable par le client -->
+    <configfile name="multipart/multipart.properties">
+      <parameter key="MultipartParserMaxSize">10485760</parameter>
+    </configfile>
+
+    <configfile name="peasCore/SessionManager.properties">
+      <parameter key="scheduledSessionManagementTimeStamp">2</parameter>
+      <parameter key="userSessionTimeout">10</parameter>
+    </configfile>
+
+  </fileset>
+
+		<!-- 3) COM/SILVERPEAS : -->
+  <fileset root="${SILVERPEAS_HOME}/properties/com/silverpeas/">
+    <configfile name="importExport/settings/mapping.properties">
+      <parameter key="mappingDir">file:///${SILVERPEAS_HOME}/resources/importExport/</parameter>
+    </configfile>
+
+    <configfile name="publicationTemplate/settings/mapping.properties">
+      <parameter key="mappingDir">file:///${SILVERPEAS_HOME}/resources/formTemplate/</parameter>
+    </configfile>
+
+    <configfile name="publicationTemplate/settings/template.properties">
+      <parameter key="templateDir">${SILVERPEAS_DATA_HOME}/data/templateRepository/</parameter>
+    </configfile>
+
+    <configfile name="whitePages/settings/template.properties">
+      <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/data/templateRepository/</parameter>
+    </configfile>
+
+		<!-- Variable à modifier par le client -->    
+    <configfile name="jobManagerPeas/settings/jobManagerPeasSettings.properties">
+      <parameter key="IsKMVisible">true</parameter>
+      <parameter key="IsToolsVisible">false</parameter>
+    </configfile>
+
+    <configfile name="workflow/engine/castorSettings.properties">
+      <parameter key="CastorJDOFastDatabaseFileURL">${SILVERPEAS_HOME_DEPENDANT}\resources\instanceManager\fast_database.xml</parameter>
+      <parameter key="CastorJDODatabaseFileURL">${SILVERPEAS_HOME_DEPENDANT}\\resources\instanceManager\database.xml</parameter>
+      <parameter key="CastorJDOLogFileURL">${SILVERPEAS_HOME_DEPENDANT}\log\castor.log</parameter>
+      <parameter key="CastorXMLMappingFileURL">${SILVERPEAS_HOME_DEPENDANT}\resources\modelManager\mapping.xml</parameter>
+      <parameter key="ProcessModelDir">${SILVERPEAS_DATA_HOME_DEPENDANT}\data\workflowRepository\</parameter>
+    </configfile>
+
+		<!-- Variable modifiable par le client -->    
+    <configfile name="workflow/engine/schedulerSettings.properties">
+      <parameter key="timeoutSchedule">* 0,4,8,12,16,20 * * *</parameter>
+    </configfile>
+
+    <configfile name="mailinglist/notification.properties">
+      <parameter key="jdbc.driver">${DB_DRIVER}</parameter>
+      <parameter key="jdbc.url">${DB_URL}</parameter>
+      <parameter key="jdbc.username">${DB_USER}</parameter>
+      <parameter key="jdbc.password">${DB_PASSWD}</parameter>
+      <parameter key="hibernate.dialect">${HIBERNATE_DIALECT}</parameter>
+    </configfile>
+
+    <configfile name="portlets/portletsSettings.properties">
+      <parameter key="portlets.configDir">${SILVERPEAS_DATA_HOME}/data/portlets</parameter>
+    </configfile>
+  </fileset>
+
+  <fileset root="${SILVERPEAS_HOME}/bin/">
+    <configfile name="dbBuilder.sh">
+      <parameter key="set SILVERPEAS_HOME">${SILVERPEAS_HOME_DEPENDANT}</parameter>
+      <parameter key="set SRV_SERVERTYPE">${DB_SERVERTYPE}</parameter>
+      <parameter key="set SRV_SERVERNAME">${DB_SERVER}</parameter>
+      <parameter key="set SRV_LOGINNAME">${DB_USER}</parameter>
+      <parameter key="set SRV_LOGINPWD">${DB_PASSWD}</parameter>
+      <parameter key="set SRV_DBNAME">${DB_NAME}</parameter>
+      <parameter key="set DRIVERPARAM">${DB_DRIVER}</parameter>
+      <parameter key="set DBURLPARAM">"${DB_URL}"</parameter>
+      <parameter key="set SILVERPEAS_DATA">${SILVERPEAS_DATA_HOME_DEPENDANT}</parameter>
+    </configfile>
+  </fileset>
+
+    <!-- workflowEngine settings -->
+    
+  <fileset root="${SILVERPEAS_HOME}/resources/instanceManager/">
+    <textfile name="database.xml">
+      <parameter key="&lt;!DOCTYPE[^&gt;]*&gt;" use-regex="true"> </parameter>
+    </textfile>
+
+    <xmlfile name="database.xml">
+      <parameter key="/" mode="update">
+        <value location="@engine">$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="sql-server"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="postgresql"; else value="oracle";}}</value>
+      </parameter>
+      <parameter key="/database" mode="update">
+        <value location="@engine">$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="sql-server"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="postgresql"; else value="oracle";}}</value>
+      </parameter>
+      <parameter key="/database/mapping" mode="update">
+        <value location="@href">file:///${SILVERPEAS_HOME}/resources/instanceManager/mapping.xml</value>
+      </parameter>
+    </xmlfile>
+
+    <textfile name="fast_database.xml">
+      <parameter key="&lt;!DOCTYPE[^&gt;]*&gt;" use-regex="true"> </parameter>
+    </textfile>
+
+    <xmlfile name="fast_database.xml">
+      <parameter key="/" mode="update">
+        <value location="@engine">$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="sql-server"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="postgresql"; else value="oracle";}}</value>
+      </parameter>
+      <parameter key="/mapping" mode="update">
+        <value location="@href">file:///${SILVERPEAS_HOME}/resources/instanceManager/fast_mapping.xml</value>
+      </parameter>
+    </xmlfile>
+  </fileset>
+
+    <!-- components visibility settings -->
+    
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="almanach.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="bookmark.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="chat.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="connecteurJDBC.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="demandeConges.xml">
+      <parameter key="/visible">no</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="forums.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="hyperlink.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="infoLetter.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="kmax.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="kmelia.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="newsEdito.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="pollingStation.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="processManager.xml">
+      <parameter key="/visible">no</parameter>
+    </xmlfile>
+  </fileset>
+
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="projectManager.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="questionReply.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="quickinfo.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="quizz.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="survey.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="toolbox.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="webSites.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="whitePages.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="WorkflowBugs.xml">
+      <parameter key="/visible">no</parameter>
+    </xmlfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="yellowpages.xml">
+      <parameter key="/visible">yes</parameter>
+    </xmlfile>
+  </fileset>
+
+  <!-- Whitepages -->
+  <fileset root="${SILVERPEAS_HOME}/properties/com/silverpeas/">
+    <configfile name="whitePages/settings/template.properties">
+      <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/data/templateRepository</parameter>
+    </configfile>
+  </fileset>
+
+<!-- Website Designer -->
+  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/webSites/settings/">
+    <configfile name="webSiteSettings.properties">
+      <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/data/</parameter>
+    </configfile>
+  </fileset>
+
+
+ <!-- Chat settings 
+  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/silverpeas/">
+    <configfile name="chat/settings/chatSettings.properties">
+      <parameter key="xmlConfigLocation">${SILVERPEAS_DATA_HOME}/data/chat/jchatbox.xml</parameter>
+    </configfile>
+  </fileset>
+  <fileset root="${SILVERPEAS_DATA_HOME}/data/chat/">
+    <textfile name="jchatbox.xml">
+      <parameter key="&lt;!DOCTYPE[^&gt;]*&gt;" use-regex="true"> </parameter>
+    </textfile>
+    <xmlfile name="jchatbox.xml">
+      <parameter key="/jChatBox/LOGFOLDER" mode="update">${SILVERPEAS_HOME}/log/chat</parameter>
+    </xmlfile>
+  </fileset>
+  -->
+</silverpeas-settings>
