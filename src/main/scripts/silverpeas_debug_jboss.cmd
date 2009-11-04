@@ -14,7 +14,7 @@ del silverpeas-destinations-service.xml.bak*
 cd "%JBOSS_HOME%/bin"
 
 rem Add Silverpeas Properties root repository to path
-SET JBOSS_CLASSPATH="%SILVERPEAS_HOME%/properties"
+SET JBOSS_CLASSPATH=%SILVERPEAS_HOME%/properties
 
 call run.bat
 
