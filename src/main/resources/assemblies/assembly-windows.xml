@@ -26,6 +26,11 @@
       <source>src/main/config/settings/windows/SilverpeasSettings.xml</source>
        <filtered>false</filtered>
     </file>
+    <file>
+      <outputDirectory>setup/settings</outputDirectory>
+      <source>src/main/config/settings/linux/JBossSettings.xml</source>
+      <filtered>false</filtered>
+    </file>
   </files>
   <fileSets>
     <fileSet>

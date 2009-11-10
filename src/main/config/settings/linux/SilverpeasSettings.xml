@@ -255,7 +255,7 @@
 		<!-- Variable à modifier par le client -->    
     <configfile name="jobManagerPeas/settings/jobManagerPeasSettings.properties">
       <parameter key="IsKMVisible">true</parameter>
-      <parameter key="IsToolsVisible">false</parameter>
+      <parameter key="IsToolsVisible">true</parameter>
     </configfile>
 
     <configfile name="workflow/engine/castorSettings.properties">
