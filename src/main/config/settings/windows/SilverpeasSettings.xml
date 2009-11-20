@@ -5,9 +5,9 @@
   <global-vars>
 
     <!-- INSTALLATION DIRECTORY -->
-    <var name="SILVERPEAS_HOME_DEPENDANT" value="C:\Java\silverpeas"/>
-    <var name="SILVERPEAS_DATA_HOME" value="C:/Java/silverpeas"/>
-    <var name="SILVERPEAS_DATA_HOME_DEPENDANT" value="C:\Java\silverpeas"/>
+    <var name="SILVERPEAS_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
+    <var name="SILVERPEAS_DATA_HOME" value="${SILVERPEAS_HOME}"/>
+    <var name="SILVERPEAS_DATA_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
 
     <!-- STORED PASSWORDS FORMATS CONSTANTS -->
     <var name="STORED_PASSWD_NOT_ENCRYPTED" value="ClearText"/>
@@ -394,11 +394,6 @@
       <parameter key="/visible">yes</parameter>
     </xmlfile>
   </fileset>
-  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
-    <xmlfile name="processManager.xml">
-      <parameter key="/visible">no</parameter>
-    </xmlfile>
-  </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="projectManager.xml">
@@ -442,7 +437,7 @@
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
-    <xmlfile name="WorkflowBugs.xml">
+    <xmlfile name="silverBugTracker.xml">
       <parameter key="/visible">no</parameter>
     </xmlfile>
   </fileset>
