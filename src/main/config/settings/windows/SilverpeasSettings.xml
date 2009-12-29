@@ -355,8 +355,8 @@
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
-    <xmlfile name="demandeConges.xml">
-      <parameter key="/visible">no</parameter>
+    <xmlfile name="demandeCongesSimple.xml">
+      <parameter key="/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
@@ -434,11 +434,6 @@
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="whitePages.xml">
       <parameter key="/visible">yes</parameter>
-    </xmlfile>
-  </fileset>
-  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
-    <xmlfile name="silverBugTracker.xml">
-      <parameter key="/visible">no</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
