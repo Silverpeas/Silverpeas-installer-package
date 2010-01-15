@@ -41,7 +41,7 @@
     <var name="ADMIN_LOGIN" value="SilverAdmin"/>
     <var name="ADMIN_PASSWD" value="SilverAdmin"/>
     <var name="ADMIN_EMAIL" value="silveradmin@localhost"/>
-    <var name="URL_SERVER" value="http://localhost"/>
+    <var name="URL_SERVER" value="http://localhost:8000"/>
 
     <var name="EXPED_NAME" value="Silverpeas"/>
     <var name="EXPED_EMAIL" value="silveradmin@localhost"/>
