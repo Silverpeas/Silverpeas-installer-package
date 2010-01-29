@@ -10,6 +10,7 @@
   </parent>
 
   <scm>
+    <developerConnection>scm:svn:https://repository.silverpeas.org/svn/silverpeas/services/installation/trunk</developerConnection>
     <connection>scm:svn:https://repository.silverpeas.org/svn/silverpeas/services/installation/trunk</connection>
     <url>https://repository.silverpeas.org/redmine/repositories/show/installation</url>
   </scm>
