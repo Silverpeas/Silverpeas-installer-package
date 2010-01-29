@@ -9,15 +9,15 @@
   </parent>
 
   <scm>
-    <developerConnection>scm:svn:https://repository.silverpeas.org/svn/silverpeas/services/installation/tags/installation-1.0-RC1</developerConnection>
-    <connection>scm:svn:https://repository.silverpeas.org/svn/silverpeas/services/installation/tags/installation-1.0-RC1</connection>
-    <url>https://repository.silverpeas.org/redmine/repositories/show/installation/tags/installation-1.0-RC1</url>
+    <developerConnection>scm:svn:https://repository.silverpeas.org/svn/silverpeas/services/installation/trunk</developerConnection>
+    <connection>scm:svn:https://repository.silverpeas.org/svn/silverpeas/services/installation/trunk</connection>
+    <url>https://repository.silverpeas.org/redmine/repositories/show/installation</url>
   </scm>
 
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
-  <version>1.0-RC1</version>
+  <version>1.0-RC2-SNAPSHOT</version>
   <name>Assembly for Silverpeas Installation</name>
   <description>Builds the Silverpeas installation package</description>
 
