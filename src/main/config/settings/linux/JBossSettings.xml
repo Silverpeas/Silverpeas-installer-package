@@ -45,15 +45,15 @@
                 <value location="@port">${JBOSS_LISTEN_PORT}</value>
             </parameter>
 			<parameter key="/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/weblib']" mode="update">
-                <value location="@docBase">${SILVERPEAS_DATA_HOME_DEPENDANT}\data\weblib</value>
+                <value location="@docBase">${SILVERPEAS_DATA_HOME_DEPENDANT}/data/weblib</value>
                 <value location="@path">/weblib</value>
             </parameter>
 			<parameter key="/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/website']" mode="update">
-                <value location="@docBase">${SILVERPEAS_DATA_HOME_DEPENDANT}\data\website</value>
+                <value location="@docBase">${SILVERPEAS_DATA_HOME_DEPENDANT}/data/website</value>
                 <value location="@path">/website</value>
             </parameter>
 			<parameter key="/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/help_fr']" mode="update">
-                <value location="@docBase">${SILVERPEAS_HOME_DEPENDANT}\help\fr</value>
+                <value location="@docBase">${SILVERPEAS_HOME_DEPENDANT}/help/fr</value>
                 <value location="@path">/help_fr</value>
             </parameter>
 		</xmlfile>
