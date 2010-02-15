@@ -14,15 +14,15 @@
     <user-name>postgres</user-name>
     <password>postgres</password>
 	<!-- sql to call when connection is created
-	<new-connection-sql>some arbitrary sql</new-connection-sql>
+    <new-connection-sql>some arbitrary sql</new-connection-sql>
 	-->
 
 	<!-- sql to call on an existing pooled connection when it is obtained from pool 
-	<check-valid-connection-sql>some arbitrary sql</check-valid-connection-sql>
+    <check-valid-connection-sql>some arbitrary sql</check-valid-connection-sql>
 	-->
-	<min-pool-size>1</min-pool-size>
-	<max-pool-size>200</max-pool-size>
-	<max-idle-timeout>0</max-idle-timeout>
-	<blocking-timeout-millis>30000</blocking-timeout-millis>
+    <min-pool-size>1</min-pool-size>
+    <max-pool-size>200</max-pool-size>
+    <max-idle-timeout>0</max-idle-timeout>
+    <blocking-timeout-millis>30000</blocking-timeout-millis>
   </local-tx-datasource>
 </datasources>
