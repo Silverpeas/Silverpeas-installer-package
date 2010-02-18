@@ -286,15 +286,15 @@
 
   <fileset root="${SILVERPEAS_HOME}/bin/">
     <configfile name="dbBuilder.sh">
-      <parameter key="set SILVERPEAS_HOME">${SILVERPEAS_HOME_DEPENDANT}</parameter>
-      <parameter key="set SRV_SERVERTYPE">${DB_SERVERTYPE}</parameter>
-      <parameter key="set SRV_SERVERNAME">${DB_SERVER}</parameter>
-      <parameter key="set SRV_LOGINNAME">${DB_USER}</parameter>
-      <parameter key="set SRV_LOGINPWD">${DB_PASSWD}</parameter>
-      <parameter key="set SRV_DBNAME">${DB_NAME}</parameter>
-      <parameter key="set DRIVERPARAM">${DB_DRIVER}</parameter>
-      <parameter key="set DBURLPARAM">"${DB_URL}"</parameter>
-      <parameter key="set SILVERPEAS_DATA">${SILVERPEAS_DATA_HOME_DEPENDANT}</parameter>
+      <parameter key="SILVERPEAS_HOME">${SILVERPEAS_HOME_DEPENDANT}</parameter>
+      <parameter key="SRV_SERVERTYPE">${DB_SERVERTYPE}</parameter>
+      <parameter key="SRV_SERVERNAME">${DB_SERVER}</parameter>
+      <parameter key="SRV_LOGINNAME">${DB_USER}</parameter>
+      <parameter key="SRV_LOGINPWD">${DB_PASSWD}</parameter>
+      <parameter key="SRV_DBNAME">${DB_NAME}</parameter>
+      <parameter key="DRIVERPARAM">${DB_DRIVER}</parameter>
+      <parameter key="DBURLPARAM">"${DB_URL}"</parameter>
+      <parameter key="SILVERPEAS_DATA">${SILVERPEAS_DATA_HOME_DEPENDANT}</parameter>
     </configfile>
   </fileset>
 
