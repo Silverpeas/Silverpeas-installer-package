@@ -25,22 +25,22 @@
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>application-builder</artifactId>
-      <version>1.1-SNAPSHOT</version>
+      <version>1.1</version>
     </dependency>
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>fileutil</artifactId>
-      <version>1.1-SNAPSHOT</version>
+      <version>1.1</version>
     </dependency>
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>dbbuilder</artifactId>
-      <version>1.1-SNAPSHOT</version>
+      <version>1.1</version>
     </dependency>
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>silverpeas-settings</artifactId>
-      <version>1.1-SNAPSHOT</version>
+      <version>1.1</version>
     </dependency>
     <dependency>
       <groupId>postgresql</groupId>
@@ -103,7 +103,7 @@
               <fileSeparator>/</fileSeparator>
               <outputFile>${linux.classpath}</outputFile>
               <outputFilterFile>true</outputFilterFile>
-               <stripVersion>true</stripVersion>
+              <stripVersion>true</stripVersion>
               <regenerateFile>true</regenerateFile>
             </configuration>
           </execution>
