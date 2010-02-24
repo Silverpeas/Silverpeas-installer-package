@@ -5,8 +5,8 @@
 	<global-vars>
 		<!-- debut ******* variables à paramètrer ******* -->
 		<var name="JBOSS_LISTEN_PORT" value="8000"/>
-		<var name="RAM_MIN" value="256"/>
-		<var name="RAM_MAX" value="256"/>
+		<var name="RAM_MIN" value="512"/>
+		<var name="RAM_MAX" value="512"/>
 		<!-- fin ******* variables à paramètrer ******* -->
 
 		<var name="JBOSS_SERVER" value="${JBOSS_HOME}/server/default"/>

@@ -46,8 +46,14 @@
     <var name="EXPED_NAME" value="Silverpeas"/>
     <var name="EXPED_EMAIL" value="silveradmin@localhost"/>
 
-    <var name="SMTP_SERVER" value="smtp.server"/>
+	<!-- SMTP Server configuration -->
+    <var name="SMTP_SERVER" value="localhost"/>
+    <var name="SMTP_AUTHENTICATION" value="false"/>
     <var name="SMTP_DEBUG" value="false"/>
+    <var name="SMTP_PORT" value="25"/>
+    <var name="SMTP_USER" value=""/>
+    <var name="SMTP_PWD" value=""/>
+    <var name="SMTP_SECURE" value="false"/>
 
 	<!-- Server LDAP configuration -->
     <var name="LDAP_SERVER" value="%LDAP_SERVER%"/>
@@ -186,11 +192,16 @@
       <parameter key="autServer0.NTRISPort">${NTRIS_PORT}</parameter>
     </configfile>
 
-        <!-- <configfile name="notificationserver/channel/smtp/smtpSettings.properties">
-            <parameter key="SMTPServer">${SMTP_SERVER}</parameter>
-            <parameter key="SMTPDebug">${SMTP_DEBUG}</parameter>
-        </configfile> -->
-       
+	<configfile name="notificationserver/channel/smtp/smtpSettings.properties">
+			<parameter key="SMTPServer">${SMTP_SERVER}</parameter>
+			<parameter key="SMTPAuthentication">${SMTP_AUTHENTICATION}</parameter>
+			<parameter key="SMTPDebug">${SMTP_DEBUG}</parameter>
+			<parameter key="SMTPPort">${SMTP_PORT}</parameter>
+			<parameter key="SMTPUser">${SMTP_USER}</parameter>
+			<parameter key="SMTPPwd">${SMTP_PWD}</parameter>
+			<parameter key="SMTPSecure">${SMTP_SECURE}</parameter>
+	</configfile>
+		       
     <configfile name="silvertrace/settings/silverTrace.properties">
       <parameter key="pathSilverTrace">${SILVERPEAS_HOME}/silvertrace</parameter>
       <parameter key="ErrorDir">${LOG_HOME}</parameter>
