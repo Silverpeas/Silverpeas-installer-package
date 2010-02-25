@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
 <silverpeas-settings product="Silverpeas">
-
   <global-vars>
-
     <!-- INSTALLATION DIRECTORY -->
     <var name="SILVERPEAS_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
     <var name="SILVERPEAS_DATA_HOME" value="${SILVERPEAS_HOME}"/>
@@ -67,8 +64,7 @@
 	<!-- Silvertrace error -->
     <var name="LANGUAGE" value="fr"/>
 
-<!-- fin ******* variables à paramètrer ******* -->
-
+    <!-- fin ******* variables à paramètrer ******* -->
     <var name="DB_SERVERTYPEU" value='$eval{{value=new String("${DB_SERVERTYPE}").toUpperCase();}}'/>
     <var name="DB_DRIVER_MSSQL" value="net.sourceforge.jtds.jdbc.Driver"/>
     <var name="DB_DRIVER_ORACLE" value="com.inet.ora.OraDriver"/>
@@ -92,11 +88,10 @@
     <var name="JACKRABBIT_PERSIST_POSTGRES" value="org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager"/>
     <var name="JACKRABBIT_PERSIST" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${JACKRABBIT_PERSIST_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${JACKRABBIT_PERSIST_POSTGRES}"; else value="${JACKRABBIT_PERSIST_ORACLE}";}}'/>
 
-<!-- INSTALLED DIRECTORIES -->
+    <!-- INSTALLED DIRECTORIES -->
     <var name="JAR_HOME" value="${SILVERPEAS_HOME}/jar"/>
     <var name="TEMP_HOME" value="${SILVERPEAS_HOME}/temp"/>
     <var name="LOG_HOME" value="${SILVERPEAS_HOME}/log"/>
-        
   </global-vars>
 
     <!-- PROPERTIES CONFIGURATION -->
@@ -192,15 +187,15 @@
       <parameter key="autServer0.NTRISPort">${NTRIS_PORT}</parameter>
     </configfile>
 
-	<configfile name="notificationserver/channel/smtp/smtpSettings.properties">
-			<parameter key="SMTPServer">${SMTP_SERVER}</parameter>
-			<parameter key="SMTPAuthentication">${SMTP_AUTHENTICATION}</parameter>
-			<parameter key="SMTPDebug">${SMTP_DEBUG}</parameter>
-			<parameter key="SMTPPort">${SMTP_PORT}</parameter>
-			<parameter key="SMTPUser">${SMTP_USER}</parameter>
-			<parameter key="SMTPPwd">${SMTP_PWD}</parameter>
-			<parameter key="SMTPSecure">${SMTP_SECURE}</parameter>
-	</configfile>
+    <configfile name="notificationserver/channel/smtp/smtpSettings.properties">
+      <parameter key="SMTPServer">${SMTP_SERVER}</parameter>
+      <parameter key="SMTPAuthentication">${SMTP_AUTHENTICATION}</parameter>
+      <parameter key="SMTPDebug">${SMTP_DEBUG}</parameter>
+      <parameter key="SMTPPort">${SMTP_PORT}</parameter>
+      <parameter key="SMTPUser">${SMTP_USER}</parameter>
+      <parameter key="SMTPPwd">${SMTP_PWD}</parameter>
+      <parameter key="SMTPSecure">${SMTP_SECURE}</parameter>
+    </configfile>
 		       
     <configfile name="silvertrace/settings/silverTrace.properties">
       <parameter key="pathSilverTrace">${SILVERPEAS_HOME}/silvertrace</parameter>
@@ -218,9 +213,9 @@
       <parameter key="pathInitialize">${SILVERPEAS_HOME}/initialize</parameter>
     </configfile>
         
-       <!-- <configfile name="formcommon/settings/formcommonSettings.properties">
+    <!-- <configfile name="formcommon/settings/formcommonSettings.properties">
             <parameter key="pathFormRepository">${SILVERPEAS_DATA_HOME}/data/formRepository</parameter>
-        </configfile> -->
+     </configfile> -->
 
     <configfile name="dbBuilder/settings/dbBuilderSettings.properties">
       <parameter key="ADMINLOGIN">${ADMIN_LOGIN}</parameter>
@@ -233,7 +228,7 @@
     </configfile>
 
        
-        <!--Modifiable par le client -->
+    <!--Modifiable par le client -->
     <configfile name="multipart/multipart.properties">
       <parameter key="MultipartParserMaxSize">10485760</parameter>
     </configfile>
@@ -245,7 +240,7 @@
 
   </fileset>
 
-		<!-- 3) COM/SILVERPEAS : -->
+  <!-- 3) COM/SILVERPEAS : -->
   <fileset root="${SILVERPEAS_HOME}/properties/com/silverpeas/">
     <configfile name="importExport/settings/mapping.properties">
       <parameter key="mappingDir">file:///${SILVERPEAS_HOME}/resources/importExport/</parameter>
@@ -299,12 +294,6 @@
     <configfile name="dbBuilder.sh">
       <parameter key="SILVERPEAS_HOME">${SILVERPEAS_HOME_DEPENDANT}</parameter>
       <parameter key="SRV_SERVERTYPE">${DB_SERVERTYPE}</parameter>
-      <parameter key="SRV_SERVERNAME">${DB_SERVER}</parameter>
-      <parameter key="SRV_LOGINNAME">${DB_USER}</parameter>
-      <parameter key="SRV_LOGINPWD">${DB_PASSWD}</parameter>
-      <parameter key="SRV_DBNAME">${DB_NAME}</parameter>
-      <parameter key="DRIVERPARAM">${DB_DRIVER}</parameter>
-      <parameter key="DBURLPARAM">"${DB_URL}"</parameter>
       <parameter key="SILVERPEAS_DATA">${SILVERPEAS_DATA_HOME_DEPENDANT}</parameter>
     </configfile>
   </fileset>

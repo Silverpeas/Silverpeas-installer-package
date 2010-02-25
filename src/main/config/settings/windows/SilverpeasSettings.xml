@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
 <silverpeas-settings product="Silverpeas">
-
   <global-vars>
-
     <!-- INSTALLATION DIRECTORY -->
     <var name="SILVERPEAS_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
     <var name="SILVERPEAS_DATA_HOME" value="${SILVERPEAS_HOME}"/>
@@ -192,15 +189,15 @@
       <parameter key="autServer0.NTRISPort">${NTRIS_PORT}</parameter>
     </configfile>
 
-	<configfile name="notificationserver/channel/smtp/smtpSettings.properties">
-			<parameter key="SMTPServer">${SMTP_SERVER}</parameter>
-			<parameter key="SMTPAuthentication">${SMTP_AUTHENTICATION}</parameter>
-			<parameter key="SMTPDebug">${SMTP_DEBUG}</parameter>
-			<parameter key="SMTPPort">${SMTP_PORT}</parameter>
-			<parameter key="SMTPUser">${SMTP_USER}</parameter>
-			<parameter key="SMTPPwd">${SMTP_PWD}</parameter>
-			<parameter key="SMTPSecure">${SMTP_SECURE}</parameter>
-	</configfile> 
+    <configfile name="notificationserver/channel/smtp/smtpSettings.properties">
+      <parameter key="SMTPServer">${SMTP_SERVER}</parameter>
+      <parameter key="SMTPAuthentication">${SMTP_AUTHENTICATION}</parameter>
+      <parameter key="SMTPDebug">${SMTP_DEBUG}</parameter>
+      <parameter key="SMTPPort">${SMTP_PORT}</parameter>
+      <parameter key="SMTPUser">${SMTP_USER}</parameter>
+      <parameter key="SMTPPwd">${SMTP_PWD}</parameter>
+      <parameter key="SMTPSecure">${SMTP_SECURE}</parameter>
+    </configfile>
 		      
     <configfile name="silvertrace/settings/silverTrace.properties">
       <parameter key="pathSilverTrace">${SILVERPEAS_HOME}/silvertrace</parameter>
@@ -299,12 +296,6 @@
     <configfile name="dbBuilder.bat">
       <parameter key="set SILVERPEAS_HOME">${SILVERPEAS_HOME_DEPENDANT}</parameter>
       <parameter key="set SRV_SERVERTYPE">${DB_SERVERTYPE}</parameter>
-      <parameter key="set SRV_SERVERNAME">${DB_SERVER}</parameter>
-      <parameter key="set SRV_LOGINNAME">${DB_USER}</parameter>
-      <parameter key="set SRV_LOGINPWD">${DB_PASSWD}</parameter>
-      <parameter key="set SRV_DBNAME">${DB_NAME}</parameter>
-      <parameter key="set DRIVERPARAM">${DB_DRIVER}</parameter>
-      <parameter key="set DBURLPARAM">"${DB_URL}"</parameter>
       <parameter key="set SILVERPEAS_DATA">${SILVERPEAS_DATA_HOME_DEPENDANT}</parameter>
     </configfile>
   </fileset>
