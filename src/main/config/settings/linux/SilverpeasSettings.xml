@@ -449,10 +449,17 @@
     </configfile>
   </fileset>
 
-<!-- Website Designer -->
+ <!-- Website Designer -->
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/webSites/settings/">
     <configfile name="webSiteSettings.properties">
       <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/data/</parameter>
+    </configfile>
+  </fileset>
+
+  <!-- importExport -->
+  <fileset root="${SILVERPEAS_HOME}properties/com/silverpeas/importExport/settings/">
+    <configfile name="importSettings.properties">
+      <parameter key="importRepository">${SILVERPEAS_DATA_HOME}/import/</parameter>
     </configfile>
   </fileset>
 
