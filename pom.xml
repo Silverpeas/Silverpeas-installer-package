@@ -10,14 +10,14 @@
   <scm>
     <developerConnection>scm:svn:https://repository.silverpeas.org/svn/silverpeas/services/installation/trunk</developerConnection>
     <connection>scm:svn:https://repository.silverpeas.org/svn/silverpeas/services/installation/trunk</connection>
-    <url>https://repository.silverpeas.org/redmine/repositories/show/installation</url>
+    <url>https://www.silverpeas.org/redmine/repositories/show/installation</url>
   </scm>
 
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
   <version>5.0-SNAPSHOT</version>
-  <name>Assembly for Silverpeas Installation</name>
+  <name>Silverpeas Installation</name>
   <description>Builds the Silverpeas installation package</description>
 
   <dependencies>
@@ -162,7 +162,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>wagon-maven-plugin</artifactId>
-        <version>1.0-beta-2</version>
+        <version>1.0-beta-3</version>
         <executions>
           <execution>
             <id>upload-packages</id>
@@ -184,7 +184,7 @@
           <dependency>
             <groupId>org.apache.maven.wagon</groupId>
             <artifactId>wagon-ssh</artifactId>
-            <version>1.0-beta-6</version>
+            <version>${wagon.version}</version>
           </dependency>
         </dependencies>
       </plugin>
