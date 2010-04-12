@@ -465,6 +465,15 @@
     </configfile>
   </fileset>
 
+  <!-- wiki -->
+  <fileset root="${SILVERPEAS_HOME}/jar/silverpeas.ear/war-ic.war/WEB-INF/">
+    <configfile name="jspwiki.properties">
+      <parameter key="jspwiki.workDir">${SILVERPEAS_DATA_HOME}/temp/wiki/indexes</parameter>
+      <parameter key="jspwiki.basicAttachmentProvider.storageDir">${SILVERPEAS_DATA_HOME}/temp/wiki/</parameter>
+      <parameter key="jspwiki.fileSystemProvider.pageDir">${SILVERPEAS_DATA_HOME}/temp/wiki/pages</parameter>
+    </configfile>
+  </fileset>
+
  <!-- Chat settings 
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/silverpeas/">
     <configfile name="chat/settings/chatSettings.properties">

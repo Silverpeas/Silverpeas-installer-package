@@ -5,13 +5,13 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>assembly-silverpeas</artifactId>
-    <version>1.0-RC3</version>
+    <version>5.0/version>
   </parent>
 
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>assembly-sdk</artifactId>
-  <version>1.0</version>
+  <version>5.0</version>
   <name>Assembly SDK</name>
 
   

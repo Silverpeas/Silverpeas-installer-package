@@ -457,9 +457,18 @@
   </fileset>
 
   <!-- importExport -->
-  <fileset root="${SILVERPEAS_HOME}properties/com/silverpeas/importExport/settings/">
+  <fileset root="${SILVERPEAS_HOME}/properties/com/silverpeas/importExport/settings/">
     <configfile name="importSettings.properties">
       <parameter key="importRepository">${SILVERPEAS_DATA_HOME}/import/</parameter>
+    </configfile>
+  </fileset>
+
+  <!-- wiki -->
+  <fileset root="${SILVERPEAS_HOME}/jar/silverpeas.ear/war-ic.war/WEB-INF/">
+    <configfile name="jspwiki.properties">
+      <parameter key="jspwiki.workDir">${SILVERPEAS_DATA_HOME}/temp/wiki/indexes</parameter>
+      <parameter key="jspwiki.basicAttachmentProvider.storageDir">${SILVERPEAS_DATA_HOME}/temp/wiki/</parameter>
+      <parameter key="jspwiki.fileSystemProvider.pageDir">${SILVERPEAS_DATA_HOME}/temp/wiki/pages</parameter>
     </configfile>
   </fileset>
 
