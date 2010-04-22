@@ -290,6 +290,10 @@
     <configfile name="portlets/portletsSettings.properties">
       <parameter key="portlets.configDir">${SILVERPEAS_DATA_HOME}/data/portlets</parameter>
     </configfile>
+
+    <configfile name="communicationUser/settings/communicationUserSettings.properties">
+      <parameter key="pathDiscussions">${SILVERPEAS_DATA_HOME}/data/imRepository/</parameter>
+    </configfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/bin/">
