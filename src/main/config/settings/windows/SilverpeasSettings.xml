@@ -463,7 +463,7 @@
   </fileset>
 
   <!-- importExport -->
-  <fileset root="${SILVERPEAS_HOME}properties/com/silverpeas/importExport/settings/">
+  <fileset root="${SILVERPEAS_HOME}/properties/com/silverpeas/importExport/settings/">
     <configfile name="importSettings.properties">
       <parameter key="importRepository">${SILVERPEAS_DATA_HOME}/import/</parameter>
     </configfile>
