@@ -67,14 +67,13 @@
     <!-- fin ******* variables à paramètrer ******* -->
     <var name="DB_SERVERTYPEU" value='$eval{{value=new String("${DB_SERVERTYPE}").toUpperCase();}}'/>
     <var name="DB_DRIVER_MSSQL" value="net.sourceforge.jtds.jdbc.Driver"/>
-    <var name="DB_DRIVER_ORACLE" value="com.inet.ora.OraDriver"/>
+    <var name="DB_DRIVER_ORACLE" value="oracle.jdbc.driver.OracleDriver"/>
     <var name="DB_DRIVER_POSTGRES" value="org.postgresql.Driver"/>
     <var name="DB_DRIVER" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_DRIVER_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_DRIVER_POSTGRES}"; else value="${DB_DRIVER_ORACLE}";}}'/>
 
     <var name="SQL_LISTEN_PORT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${SQL_LISTEN_PORT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${SQL_LISTEN_PORT_POSTGRES}"; else value="${SQL_LISTEN_PORT_ORACLE}";}}'/>
-
     <var name="DB_URL_MSSQL" value="jdbc:jtds:sqlserver://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
-    <var name="DB_URL_ORACLE" value="jdbc:inetora:${DB_SERVER}:${SQL_LISTEN_PORT}:${DB_NAME}"/>
+    <var name="DB_URL_ORACLE" value="jdbc:oracle:thin:@$//{DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
     <var name="DB_URL_POSTGRES" value="jdbc:postgresql://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
     <var name="DB_URL" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_URL_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_URL_POSTGRES}"; else value="${DB_URL_ORACLE}";}}'/>
 
