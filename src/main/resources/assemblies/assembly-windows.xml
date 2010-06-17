@@ -28,7 +28,7 @@
     </file>
     <file>
       <outputDirectory>setup/settings</outputDirectory>
-      <source>src/main/config/settings/linux/JBossSettings.xml</source>
+      <source>src/main/config/settings/windows/JBossSettings.xml</source>
       <filtered>false</filtered>
     </file>
   </files>
