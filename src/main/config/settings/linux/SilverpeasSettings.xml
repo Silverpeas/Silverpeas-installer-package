@@ -139,6 +139,13 @@
       <parameter key="xmlPackage">${SILVERPEAS_HOME}/xmlcomponents</parameter>
     </configfile>
 
+    <configfile name="kmelia/settings/kmeliaSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/kmelia/</parameter>
+    </configfile>
+    <configfile name="kmelia/settings/kmeliaSettings.properties">
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/kmelia/</parameter>
+    </configfile>
+
   </fileset>
 
 		<!-- 2) COM/STRATELIA/SILVERPEAS : -->
@@ -457,6 +464,12 @@
     <configfile name="webSiteSettings.properties">
       <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/data/</parameter>
     </configfile>
+    <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
+    </configfile>
+    <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/</parameter>
+    </configfile> 
   </fileset>
 
   <!-- importExport -->
