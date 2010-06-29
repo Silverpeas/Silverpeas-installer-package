@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<silverpeas-settings product="Silverpeas">
+  <global-vars>
+    <!-- INSTALLATION DIRECTORY -->
+    <var name="SILVERPEAS_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
+    <var name="SILVERPEAS_DATA_HOME" value="${SILVERPEAS_HOME}"/>
+    <var name="SILVERPEAS_DATA_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
+
+    <!-- STORED PASSWORDS FORMATS CONSTANTS -->
+    <var name="STORED_PASSWD_NOT_ENCRYPTED" value="ClearText"/>
+    <var name="STORED_PASSWD_ENCRYPTED" value="CryptUnix"/>
+
+    <!-- AUTHENTICATION FALLBACKS CONSTANTS -->
+    <var name="FALLBACK_NONE" value="none"/>
+    <var name="FALLBACK_REJECT" value="ifNotRejected"/>
+    <var name="FALLBACK_ALWAYS" value="always"/>
+
+    <!-- debut ******* variables à paramètrer ******* -->
+    <var name="STORED_PASSWD_ENCRYPTION" value="${STORED_PASSWD_ENCRYPTED}"/>
+    <var name="FALLBACK_TYPE" value="${FALLBACK_ALWAYS}"/>
+    <var name="NT_AUTHENT_ENABLED" value="true"/>
+
+	<!-- SILVERPEAS DATABASE CONNECTION INFO -->
+    <var name="DB_SERVERTYPE" value="POSTGRES"/>
+    <var name="DB_SERVER" value="localhost"/>
+    <var name="DB_USER" value="postgres"/>
+    <var name="DB_PASSWD" value="postgres"/>
+    <var name="DB_NAME" value="SilverpeasV5"/>
+    <var name="SQL_LISTEN_PORT_MSSQL" value="1433"/>
+    <var name="SQL_LISTEN_PORT_ORACLE" value="1521"/>
+    <var name="SQL_LISTEN_PORT_POSTGRES" value="5432"/>
+
+    <var name="NTRIS_SERVER" value="localhost"/>
+    <var name="NTRIS_PORT" value="9999"/>
+    <var name="NTRIS_HOST" value="%NTRIS_HOST%"/>
+
+    <!-- Silverpeas Adminitrator infos -->
+    <var name="ADMIN_LOGIN" value="SilverAdmin"/>
+    <var name="ADMIN_PASSWD" value="SilverAdmin"/>
+    <var name="ADMIN_EMAIL" value="silveradmin@localhost"/>
+    <var name="URL_SERVER" value="http://localhost:8000"/>
+
+    <var name="EXPED_NAME" value="Silverpeas"/>
+    <var name="EXPED_EMAIL" value="silveradmin@localhost"/>
+
+	<!-- SMTP Server configuration -->
+    <var name="SMTP_SERVER" value="localhost"/>
+    <var name="SMTP_AUTHENTICATION" value="false"/>
+    <var name="SMTP_DEBUG" value="false"/>
+    <var name="SMTP_PORT" value="25"/>
+    <var name="SMTP_USER" value=""/>
+    <var name="SMTP_PWD" value=""/>
+    <var name="SMTP_SECURE" value="false"/>
+
+	<!-- Server LDAP configuration -->
+    <var name="LDAP_SERVER" value="%LDAP_SERVER%"/>
+    <var name="LDAP_PORT" value="%LDAP_PORT%"/>
+
+    <!-- Application Server access -->
+    <var name="PROXY_HOST" value=""/>
+    <var name="PROXY_PORT" value=""/>
+    <var name="NONPROXY_HOST" value="127.0.0.1|localhost"/>
+
+	<!-- Silvertrace error -->
+    <var name="LANGUAGE" value="fr"/>
+
+<!-- fin ******* variables à paramètrer ******* -->
+
+    <var name="DB_SERVERTYPEU" value='$eval{{value=new String("${DB_SERVERTYPE}").toUpperCase();}}'/>
+    <var name="DB_DRIVER_MSSQL" value="net.sourceforge.jtds.jdbc.Driver"/>
+    <var name="DB_DRIVER_ORACLE" value="oracle.jdbc.driver.OracleDriver"/>
+    <var name="DB_DRIVER_POSTGRES" value="org.postgresql.Driver"/>
+    <var name="DB_DRIVER" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_DRIVER_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_DRIVER_POSTGRES}"; else value="${DB_DRIVER_ORACLE}";}}'/>
+
+    <var name="SQL_LISTEN_PORT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${SQL_LISTEN_PORT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${SQL_LISTEN_PORT_POSTGRES}"; else value="${SQL_LISTEN_PORT_ORACLE}";}}'/>
+    <var name="DB_URL_MSSQL" value="jdbc:jtds:sqlserver://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
+    <var name="DB_URL_ORACLE" value="jdbc:oracle:thin:@${DB_SERVER}:${SQL_LISTEN_PORT}:${DB_NAME}"/>
+    <var name="DB_URL_POSTGRES" value="jdbc:postgresql://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
+    <var name="DB_URL" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_URL_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_URL_POSTGRES}"; else value="${DB_URL_ORACLE}";}}'/>
+
+    <var name="HIBERNATE_DIALECT_MSSQL" value="org.hibernate.dialect.SQLServerDialect"/>
+    <var name="HIBERNATE_DIALECT_ORACLE" value="org.hibernate.dialect.OracleDialect"/>
+    <var name="HIBERNATE_DIALECT_POSTGRES" value="org.hibernate.dialect.PostgreSQLDialect"/>
+    <var name="HIBERNATE_DIALECT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${HIBERNATE_DIALECT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${HIBERNATE_DIALECT_POSTGRES}"; else value="${HIBERNATE_DIALECT_ORACLE}";}}'/>
+
+    <var name="JACKRABBIT_PERSIST_MSSQL" value="org.apache.jackrabbit.core.persistence.bundle.MSSqlPersistenceManager"/>
+    <var name="JACKRABBIT_PERSIST_ORACLE" value="org.apache.jackrabbit.core.persistence.bundle.OraclePersistenceManager"/>
+    <var name="JACKRABBIT_PERSIST_POSTGRES" value="org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager"/>
+    <var name="JACKRABBIT_PERSIST" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${JACKRABBIT_PERSIST_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${JACKRABBIT_PERSIST_POSTGRES}"; else value="${JACKRABBIT_PERSIST_ORACLE}";}}'/>
+
+<!-- INSTALLED DIRECTORIES -->
+    <var name="JAR_HOME" value="${SILVERPEAS_HOME}/jar"/>
+    <var name="TEMP_HOME" value="${SILVERPEAS_HOME}/temp"/>
+    <var name="LOG_HOME" value="${SILVERPEAS_HOME}/log"/>
+        
+  </global-vars>
+</silverpeas-settings>
