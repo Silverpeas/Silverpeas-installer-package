@@ -9,8 +9,8 @@
     <!-- <var name="JBOSS_VERSION" value="5.1"/> -->
     <!-- fin ******* variables à paramètrer ******* -->
     <var name="JBOSS_SERVER" value="${JBOSS_HOME}/server/default"/>
-    <var name="JBOSS_START" value="bin/run.sh"/>
-    <var name="JBOSS_CONF" value="bin/run.sh"/>
+    <var name="JBOSS_START" value="bin/silverpeas_start_jboss.sh"/>
+    <var name="JBOSS_CONF" value="bin/silverpeas_start_jboss.sh"/>
     <var name="DATASOURCE" value="java:/Silverpeas"/>
   </global-vars>
 
@@ -30,7 +30,7 @@
     </copyfile>
   </fileset>
      
-  <fileset root="${JBOSS_HOME}/">
+  <fileset root="${SILVERPEAS_HOME}/">
     <textfile name="${JBOSS_CONF}">
       <parameter key="-Xms[0-9]+m" use-regex="true">-Xms${RAM_MIN}m</parameter>
       <parameter key="-Xmx[0-9]+m" use-regex="true">-Xmx${RAM_MAX}m</parameter>

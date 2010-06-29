@@ -364,6 +364,12 @@
     <configfile name="whitePages/settings/template.properties">
       <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/data/templateRepository</parameter>
     </configfile>
+    <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
+    </configfile>
+    <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/</parameter>
+    </configfile> 
   </fileset>
 
  <!-- Website Designer -->
@@ -371,12 +377,6 @@
     <configfile name="webSiteSettings.properties">
       <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/data/</parameter>
     </configfile>
-    <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
-      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
-    </configfile>
-    <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/</parameter>
-    </configfile> 
   </fileset>
 
   <!-- importExport -->

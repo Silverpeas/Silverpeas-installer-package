@@ -31,6 +31,11 @@
       <source>src/main/config/settings/windows/JBossSettings.xml</source>
       <filtered>false</filtered>
     </file>
+    <file>
+      <outputDirectory>setup/settings</outputDirectory>
+      <source>src/main/config/settings/windows/config.xml</source>
+      <filtered>false</filtered>
+    </file>
   </files>
   <fileSets>
     <fileSet>

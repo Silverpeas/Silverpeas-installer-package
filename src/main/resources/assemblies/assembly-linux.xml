@@ -45,6 +45,11 @@
       <source>src/main/config/settings/linux/JBossSettings.xml</source>
       <filtered>false</filtered>
     </file>
+     <file>
+      <outputDirectory>setup/settings</outputDirectory>
+      <source>src/main/config/settings/linux/config.xml</source>
+      <filtered>false</filtered>
+    </file>
   </files>
   <dependencySets>
     <dependencySet>
