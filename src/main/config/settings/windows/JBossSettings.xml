@@ -11,8 +11,8 @@
     <!-- <var name="JBOSS_VERSION" value="5.1"/> -->
 	<!-- fin ******* variables à paramètrer ******* -->
     <var name="JBOSS_SERVER" value="${JBOSS_HOME}/server/default"/>
-    <var name="JBOSS_START" value="bin/silverpeas_start_jboss.bat"/>
-    <var name="JBOSS_CONF" value="bin/silverpeas_start_jboss.bat"/>
+    <var name="JBOSS_START" value="bin/silverpeas_start_jboss.cmd"/>
+    <var name="JBOSS_CONF" value="bin/silverpeas_start_jboss.cmd"/>
     <var name="DATASOURCE" value="java:/Silverpeas"/>
   </global-vars>
 
