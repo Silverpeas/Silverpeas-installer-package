@@ -3,13 +3,6 @@
 <silverpeas-settings product="Configuration_JBoss_Server">
 
   <global-vars>
-	<!-- debut ******* variables à paramètrer ******* -->
-    <var name="JBOSS_LISTEN_PORT" value="8000"/>
-    <var name="RAM_MIN" value="512"/>
-    <var name="RAM_MAX" value="512"/>
-    <var name="JBOSS_VERSION" value="4.0.3"/>
-    <!-- <var name="JBOSS_VERSION" value="5.1"/> -->
-	<!-- fin ******* variables à paramètrer ******* -->
     <var name="JBOSS_SERVER" value="${JBOSS_HOME}/server/default"/>
     <var name="JBOSS_START" value="/bin/silverpeas_start_jboss.cmd"/>
     <var name="JBOSS_CONF" value="/bin/silverpeas_start_jboss.cmd"/>
