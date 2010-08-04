@@ -299,7 +299,7 @@
     </xmlfile>
   </fileset>
 
-  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/workflows/">
     <xmlfile name="demandeCongesSimple.xml">
       <parameter key="/visible">yes</parameter>
     </xmlfile>
