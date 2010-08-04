@@ -175,7 +175,7 @@
               <fromDir>${project.basedir}/target</fromDir>
               <includes>*.zip,*.tar.gz</includes>
               <excludes>pom.xml</excludes>
-              <url>scp://repository.silverpeas.org</url>
+              <url>scp://www.silverpeas.org</url>
               <toDir>/var/www/files</toDir>
             </configuration>
           </execution>
