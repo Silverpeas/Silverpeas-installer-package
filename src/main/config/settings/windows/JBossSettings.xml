@@ -50,10 +50,18 @@
       </parameter>
     </xmlfile>
     <xmlfile name="silverpeas-ds.xml">
-      <parameter key="/datasources/local-tx-datasource/connection-url">${DB_URL}</parameter>
-      <parameter key="/datasources/local-tx-datasource/driver-class">${DB_DRIVER}</parameter>
-      <parameter key="/datasources/local-tx-datasource/user-name">${DB_USER}</parameter>
-      <parameter key="/datasources/local-tx-datasource/password">${DB_PASSWD}</parameter>
+      <parameter key="/datasources/local-tx-datasource/connection-url">
+        <value>${DB_URL}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/driver-class">
+        <value>${DB_DRIVER}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/user-name">
+        <value>${DB_USER}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/password">
+        <value>${DB_PASSWD}</value>
+      </parameter>
     </xmlfile>
   </fileset>
 
