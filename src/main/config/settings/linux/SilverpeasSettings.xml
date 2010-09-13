@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <silverpeas-settings product="Silverpeas">
-  <global-vars> 
+  <global-vars>
     <var name="DB_SERVERTYPEU" value='$eval{{value=new String("${DB_SERVERTYPE}").toUpperCase();}}'/>
     <var name="DB_DRIVER_MSSQL" value="net.sourceforge.jtds.jdbc.Driver"/>
     <var name="DB_DRIVER_ORACLE" value="oracle.jdbc.driver.OracleDriver"/>
@@ -28,7 +28,7 @@
     <var name="TEMP_HOME" value="${SILVERPEAS_HOME}/temp"/>
     <var name="LOG_HOME" value="${SILVERPEAS_HOME}/log"/>
   </global-vars>
-  
+
   <!-- PROPERTIES CONFIGURATION -->
   <fileset root="${SILVERPEAS_HOME}/initialize/">
     <configfile name="systemSettings.properties">
@@ -55,7 +55,7 @@
       <parameter key="uploadsIndexPath">${SILVERPEAS_DATA_HOME}/data/index</parameter>
       <parameter key="tempPath">${TEMP_HOME}</parameter>
     </configfile>
-        
+
     <configfile name="beans/admin/admin.properties">
       <parameter key="AdminDBDriver">${DB_DRIVER}</parameter>
       <parameter key="WaProductionDb">${DB_URL}</parameter>
@@ -70,7 +70,7 @@
       <parameter key="EntrepriseClientSpaceId">1</parameter>
       <parameter key="xmlSpaceTemplate">${SILVERPEAS_HOME}/xmlspacetemplates</parameter>
     </configfile>
-        
+
     <configfile name="beans/admin/instance/control/instanciator.properties">
       <parameter key="xmlPackage">${SILVERPEAS_HOME}/xmlcomponents</parameter>
     </configfile>
@@ -138,7 +138,7 @@
       <parameter key="SMTPPwd">${SMTP_PWD}</parameter>
       <parameter key="SMTPSecure">${SMTP_SECURE}</parameter>
     </configfile>
-		       
+
     <configfile name="silvertrace/settings/silverTrace.properties">
       <parameter key="pathSilverTrace">${SILVERPEAS_HOME}/silvertrace</parameter>
       <parameter key="ErrorDir">${LOG_HOME}</parameter>
@@ -154,7 +154,7 @@
     <configfile name="_silverpeasinitialize/settings/_silverpeasinitializeSettings.properties">
       <parameter key="pathInitialize">${SILVERPEAS_HOME}/initialize</parameter>
     </configfile>
-        
+
     <!-- <configfile name="formcommon/settings/formcommonSettings.properties">
             <parameter key="pathFormRepository">${SILVERPEAS_DATA_HOME}/data/formRepository</parameter>
      </configfile> -->
@@ -169,7 +169,7 @@
       <parameter key="SilverPeasDataPath0">${SILVERPEAS_DATA_HOME}/data</parameter>
     </configfile>
 
-       
+
     <!--Modifiable par le client -->
     <configfile name="multipart/multipart.properties">
       <parameter key="MultipartParserMaxSize">10485760</parameter>
@@ -200,7 +200,7 @@
       <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/data/templateRepository/</parameter>
     </configfile>
 
-		<!-- Variable à modifier par le client -->    
+		<!-- Variable à modifier par le client -->
     <configfile name="jobManagerPeas/settings/jobManagerPeasSettings.properties">
       <parameter key="IsKMVisible">true</parameter>
       <parameter key="IsToolsVisible">true</parameter>
@@ -214,7 +214,7 @@
       <parameter key="ProcessModelDir">${SILVERPEAS_DATA_HOME_DEPENDANT}\data\workflowRepository\</parameter>
     </configfile>
 
-		<!-- Variable modifiable par le client -->    
+		<!-- Variable modifiable par le client -->
     <configfile name="workflow/engine/schedulerSettings.properties">
       <parameter key="timeoutSchedule">* 0,4,8,12,16,20 * * *</parameter>
     </configfile>
@@ -245,20 +245,20 @@
   </fileset>
 
     <!-- workflowEngine settings -->
-    
+
   <fileset root="${SILVERPEAS_HOME}/resources/instanceManager/">
     <textfile name="database.xml">
       <parameter key="&lt;!DOCTYPE[^&gt;]*&gt;" use-regex="true"> </parameter>
     </textfile>
 
     <xmlfile name="database.xml">
-      <parameter key="/" mode="update">
+      <parameter key="/jdo-conf" mode="update">
         <value location="@engine">$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="sql-server"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="postgresql"; else value="oracle";}}</value>
       </parameter>
-      <parameter key="/database" mode="update">
+      <parameter key="/jdo-conf/database" mode="update">
         <value location="@engine">$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="sql-server"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="postgresql"; else value="oracle";}}</value>
       </parameter>
-      <parameter key="/database/mapping" mode="update">
+      <parameter key="/jdo-conf/database/mapping" mode="update">
         <value location="@href">file:///${SILVERPEAS_HOME}/resources/instanceManager/mapping.xml</value>
       </parameter>
     </xmlfile>
@@ -268,123 +268,123 @@
     </textfile>
 
     <xmlfile name="fast_database.xml">
-      <parameter key="/" mode="update">
+      <parameter key="/database" mode="update">
         <value location="@engine">$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="sql-server"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="postgresql"; else value="oracle";}}</value>
       </parameter>
-      <parameter key="/mapping" mode="update">
+      <parameter key="/database/mapping" mode="update">
         <value location="@href">file:///${SILVERPEAS_HOME}/resources/instanceManager/fast_mapping.xml</value>
       </parameter>
     </xmlfile>
   </fileset>
 
     <!-- components visibility settings -->
-    
+
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="almanach.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="bookmark.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="chat.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="connecteurJDBC.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/workflows/">
     <xmlfile name="demandeCongesSimple.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="forums.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="hyperlink.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="infoLetter.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="kmax.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="kmelia.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="newsEdito.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="pollingStation.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="projectManager.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="questionReply.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="quickinfo.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="quizz.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="survey.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="toolbox.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="webSites.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="whitePages.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="yellowpages.xml">
-      <parameter key="/visible">yes</parameter>
+      <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
   </fileset>
 
@@ -398,7 +398,7 @@
     </configfile>
     <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/</parameter>
-    </configfile> 
+    </configfile>
   </fileset>
 
  <!-- Website Designer -->
@@ -427,7 +427,7 @@
 
 
 
- <!-- Chat settings 
+ <!-- Chat settings
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/silverpeas/">
     <configfile name="chat/settings/chatSettings.properties">
       <parameter key="xmlConfigLocation">${SILVERPEAS_DATA_HOME}/data/chat/jchatbox.xml</parameter>

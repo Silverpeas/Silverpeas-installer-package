@@ -22,7 +22,7 @@
       ${JBOSS_SERVER}/deploy/silverpeas-ds.xml
     </copyfile>
   </fileset>
-     
+
   <fileset root="${SILVERPEAS_HOME}/">
     <textfile name="${JBOSS_CONF}">
       <parameter key="-Xms[0-9]+m" use-regex="true">-Xms${RAM_MIN}m</parameter>
@@ -32,27 +32,28 @@
 
   <fileset root="${JBOSS_SERVER}/deploy/">
     <xmlfile name="jbossweb-tomcat55.sar/server.xml">
-      <parameter key="/Service[@name='jboss.web']/Connector[@maxThreads='250']" mode="update">
+      <parameter key="/Server/Service[@name='jboss.web']/Connector[@maxThreads='250']" mode="update">
         <value location="@port">${JBOSS_LISTEN_PORT}</value>
+        <value location="@URIEncoding">UTF-8</value>
       </parameter>
-      <parameter key="/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/weblib']" mode="update">
+      <parameter key="/Server/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/weblib']" mode="update">
         <value location="@docBase">${SILVERPEAS_DATA_HOME_DEPENDANT}\data\weblib</value>
         <value location="@path">/weblib</value>
       </parameter>
-      <parameter key="/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/website']" mode="update">
+      <parameter key="/Server/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/website']" mode="update">
         <value location="@docBase">${SILVERPEAS_DATA_HOME_DEPENDANT}\data\website</value>
         <value location="@path">/website</value>
       </parameter>
-      <parameter key="/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/help_fr']" mode="update">
+      <parameter key="/Server/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/help_fr']" mode="update">
         <value location="@docBase">${SILVERPEAS_HOME_DEPENDANT}\help\fr</value>
         <value location="@path">/help_fr</value>
       </parameter>
     </xmlfile>
     <xmlfile name="silverpeas-ds.xml">
-      <parameter key="/local-tx-datasource/connection-url">${DB_URL}</parameter>
-      <parameter key="/local-tx-datasource/driver-class">${DB_DRIVER}</parameter>
-      <parameter key="/local-tx-datasource/user-name">${DB_USER}</parameter>
-      <parameter key="/local-tx-datasource/password">${DB_PASSWD}</parameter>
+      <parameter key="/datasources/local-tx-datasource/connection-url">${DB_URL}</parameter>
+      <parameter key="/datasources/local-tx-datasource/driver-class">${DB_DRIVER}</parameter>
+      <parameter key="/datasources/local-tx-datasource/user-name">${DB_USER}</parameter>
+      <parameter key="/datasources/local-tx-datasource/password">${DB_PASSWD}</parameter>
     </xmlfile>
   </fileset>
 
@@ -63,7 +64,7 @@
       <parameter key="SILVERSTATISTICS_JMS_FACTORY">java:/XAConnectionFactory</parameter>
       <parameter key="JMS_QUEUE">queue/notificationsQueue</parameter>
       <parameter key="JMS_FACTORY">java:/XAConnectionFactory</parameter>
-			
+
       <parameter key="ATTACHMENT_DATASOURCE">${DATASOURCE}</parameter>
       <parameter key="CONTAINERMANAGER_DATASOURCE">${DATASOURCE}</parameter>
       <parameter key="CONTENTMANAGER_DATASOURCE">${DATASOURCE}</parameter>
@@ -84,12 +85,12 @@
 
   <fileset root="${SILVERPEAS_HOME}/resources/">
     <xmlfile name="instanceManager/database.xml">
-      <parameter key="/jndi" mode="update">
+      <parameter key="/jdo-conf/database/jndi" mode="update">
         <value location="@name">${DATASOURCE}</value>
       </parameter>
     </xmlfile>
     <xmlfile name="instanceManager/fast_database.xml">
-      <parameter key="/jndi" mode="update">
+      <parameter key="/database/jndi" mode="update">
         <value location="@name">${DATASOURCE}</value>
       </parameter>
     </xmlfile>
