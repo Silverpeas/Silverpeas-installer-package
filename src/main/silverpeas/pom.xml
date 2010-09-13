@@ -14,19 +14,31 @@
   <version>5.0</version>
   <name>Assembly SDK</name>
 
-  
+
   <properties>
     <silverpeas.home>${env.SILVERPEAS_HOME}</silverpeas.home>
   </properties>
-  
+
   <repositories>
     <repository>
       <id>Silverpeas</id>
       <layout>default</layout>
       <name>Silverpeas Repository</name>
-      <url>http://www.silverpeas.org/nexus/content/groups/silverpeas</url>
+      <url>http://www.silverpeas.org/nexus/content/groups/public</url>
       <releases>
         <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>Silverpeas</id>
+      <layout>default</layout>
+      <name>Silverpeas Repository</name>
+      <url>https://www.silverpeas.org/nexus/content/groups/public-snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
       </releases>
       <snapshots>
         <enabled>true</enabled>

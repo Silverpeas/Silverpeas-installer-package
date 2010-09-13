@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>parent</artifactId>
-    <version>12</version>
+    <version>14</version>
   </parent>
 
   <scm>
@@ -16,7 +16,7 @@
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
-  <version>5.2.2</version>
+  <version>5.3-SNAPSHOT</version>
   <name>Silverpeas Installation</name>
   <description>Builds the Silverpeas installation package</description>
 
