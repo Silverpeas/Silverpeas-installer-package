@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <silverpeas-settings product="Silverpeas">
   <global-vars>
     <var name="DB_SERVERTYPEU" value='$eval{{value=new String("${DB_SERVERTYPE}").toUpperCase();}}'/>
@@ -204,7 +204,7 @@
       <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/data/templateRepository/</parameter>
     </configfile>
 
-		<!-- Variable à modifier par le client -->
+		<!-- Variable Ã  modifier par le client -->
     <configfile name="jobManagerPeas/settings/jobManagerPeasSettings.properties">
       <parameter key="IsKMVisible">true</parameter>
       <parameter key="IsToolsVisible">true</parameter>

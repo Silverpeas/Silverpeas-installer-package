@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <silverpeas-settings product="Silverpeas">
   <global-vars>
     <!-- INSTALLATION DIRECTORY -->
     <var name="SILVERPEAS_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
     <var name="SILVERPEAS_DATA_HOME" value="${SILVERPEAS_HOME}"/>
     <var name="SILVERPEAS_DATA_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
-    
+
     <var name="JBOSS_LISTEN_PORT" value="8000"/>
     <var name="RAM_MIN" value="512"/>
     <var name="RAM_MAX" value="512"/>
@@ -20,7 +20,7 @@
     <var name="FALLBACK_REJECT" value="ifNotRejected"/>
     <var name="FALLBACK_ALWAYS" value="always"/>
 
-    <!-- debut ******* variables à paramètrer ******* -->
+    <!-- debut ******* variables Ã  paramÃ¨trer ******* -->
     <var name="STORED_PASSWD_ENCRYPTION" value="${STORED_PASSWD_ENCRYPTED}"/>
     <var name="FALLBACK_TYPE" value="${FALLBACK_ALWAYS}"/>
     <var name="NT_AUTHENT_ENABLED" value="true"/>
