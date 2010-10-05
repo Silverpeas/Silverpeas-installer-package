@@ -230,6 +230,16 @@
       <parameter key="jdbc.password">${DB_PASSWD}</parameter>
       <parameter key="hibernate.dialect">${HIBERNATE_DIALECT}</parameter>
     </configfile>
+    
+   <configfile name="mailinglist/settings/mailinglistSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/mailingList</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/resources/StringTemplates/components/mailingList</parameter>
+    </configfile>
+    
+    <configfile name="classifieds/settings/classifiedsSettings.properties">
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/classifieds/</parameter>
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/classifieds/</parameter>
+    </configfile>
 
     <configfile name="portlets/portletsSettings.properties">
       <parameter key="portlets.configDir">${SILVERPEAS_DATA_HOME}/data/portlets</parameter>
