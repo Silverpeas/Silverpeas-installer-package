@@ -3,25 +3,29 @@
   <global-vars>
     <var name="DB_SERVERTYPEU" value='$eval{{value=new String("${DB_SERVERTYPE}").toUpperCase();}}'/>
     <var name="DB_DRIVER_MSSQL" value="net.sourceforge.jtds.jdbc.Driver"/>
+    <var name="DB_DRIVER_H2" value="org.h2.Driver"/>
     <var name="DB_DRIVER_ORACLE" value="oracle.jdbc.driver.OracleDriver"/>
     <var name="DB_DRIVER_POSTGRES" value="org.postgresql.Driver"/>
-    <var name="DB_DRIVER" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_DRIVER_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_DRIVER_POSTGRES}"; else value="${DB_DRIVER_ORACLE}";}}'/>
+    <var name="DB_DRIVER" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_DRIVER_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_DRIVER_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${DB_DRIVER_H2}"; else value="${DB_DRIVER_ORACLE}";}}'/>
 
-    <var name="SQL_LISTEN_PORT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${SQL_LISTEN_PORT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${SQL_LISTEN_PORT_POSTGRES}"; else value="${SQL_LISTEN_PORT_ORACLE}";}}'/>
+    <var name="SQL_LISTEN_PORT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${SQL_LISTEN_PORT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${SQL_LISTEN_PORT_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${SQL_LISTEN_PORT_H2}"; else value="${SQL_LISTEN_PORT_ORACLE}";}}'/>
     <var name="DB_URL_MSSQL" value="jdbc:jtds:sqlserver://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
     <var name="DB_URL_ORACLE" value="jdbc:oracle:thin:@${DB_SERVER}:${SQL_LISTEN_PORT}:${DB_NAME}"/>
     <var name="DB_URL_POSTGRES" value="jdbc:postgresql://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
-    <var name="DB_URL" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_URL_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_URL_POSTGRES}"; else value="${DB_URL_ORACLE}";}}'/>
+    <var name="DB_URL_H2" value="jdbc:h2:tcp://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
+    <var name="DB_URL" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_URL_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_URL_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${DB_URL_H2}";else value="${DB_URL_ORACLE}";}}'/>
 
     <var name="HIBERNATE_DIALECT_MSSQL" value="org.hibernate.dialect.SQLServerDialect"/>
+    <var name="HIBERNATE_DIALECT_H2" value="org.hibernate.dialect.SQLServerDialect"/>
     <var name="HIBERNATE_DIALECT_ORACLE" value="org.hibernate.dialect.OracleDialect"/>
     <var name="HIBERNATE_DIALECT_POSTGRES" value="org.hibernate.dialect.PostgreSQLDialect"/>
     <var name="HIBERNATE_DIALECT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${HIBERNATE_DIALECT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${HIBERNATE_DIALECT_POSTGRES}"; else value="${HIBERNATE_DIALECT_ORACLE}";}}'/>
 
+    <var name="JACKRABBIT_PERSIST_H2" value="org.apache.jackrabbit.core.persistence.bundle.H2PersistenceManager"/>
     <var name="JACKRABBIT_PERSIST_MSSQL" value="org.apache.jackrabbit.core.persistence.bundle.MSSqlPersistenceManager"/>
     <var name="JACKRABBIT_PERSIST_ORACLE" value="org.apache.jackrabbit.core.persistence.bundle.OraclePersistenceManager"/>
     <var name="JACKRABBIT_PERSIST_POSTGRES" value="org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager"/>
-    <var name="JACKRABBIT_PERSIST" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${JACKRABBIT_PERSIST_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${JACKRABBIT_PERSIST_POSTGRES}"; else value="${JACKRABBIT_PERSIST_ORACLE}";}}'/>
+    <var name="JACKRABBIT_PERSIST" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${JACKRABBIT_PERSIST_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${JACKRABBIT_PERSIST_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${JACKRABBIT_PERSIST_H2}";else value="${JACKRABBIT_PERSIST_ORACLE}";}}'/>
 
     <!-- INSTALLED DIRECTORIES -->
     <var name="JAR_HOME" value="${SILVERPEAS_HOME}/jar"/>
@@ -230,8 +234,8 @@
       <parameter key="jdbc.password">${DB_PASSWD}</parameter>
       <parameter key="hibernate.dialect">${HIBERNATE_DIALECT}</parameter>
     </configfile>
-    
-   <configfile name="mailinglist/settings/mailinglistSettings.properties">
+
+    <configfile name="mailinglist/settings/mailinglistSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/mailingList</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/resources/StringTemplates/components/mailingList</parameter>
     </configfile>
