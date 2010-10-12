@@ -33,7 +33,7 @@
       </snapshots>
     </repository>
     <repository>
-      <id>Silverpeas</id>
+      <id>Silverpeas-Snapshots</id>
       <layout>default</layout>
       <name>Silverpeas Repository</name>
       <url>https://www.silverpeas.org/nexus/content/groups/public-snapshots/</url>
