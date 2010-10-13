@@ -34,6 +34,7 @@
     <var name="SQL_LISTEN_PORT_MSSQL" value="1433"/>
     <var name="SQL_LISTEN_PORT_ORACLE" value="1521"/>
     <var name="SQL_LISTEN_PORT_POSTGRES" value="5432"/>
+    <var name="SQL_LISTEN_PORT_H2" value="9092"/>
 
     <var name="NTRIS_SERVER" value="localhost"/>
     <var name="NTRIS_PORT" value="9999"/>

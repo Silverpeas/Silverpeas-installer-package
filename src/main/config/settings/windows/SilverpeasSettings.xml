@@ -6,7 +6,7 @@
     <var name="DB_DRIVER_H2" value="org.h2.Driver"/>
     <var name="DB_DRIVER_ORACLE" value="oracle.jdbc.driver.OracleDriver"/>
     <var name="DB_DRIVER_POSTGRES" value="org.postgresql.Driver"/>
-    <var name="DB_DRIVER" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_DRIVER_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_DRIVER_POSTGRES}"; else value="${DB_DRIVER_ORACLE}";}}'/>
+    <var name="DB_DRIVER" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_DRIVER_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_DRIVER_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${DB_DRIVER_H2}";else value="${DB_DRIVER_ORACLE}";}}'/>
 
     <var name="SQL_LISTEN_PORT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${SQL_LISTEN_PORT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${SQL_LISTEN_PORT_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${SQL_LISTEN_PORT_H2}"; else value="${SQL_LISTEN_PORT_ORACLE}";}}'/>
     <var name="DB_URL_MSSQL" value="jdbc:jtds:sqlserver://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
