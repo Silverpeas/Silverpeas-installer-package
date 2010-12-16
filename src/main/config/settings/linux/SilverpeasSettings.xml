@@ -84,6 +84,11 @@
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/kmelia/</parameter>
     </configfile>
 
+    <configfile name="survey/surveySettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/survey/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/survey/</parameter>
+    </configfile>
+
   </fileset>
 
 		<!-- 2) COM/STRATELIA/SILVERPEAS : -->
