@@ -270,6 +270,20 @@
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/question-reply/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/question-reply/</parameter>
     </configfile>
+    
+    <configfile name="whitePages/settings/template.properties">
+      <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/data/templateRepository</parameter>
+    </configfile>
+    
+    <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/</parameter>
+    </configfile>
+    
+    <configfile name="directory/settings/DirectorySettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/directory</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/directory</parameter>
+    </configfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/bin/">
@@ -422,19 +436,6 @@
     <xmlfile name="yellowpages.xml">
       <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
-  </fileset>
-
-  <!-- Whitepages -->
-  <fileset root="${SILVERPEAS_HOME}/properties/com/silverpeas/">
-    <configfile name="whitePages/settings/template.properties">
-      <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/data/templateRepository</parameter>
-    </configfile>
-    <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
-      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
-    </configfile>
-    <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/</parameter>
-    </configfile>
   </fileset>
 
  <!-- Website Designer -->
