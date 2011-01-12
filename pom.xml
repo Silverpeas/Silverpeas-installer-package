@@ -6,19 +6,34 @@
     <artifactId>parent</artifactId>
     <version>16</version>
   </parent>
-
-  <scm>
-    <developerConnection>scm:svn:https://www.silverpeas.org/svn/silverpeas/services/installation/trunk</developerConnection>
-    <connection>scm:svn:https://www.silverpeas.org/svn/silverpeas/services/installation/trunk</connection>
-    <url>https://www.silverpeas.org/redmine/repositories/show/installation</url>
-  </scm>
-
+  
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
   <version>5.5-SNAPSHOT</version>
   <name>Silverpeas Installation</name>
   <description>Builds the Silverpeas installation package</description>
+  
+  <scm>
+    <developerConnection>scm:svn:https://www.silverpeas.org/svn/silverpeas/services/installation/trunk</developerConnection>
+    <connection>scm:svn:https://www.silverpeas.org/svn/silverpeas/services/installation/trunk</connection>
+    <url>https://www.silverpeas.org/redmine/repositories/show/installation</url>
+  </scm>
+  
+  <repositories>
+    <repository>
+      <id>NexusSilverpeas</id>
+      <layout>default</layout>
+      <name>Silverpeas Repository</name>
+      <url>http://www.silverpeas.org/nexus/content/groups/silverpeas</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <dependencies>
     <dependency>
@@ -29,7 +44,7 @@
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>fileutil</artifactId>
-      <version>1.4</version>
+      <version>1.5</version>
     </dependency>
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
@@ -39,7 +54,7 @@
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>silverpeas-settings</artifactId>
-      <version>1.7</version>
+      <version>1.8</version>
     </dependency>
     <dependency>
       <groupId>postgresql</groupId>
