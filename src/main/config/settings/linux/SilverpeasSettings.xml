@@ -428,6 +428,11 @@
     </xmlfile>
   </fileset>
   <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
+    <xmlfile name="webPages.xml">
+      <parameter key="/WAComponent/visible">yes</parameter>
+    </xmlfile>
+  </fileset>  
+  <fileset root="${SILVERPEAS_HOME}/xmlcomponents/">
     <xmlfile name="webSites.xml">
       <parameter key="/WAComponent/visible">yes</parameter>
     </xmlfile>
