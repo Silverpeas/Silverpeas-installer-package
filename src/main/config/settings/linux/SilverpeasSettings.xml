@@ -27,6 +27,12 @@
     <var name="JACKRABBIT_PERSIST_POSTGRES" value="org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager"/>
     <var name="JACKRABBIT_PERSIST" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${JACKRABBIT_PERSIST_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${JACKRABBIT_PERSIST_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${JACKRABBIT_PERSIST_H2}";else value="${JACKRABBIT_PERSIST_ORACLE}";}}'/>
 
+    <var name="JACKRABBIT_SCHEMA_H2" value="h2"/>
+    <var name="JACKRABBIT_SCHEMA_MSSQL" value="org.apache.jackrabbit.core.persistence.bundle.MSSqlPersistenceManager"/>
+    <var name="JACKRABBIT_SCHEMA_ORACLE" value="org.apache.jackrabbit.core.persistence.bundle.OraclePersistenceManager"/>
+    <var name="JACKRABBIT_SCHEMA_POSTGRES" value="org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager"/>
+    <var name="JACKRABBIT_SCHEMA" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${JACKRABBIT_SCHEMA_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${JACKRABBIT_SCHEMA_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${JACKRABBIT_SCHEMA_H2}";else value="${JACKRABBIT_SCHEMA_ORACLE}";}}'/>
+
     <!-- INSTALLED DIRECTORIES -->
     <var name="JAR_HOME" value="${SILVERPEAS_HOME}/jar"/>
     <var name="TEMP_HOME" value="${SILVERPEAS_HOME}/temp"/>
@@ -51,6 +57,7 @@
     <configfile name="util/jcr.properties">
       <parameter key="jcr.configuration.persistence.manager">${JACKRABBIT_PERSIST}</parameter>
       <parameter key="jcr.home.dir.url">file:///${SILVERPEAS_DATA_HOME}/data/jackrabbit</parameter>
+      <parameter key="jschema">${JACKRABBIT_SCHEMA}</parameter>
     </configfile>
 
     <configfile name="general.properties">

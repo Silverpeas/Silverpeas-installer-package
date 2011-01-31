@@ -27,6 +27,12 @@
     <var name="JACKRABBIT_PERSIST_POSTGRES" value="org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager"/>
     <var name="JACKRABBIT_PERSIST" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${JACKRABBIT_PERSIST_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${JACKRABBIT_PERSIST_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${JACKRABBIT_PERSIST_H2}";else value="${JACKRABBIT_PERSIST_ORACLE}";}}'/>
 
+    <var name="JACKRABBIT_SCHEMA_H2" value="h2"/>
+    <var name="JACKRABBIT_SCHEMA_MSSQL" value="org.apache.jackrabbit.core.persistence.bundle.MSSqlPersistenceManager"/>
+    <var name="JACKRABBIT_SCHEMA_ORACLE" value="org.apache.jackrabbit.core.persistence.bundle.OraclePersistenceManager"/>
+    <var name="JACKRABBIT_SCHEMA_POSTGRES" value="org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager"/>
+    <var name="JACKRABBIT_SCHEMA" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${JACKRABBIT_SCHEMA_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${JACKRABBIT_SCHEMA_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${JACKRABBIT_SCHEMA_H2}";else value="${JACKRABBIT_SCHEMA_ORACLE}";}}'/>
+
     <!-- INSTALLED DIRECTORIES -->
     <var name="JAR_HOME" value="${SILVERPEAS_HOME}/jar"/>
     <var name="TEMP_HOME" value="${SILVERPEAS_HOME}/temp"/>
@@ -50,6 +56,7 @@
     <configfile name="util/jcr.properties">
       <parameter key="jcr.configuration.persistence.manager">${JACKRABBIT_PERSIST}</parameter>
       <parameter key="jcr.home.dir.url">file:///${SILVERPEAS_DATA_HOME}/data/jackrabbit</parameter>
+      <parameter key="jschema">${JACKRABBIT_SCHEMA}</parameter>
     </configfile>
 
     <configfile name="general.properties">
@@ -186,9 +193,9 @@
       <parameter key="userSessionTimeout">10</parameter>
     </configfile>
     
-	<configfile name="infoLetter/settings/infoLetterSettings.properties">
-		<parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/infoLetter/</parameter>
-        <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/infoLetter/</parameter>
+    <configfile name="infoLetter/settings/infoLetterSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/infoLetter/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/infoLetter/</parameter>
     </configfile>
 
   </fileset>
@@ -252,7 +259,7 @@
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/classifieds/</parameter>
     </configfile>
 
-	<configfile name="webpages/settings/webPagesSettings.properties">
+    <configfile name="webpages/settings/webPagesSettings.properties">
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/webpages/</parameter>
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/webpages/</parameter>
     </configfile>
@@ -284,9 +291,9 @@
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/directory</parameter>
     </configfile>
     
-	<configfile name="blog/settings/blogSettings.properties">
-		<parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/blog/</parameter>
-        <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/blog/</parameter>
+    <configfile name="blog/settings/blogSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/blog/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/blog/</parameter>
     </configfile>
   </fileset>
 
