@@ -10,14 +10,14 @@
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
-  <version>5.5-SNAPSHOT</version>
+  <version>5.5</version>
   <name>Silverpeas Installation</name>
   <description>Builds the Silverpeas installation package</description>
   
   <scm>
-    <developerConnection>scm:svn:https://www.silverpeas.org/svn/silverpeas/services/installation/trunk</developerConnection>
-    <connection>scm:svn:https://www.silverpeas.org/svn/silverpeas/services/installation/trunk</connection>
-    <url>https://www.silverpeas.org/redmine/repositories/show/installation</url>
+    <developerConnection>scm:svn:https://www.silverpeas.org/svn/silverpeas/services/installation/tags/installation-5.5</developerConnection>
+    <connection>scm:svn:https://www.silverpeas.org/svn/silverpeas/services/installation/tags/installation-5.5</connection>
+    <url>https://www.silverpeas.org/redmine/repositories/show/installation/tags/installation-5.5</url>
   </scm>
   
   <repositories>
