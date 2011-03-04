@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <silverpeas-settings product="Configuration_JBoss_Server">
   <global-vars>
-    <var name="JBOSS_SERVER" value="${JBOSS_HOME}/server/default"/>
-    <var name="JBOSS_START" value="/bin/silverpeas_start_jboss.sh"/>
-    <var name="JBOSS_CONF" value="/bin/silverpeas_start_jboss.sh"/>
-    <var name="DATASOURCE" value="Silverpeas"/>
+    <var name="JBOSS_SERVER"   value="${JBOSS_HOME}/server/${JBOSS_SERVER_PROFILE}"/>
+    <var name="JBOSS_CONF"     value="${JBOSS_SERVER}/conf"/>
+    <var name="JBOSS_START"    value="/bin/silverpeas_start_jboss.sh"/>
+    <var name="SILVERPEAS_APP" value="silverpeas"/>
+    <var name="DATASOURCE"     value="Silverpeas"/>
   </global-vars>
-
 
   <fileset root="${JAR_HOME}/">
     <copyfile name="silverpeas.ear">
-            ${JBOSS_SERVER}/deploy/silverpeas.ear
+            ${SILVERPEAS_APP}/silverpeas.ear
     </copyfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/setup/appserver/jboss${JBOSS_VERSION}/">
-    <copyfile name="silverpeas-destinations-service.xml">
-            ${JBOSS_SERVER}/deploy/jms/silverpeas-destinations-service.xml
+    <copyfile name="silverpeas-hotnetq-jms.xml">
+            ${JBOSS_SERVER}/deploy/${SILVERPEAS_APP}/silverpeas-hotnetq-jms.xml
     </copyfile>
     <copyfile name="silverpeas-ds.xml">
-            ${JBOSS_SERVER}/deploy/silverpeas-ds.xml
+            ${JBOSS_SERVER}/deploy/${SILVERPEAS_APP}/silverpeas-ds.xml
     </copyfile>
   </fileset>
 
@@ -30,26 +30,29 @@
     </textfile>
   </fileset>
 
-  <fileset root="${JBOSS_SERVER}/deploy/">
-    <xmlfile name="jbossweb-tomcat55.sar/server.xml">
-      <parameter key="/Server/Service[@name='jboss.web']/Connector[@maxThreads='250']" mode="update">
-        <value location="@port">${JBOSS_LISTEN_PORT}</value>
-        <value location="@URIEncoding">UTF-8</value>
-      </parameter>
-      <parameter key="/Server/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/weblib']" mode="update">
-        <value location="@docBase">${SILVERPEAS_DATA_HOME_DEPENDANT}/data/weblib</value>
-        <value location="@path">/weblib</value>
-      </parameter>
-      <parameter key="/Server/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/website']" mode="update">
-        <value location="@docBase">${SILVERPEAS_DATA_HOME_DEPENDANT}/data/website</value>
-        <value location="@path">/website</value>
-      </parameter>
-      <parameter key="/Server/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/help_fr']" mode="update">
-        <value location="@docBase">${SILVERPEAS_HOME_DEPENDANT}/help/fr</value>
-        <value location="@path">/help_fr</value>
+  <fileset root="${JBOSS_CONF}/bootstrap/">
+    <xmlfile name="profile.xml">
+      <parameter key="/deployment/bean[@name='UserProfileFactory']/property[@name='applicationURIs']/list" mode="insert">
+        <value location="value">file://${SILVERPEAS_DATA_WEB}</value>
       </parameter>
     </xmlfile>
-    <xmlfile name="silverpeas-ds.xml">
+  </fileset>
+
+  <fileset root="${JBOSS_CONF}/bindingservice.beans/META-INF/">
+    <xmlfile name="bindings-jboss-beans.xml">
+      <parameter key="/deployment/bean[@name='StandardBindings']//bean[property = 'HttpConnector']" mode="update">
+        <value location="property[@name='port']">${JBOSS_LISTEN_PORT}</value>
+      </parameter>
+    </xmlfile>
+  </fileset>
+
+  <fileset root="${JBOSS_SERVER}/deploy/">
+    <xmlfile name="jbossweb.sar/server.xml">
+      <parameter key="/Server/Service[@name='jboss.web']/Connector[@protocol='HTTP/1.1']" mode="update">
+        <value location="@URIEncoding">UTF-8</value>
+      </parameter>
+    </xmlfile>
+    <xmlfile name="${SILVERPEAS_APP}/silverpeas-ds.xml">
       <parameter key="/datasources/local-tx-datasource/connection-url">
         <value>${DB_URL}</value>
       </parameter>
@@ -65,7 +68,6 @@
     </xmlfile>
   </fileset>
 
-<!-- V4.0 : nouveau -->
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/util/">
     <configfile name="jndi.properties">
       <parameter key="SILVERSTATISTICS_JMS_QUEUE">queue/statisticsQueue</parameter>
@@ -106,7 +108,7 @@
   <fileset root="${SILVERPEAS_HOME}/data/portlets/config/">
     <configfile name="pcenv.conf">
       <parameter key="TOMCAT_WEBAPPS_DIR">${JBOSS_SERVER}/deploy</parameter>
-      <parameter key="TOMCAT_HOME">${JBOSS_SERVER}/deploy/jbossweb-tomcat55.sar</parameter>
+      <parameter key="TOMCAT_HOME">${JBOSS_SERVER}/deploy/jbossweb.sar</parameter>
     </configfile>
   </fileset>
 </silverpeas-settings>

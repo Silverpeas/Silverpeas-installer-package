@@ -4,12 +4,15 @@
     <!-- INSTALLATION DIRECTORY -->
     <var name="SILVERPEAS_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
     <var name="SILVERPEAS_DATA_HOME" value="${SILVERPEAS_HOME}"/>
-    <var name="SILVERPEAS_DATA_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
+    <var name="SILVERPEAS_DATA_HOME_DEPENDANT" value="${SILVERPEAS_HOME_DEPENDANT}"/>
+    <var name="SILVERPEAS_DATA_WEB" value="${SILVERPEAS_HOME_DEPENDANT}/data/web"/>
 
+    <!-- JBOSS APPLICATION SERVER SETTINGS -->
     <var name="JBOSS_LISTEN_PORT" value="8000"/>
+    <var name="JBOSS_SERVER_PROFILE" value="default"/>
     <var name="RAM_MIN" value="512"/>
     <var name="RAM_MAX" value="512"/>
-    <var name="JBOSS_VERSION" value="4.0.3"/>
+    <var name="JBOSS_VERSION" value="6.0"/>
 
     <!-- STORED PASSWORDS FORMATS CONSTANTS -->
     <var name="STORED_PASSWD_NOT_ENCRYPTED" value="ClearText"/>
