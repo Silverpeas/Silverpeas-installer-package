@@ -18,7 +18,7 @@
 
   <fileset root="${SILVERPEAS_HOME}/setup/appserver/jboss${JBOSS_VERSION}/">
     <copyfile name="silverpeas-hotnetq-jms.xml">
-            ${JBOSS_SERVER}/deploy/${SILVERPEAS_APP}/silverpeas-hortnetq-jms.xml
+            ${JBOSS_SERVER}/deploy/${SILVERPEAS_APP}/silverpeas-hornetq-jms.xml
     </copyfile>
     <copyfile name="silverpeas-ds.xml">
             ${JBOSS_SERVER}/deploy/${SILVERPEAS_APP}/silverpeas-ds.xml
