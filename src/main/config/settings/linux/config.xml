@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <silverpeas-settings product="Silverpeas">
   <global-vars>
+     <!-- INSTALLATION CONTEXT: 'install' for a fresh installation or 'update' for updating an
+    existing installation -->
+    <var name="INSTALL_CONTEXT" value="install" />
+
     <!-- INSTALLATION DIRECTORY -->
     <var name="SILVERPEAS_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
     <var name="SILVERPEAS_DATA_HOME" value="${SILVERPEAS_HOME}"/>
@@ -10,8 +14,9 @@
     <!-- JBOSS APPLICATION SERVER SETTINGS -->
     <var name="JBOSS_LISTEN_PORT" value="8000"/>
     <var name="JBOSS_SERVER_PROFILE" value="default"/>
-    <var name="RAM_MIN" value="512"/>
-    <var name="RAM_MAX" value="512"/>
+    <var name="RAM_MIN" value="1024"/>
+    <var name="RAM_MAX" value="2048"/>
+    <var name="PERMSIZE_MAX" value="512"/>
     <var name="JBOSS_VERSION" value="6.0"/>
 
     <!-- STORED PASSWORDS FORMATS CONSTANTS -->
