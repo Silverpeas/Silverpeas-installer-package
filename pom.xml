@@ -154,7 +154,7 @@
               <appendAssemblyId>false</appendAssemblyId>
               <attach>false</attach>
               <skipAssembly>false</skipAssembly>
-              <finalName>silverpeas-${project.version}</finalName>
+              <finalName>silverpeas-${project.version}-${server.distribution}</finalName>
             </configuration>
           </execution>
           <execution>
@@ -173,7 +173,7 @@
               <appendAssemblyId>false</appendAssemblyId>
               <attach>false</attach>
               <skipAssembly>false</skipAssembly>
-              <finalName>silverpeas-${project.version}</finalName>
+              <finalName>silverpeas-${project.version}-${server.distribution}</finalName>
             </configuration>
           </execution>
         </executions>
