@@ -17,37 +17,33 @@
     </fileSet>
     <fileSet>
       <outputDirectory>bin</outputDirectory>
-      <directory>src/main/silverpeas</directory>
+      <directory>src/main/silverpeas/${server.distribution}</directory>
       <includes>
         <include>**/pom.xml</include>
       </includes>
     </fileSet>
     <fileSet>
-      <outputDirectory>setup</outputDirectory>
-      <directory>src/main/config</directory>
+      <outputDirectory>setup/appserver</outputDirectory>
+      <directory>src/main/config/appserver/${server.distribution}</directory>
       <includes>
         <include>**/*.xml</include>
       </includes>
-      <excludes>
-        <exclude>**/windows/*.xml</exclude>
-        <exclude>**/linux/*.xml</exclude>
-      </excludes>
     </fileSet>
   </fileSets>
   <files>
     <file>
       <outputDirectory>setup/settings</outputDirectory>
-      <source>src/main/config/settings/linux/SilverpeasSettings.xml</source>
+      <source>src/main/config/settings/${server.distribution}/linux/SilverpeasSettings.xml</source>
       <filtered>false</filtered>
     </file>
     <file>
       <outputDirectory>setup/settings</outputDirectory>
-      <source>src/main/config/settings/linux/JBossSettings.xml</source>
+      <source>src/main/config/settings/${server.distribution}/linux/JBossSettings.xml</source>
       <filtered>false</filtered>
     </file>
      <file>
       <outputDirectory>setup/settings</outputDirectory>
-      <source>src/main/config/settings/linux/config.xml</source>
+      <source>src/main/config/settings/${server.distribution}/linux/config.xml</source>
       <filtered>false</filtered>
     </file>
   </files>

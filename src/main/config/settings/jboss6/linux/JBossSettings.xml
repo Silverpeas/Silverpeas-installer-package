@@ -15,9 +15,10 @@
     </copyfile>
   </fileset>
 
-  <fileset root="${SILVERPEAS_HOME}/bin/jar/">
-    <copyfile name="postgresql.jar">
-            ${JBOSS_SERVER}/lib/postgresql.jar
+  <!-- copy dependencies shared with sites to the JBoss server lib directory -->
+  <fileset root="${SILVERPEAS_HOME}/repository/">
+    <copyfile name="jboss">
+            ${JBOSS_SERVER}/lib
     </copyfile>
   </fileset>
 

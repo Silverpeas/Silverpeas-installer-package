@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<silverpeas-settings product="Configuration_JBoss_Server">
+  <global-vars>
+    <var name="JBOSS_SERVER" value="${JBOSS_HOME}/server/default"/>
+    <var name="JBOSS_START" value="/bin/silverpeas_start_jboss.sh"/>
+    <var name="JBOSS_CONF" value="/bin/silverpeas_start_jboss.sh"/>
+    <var name="DATASOURCE" value="Silverpeas"/>
+  </global-vars>
+
+
+  <fileset root="${JAR_HOME}/">
+    <copyfile name="silverpeas.ear">
+            ${JBOSS_SERVER}/deploy/silverpeas.ear
+    </copyfile>
+  </fileset>
+
+  <fileset root="${SILVERPEAS_HOME}/setup/appserver/jboss${JBOSS_VERSION}/">
+    <copyfile name="silverpeas-destinations-service.xml">
+            ${JBOSS_SERVER}/deploy/jms/silverpeas-destinations-service.xml
+    </copyfile>
+    <copyfile name="silverpeas-ds.xml">
+            ${JBOSS_SERVER}/deploy/silverpeas-ds.xml
+    </copyfile>
+  </fileset>
+
+  <fileset root="${SILVERPEAS_HOME}/">
+    <textfile name="${JBOSS_CONF}">
+      <parameter key="-Xms[0-9]+m" use-regex="true">-Xms${RAM_MIN}m</parameter>
+      <parameter key="-Xmx[0-9]+m" use-regex="true">-Xmx${RAM_MAX}m</parameter>
+    </textfile>
+  </fileset>
+
+  <fileset root="${JBOSS_SERVER}/deploy/">
+    <xmlfile name="jbossweb-tomcat55.sar/server.xml">
+      <parameter key="/Server/Service[@name='jboss.web']/Connector[@maxThreads='250']" mode="update">
+        <value location="@port">${JBOSS_LISTEN_PORT}</value>
+        <value location="@URIEncoding">UTF-8</value>
+      </parameter>
+      <parameter key="/Server/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/weblib']" mode="update">
+        <value location="@docBase">${SILVERPEAS_DATA_HOME_DEPENDANT}/data/web/weblib.war</value>
+        <value location="@path">/weblib</value>
+      </parameter>
+      <parameter key="/Server/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/website']" mode="update">
+        <value location="@docBase">${SILVERPEAS_DATA_HOME_DEPENDANT}/data/web/website.war</value>
+        <value location="@path">/website</value>
+      </parameter>
+      <parameter key="/Server/Service[@name='jboss.web']/Engine[@name='jboss.web']/Host[@name='localhost']/Context[@path='/help_fr']" mode="update">
+        <value location="@docBase">${SILVERPEAS_HOME_DEPENDANT}/help/fr</value>
+        <value location="@path">/help_fr</value>
+      </parameter>
+    </xmlfile>
+    <xmlfile name="silverpeas-ds.xml">
+      <parameter key="/datasources/local-tx-datasource/connection-url">
+        <value>${DB_URL}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/driver-class">
+        <value>${DB_DRIVER}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/user-name">
+        <value>${DB_USER}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/password">
+        <value>${DB_PASSWD}</value>
+      </parameter>
+    </xmlfile>
+  </fileset>
+
+<!-- V4.0 : nouveau -->
+  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/util/">
+    <configfile name="jndi.properties">
+      <parameter key="SILVERSTATISTICS_JMS_QUEUE">queue/statisticsQueue</parameter>
+      <parameter key="SILVERSTATISTICS_JMS_FACTORY">java:/XAConnectionFactory</parameter>
+      <parameter key="JMS_QUEUE">queue/notificationsQueue</parameter>
+      <parameter key="JMS_FACTORY">java:/XAConnectionFactory</parameter>
+      <parameter key="ATTACHMENT_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="CONTAINERMANAGER_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="CONTENTMANAGER_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="CLASSIFYENGINE_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="PDC_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="ADMIN_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="FORMTEMPLATE_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="WORKFLOW_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="CHAT_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="INFOLETTER_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="OUTLOOK_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="GENERATOR_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="FORMDESIGNER_DB_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="DATABASE_DATASOURCE">${DATASOURCE}</parameter>
+      <parameter key="PERSISTENCE_DB_DATASOURCE">${DATASOURCE}</parameter>
+    </configfile>
+  </fileset>
+
+  <fileset root="${SILVERPEAS_HOME}/resources/">
+    <xmlfile name="instanceManager/database.xml">
+      <parameter key="/jdo-conf/database/jndi" mode="update">
+        <value location="@name">${DATASOURCE}</value>
+      </parameter>
+    </xmlfile>
+    <xmlfile name="instanceManager/fast_database.xml">
+      <parameter key="/database/jndi" mode="update">
+        <value location="@name">${DATASOURCE}</value>
+      </parameter>
+    </xmlfile>
+  </fileset>
+
+  <fileset root="${SILVERPEAS_HOME}/data/portlets/config/">
+    <configfile name="pcenv.conf">
+      <parameter key="TOMCAT_WEBAPPS_DIR">${JBOSS_SERVER}/deploy</parameter>
+      <parameter key="TOMCAT_HOME">${JBOSS_SERVER}/deploy/jbossweb-tomcat55.sar</parameter>
+    </configfile>
+  </fileset>
+</silverpeas-settings>

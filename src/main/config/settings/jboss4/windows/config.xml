@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<silverpeas-settings product="Silverpeas">
+  <global-vars>
+    <!-- INSTALLATION DIRECTORY -->
+    <var name="SILVERPEAS_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
+    <var name="SILVERPEAS_DATA_HOME" value="${SILVERPEAS_HOME}"/>
+    <var name="SILVERPEAS_DATA_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
+
+    <var name="JBOSS_LISTEN_PORT" value="8000"/>
+    <var name="RAM_MIN" value="512"/>
+    <var name="RAM_MAX" value="512"/>
+    <var name="JBOSS_VERSION" value="4.0.3"/>
+
+    <!-- STORED PASSWORDS FORMATS CONSTANTS -->
+    <var name="STORED_PASSWD_NOT_ENCRYPTED" value="ClearText"/>
+    <var name="STORED_PASSWD_ENCRYPTED" value="CryptUnix"/>
+
+    <!-- AUTHENTICATION FALLBACKS CONSTANTS -->
+    <var name="FALLBACK_NONE" value="none"/>
+    <var name="FALLBACK_REJECT" value="ifNotRejected"/>
+    <var name="FALLBACK_ALWAYS" value="always"/>
+
+    <!-- debut ******* variables à paramètrer ******* -->
+    <var name="STORED_PASSWD_ENCRYPTION" value="${STORED_PASSWD_ENCRYPTED}"/>
+    <var name="FALLBACK_TYPE" value="${FALLBACK_ALWAYS}"/>
+    <var name="NT_AUTHENT_ENABLED" value="true"/>
+
+	<!-- SILVERPEAS DATABASE CONNECTION INFO -->
+    <var name="DB_SERVERTYPE" value="POSTGRES"/>
+    <var name="DB_SERVER" value="localhost"/>
+    <var name="DB_USER" value="postgres"/>
+    <var name="DB_PASSWD" value="postgres"/>
+    <var name="DB_NAME" value="SilverpeasV5"/>
+    <var name="SQL_LISTEN_PORT_MSSQL" value="1433"/>
+    <var name="SQL_LISTEN_PORT_ORACLE" value="1521"/>
+    <var name="SQL_LISTEN_PORT_POSTGRES" value="5432"/>
+    <var name="SQL_LISTEN_PORT_H2" value="9092"/>
+
+    <var name="NTRIS_SERVER" value="localhost"/>
+    <var name="NTRIS_PORT" value="9999"/>
+    <var name="NTRIS_HOST" value="%NTRIS_HOST%"/>
+
+    <!-- Silverpeas Adminitrator infos -->
+    <var name="ADMIN_LOGIN" value="SilverAdmin"/>
+    <var name="ADMIN_PASSWD" value="SilverAdmin"/>
+    <var name="ADMIN_EMAIL" value="silveradmin@localhost"/>
+    <var name="URL_SERVER" value="http://localhost:8000"/>
+
+    <var name="EXPED_NAME" value="Silverpeas"/>
+    <var name="EXPED_EMAIL" value="silveradmin@localhost"/>
+
+	<!-- SMTP Server configuration -->
+    <var name="SMTP_SERVER" value="localhost"/>
+    <var name="SMTP_AUTHENTICATION" value="false"/>
+    <var name="SMTP_DEBUG" value="false"/>
+    <var name="SMTP_PORT" value="25"/>
+    <var name="SMTP_USER" value=""/>
+    <var name="SMTP_PWD" value=""/>
+    <var name="SMTP_SECURE" value="false"/>
+
+	<!-- Server LDAP configuration -->
+    <var name="LDAP_SERVER" value="%LDAP_SERVER%"/>
+    <var name="LDAP_PORT" value="%LDAP_PORT%"/>
+
+    <!-- Application Server access -->
+    <var name="PROXY_HOST" value=""/>
+    <var name="PROXY_PORT" value=""/>
+    <var name="NONPROXY_HOST" value="127.0.0.1|localhost"/>
+
+	<!-- Silvertrace error -->
+    <var name="LANGUAGE" value="fr"/>
+  </global-vars>
+</silverpeas-settings>

@@ -209,4 +209,25 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <server.distribution>jboss6</server.distribution>
+      </properties>
+    </profile>
+    <profile>
+      <id>jboss4</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <server.distribution>jboss4</server.distribution>
+      </properties>
+    </profile>
+  </profiles>
 </project>

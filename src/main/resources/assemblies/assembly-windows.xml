@@ -23,17 +23,17 @@
     </file>
      <file>
       <outputDirectory>setup/settings</outputDirectory>
-      <source>src/main/config/settings/windows/SilverpeasSettings.xml</source>
+      <source>src/main/config/settings/${server.distribution}/windows/SilverpeasSettings.xml</source>
        <filtered>false</filtered>
     </file>
     <file>
       <outputDirectory>setup/settings</outputDirectory>
-      <source>src/main/config/settings/windows/JBossSettings.xml</source>
+      <source>src/main/config/settings/${server.distribution}/windows/JBossSettings.xml</source>
       <filtered>false</filtered>
     </file>
     <file>
       <outputDirectory>setup/settings</outputDirectory>
-      <source>src/main/config/settings/windows/config.xml</source>
+      <source>src/main/config/settings/${server.distribution}/windows/config.xml</source>
       <filtered>false</filtered>
     </file>
   </files>
@@ -47,7 +47,7 @@
     </fileSet>
     <fileSet>
       <outputDirectory>bin</outputDirectory>
-      <directory>src/main/silverpeas</directory>
+      <directory>src/main/silverpeas/${server.distribution}</directory>
       <includes>
         <include>**/pom.xml</include>
       </includes>
