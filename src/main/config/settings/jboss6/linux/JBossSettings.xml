@@ -3,8 +3,8 @@
   <global-vars>
     <var name="JBOSS_SERVER"   value="${JBOSS_HOME}/server/${JBOSS_SERVER_PROFILE}"/>
     <var name="JBOSS_CONF"     value="${JBOSS_SERVER}/conf"/>
-    <var name="JBOSS_START"    value="/bin/silverpeas_start_jboss.sh"/>
-    <var name="JBOSS_DEBUG"    value="/bin/silverpeas_debug_jboss.sh"/>
+    <var name="JBOSS_START"    value="silverpeas_start_jboss.sh"/>
+    <var name="JBOSS_DEBUG"    value="silverpeas_debug_jboss.sh"/>
     <var name="DATASOURCE"     value="Silverpeas"/>
     <var name="KEY_APPURIS"    value='$eval{{if(new String("${INSTALL_CONTEXT}").equals("install")) value="applicationURIs"; else value="";}}' />
   </global-vars>
@@ -34,18 +34,18 @@
   </fileset>
 
   <!-- tunes the memory allocation of the JBoss server for silverpeas -->
-  <fileset root="${SILVERPEAS_HOME}/">
+  <fileset root="${SILVERPEAS_HOME}/bin/">
     <textfile name="${JBOSS_START}">
       <parameter key="-Xms[0-9]+m" use-regex="true">-Xms${RAM_MIN}m</parameter>
       <parameter key="-Xmx[0-9]+m" use-regex="true">-Xmx${RAM_MAX}m</parameter>
       <parameter key="-XX:MaxPermSize=[0-9]+m" use-regex="true">-XX:MaxPermSize=${PERMSIZE_MAX}m</parameter>
-      <parameter key="-c default">-c ${JBOSS_SERVER_PROFILE}</parameter>
+      <parameter key="PROFILE=[a-zA-Z]+" use-regex="true">PROFILE=${JBOSS_SERVER_PROFILE}</parameter>
     </textfile>
     <textfile name="${JBOSS_DEBUG}">
       <parameter key="-Xms[0-9]+m" use-regex="true">-Xms${RAM_MIN}m</parameter>
       <parameter key="-Xmx[0-9]+m" use-regex="true">-Xmx${RAM_MAX}m</parameter>
       <parameter key="-XX:MaxPermSize=[0-9]+m" use-regex="true">-XX:MaxPermSize=${PERMSIZE_MAX}m</parameter>
-      <parameter key="-c default">-c ${JBOSS_SERVER_PROFILE}</parameter>
+      <parameter key="PROFILE=[a-zA-Z]+" use-regex="true">PROFILE=${JBOSS_SERVER_PROFILE}</parameter>
     </textfile>
   </fileset>
 
