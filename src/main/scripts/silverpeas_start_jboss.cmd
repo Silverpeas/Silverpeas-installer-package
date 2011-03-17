@@ -15,6 +15,6 @@ rem Add Silverpeas Properties root repository to path
 rem SET JBOSS_CLASSPATH=%SILVERPEAS_HOME%/properties
 SET JAVA_OPTS=-server -Xms512m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.logging.Log4jService.catchSystemOut=false
 
-call run.bat
+call run.bat -c default
 
 if ERRORLEVEL 1 pause

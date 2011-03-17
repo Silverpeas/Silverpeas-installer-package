@@ -16,6 +16,6 @@ cd "%JBOSS_HOME%/bin"
 rem Add Silverpeas Properties root repository to path
 rem SET JBOSS_CLASSPATH=%SILVERPEAS_HOME%/properties
 
-call run.bat
+call run.bat -c default
 
 if ERRORLEVEL 1 pause

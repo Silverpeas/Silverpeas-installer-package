@@ -8,4 +8,4 @@ export JAVA_OPTS="-server -Xms512m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.log
 # JBOSS_CLASSPATH=$SILVERPEAS_HOME/properties
 # export JBOSS_CLASSPATH
 
-sh run.sh &
+sh run.sh -c default &
