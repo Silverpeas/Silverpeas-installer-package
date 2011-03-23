@@ -14,7 +14,7 @@
     <var name="DB_URL_POSTGRES" value="jdbc:postgresql://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
     <var name="DB_URL_H2" value="jdbc:h2:tcp://${DB_SERVER}:${SQL_LISTEN_PORT}/${DB_NAME}"/>
     <var name="DB_URL" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_URL_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_URL_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${DB_URL_H2}";else value="${DB_URL_ORACLE}";}}'/>
-    
+
     <var name="HIBERNATE_DIALECT_MSSQL" value="org.hibernate.dialect.SQLServerDialect"/>
     <var name="HIBERNATE_DIALECT_H2" value="org.hibernate.dialect.SQLServerDialect"/>
     <var name="HIBERNATE_DIALECT_ORACLE" value="org.hibernate.dialect.OracleDialect"/>
@@ -192,7 +192,7 @@
       <parameter key="scheduledSessionManagementTimeStamp">2</parameter>
       <parameter key="userSessionTimeout">10</parameter>
     </configfile>
-    
+
     <configfile name="infoLetter/settings/infoLetterSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/infoLetter/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/infoLetter/</parameter>
@@ -248,12 +248,12 @@
       <parameter key="jdbc.password">${DB_PASSWD}</parameter>
       <parameter key="hibernate.dialect">${HIBERNATE_DIALECT}</parameter>
     </configfile>
-    
+
     <configfile name="mailinglist/settings/mailinglistSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/mailingList</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/resources/StringTemplates/components/mailingList</parameter>
     </configfile>
-    
+
     <configfile name="classifieds/settings/classifiedsSettings.properties">
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/classifieds/</parameter>
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/classifieds/</parameter>
@@ -276,30 +276,30 @@
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/question-reply/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/question-reply/</parameter>
     </configfile>
-    
+
     <configfile name="whitePages/settings/template.properties">
       <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/data/templateRepository</parameter>
     </configfile>
-    
+
     <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/</parameter>
     </configfile>
-    
+
     <configfile name="directory/settings/DirectorySettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/directory</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/directory</parameter>
     </configfile>
-    
+
     <configfile name="blog/settings/blogSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/blog/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/blog/</parameter>
     </configfile>
-    
+
     <configfile name="rssAgregator/settings/rssAgregatorSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/rssaggregator/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/rssaggregator/</parameter>
-    </configfile> 
+    </configfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/bin/">
@@ -381,4 +381,5 @@
     </xmlfile>
   </fileset>
   -->
+
 </silverpeas-settings>

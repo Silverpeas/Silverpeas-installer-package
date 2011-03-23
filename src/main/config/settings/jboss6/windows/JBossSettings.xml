@@ -64,7 +64,7 @@
   <fileset root="${JBOSS_CONF}/bootstrap/">
     <xmlfile name="profile.xml">
       <parameter key="/deployment/bean[@name='UserProfileFactory']/property[@name='${KEY_APPURIS}']/list" mode="insert">
-        <value location="value">file://${SILVERPEAS_DATA_WEB}</value>
+        <value location="value">file:/${SILVERPEAS_DATA_WEB}</value>
       </parameter>
     </xmlfile>
   </fileset>
