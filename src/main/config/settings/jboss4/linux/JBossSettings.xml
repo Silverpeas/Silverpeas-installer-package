@@ -23,6 +23,20 @@
     </copyfile>
   </fileset>
 
+  <!-- delete old dependencies and copy dependencies shared with sites to the JBoss server lib directory -->
+  <fileset root="${JBOSS_SERVER}/">
+    <delete name="lib/java-portlet-container-2.0.jar"/>
+    <delete name="lib/container-2.0.jar"/>
+    <delete name="lib/postgresql-8.3-603.jdbc3.jar"/>
+  </fileset>
+  <fileset root="${SILVERPEAS_HOME}/repository/">
+    <copyfile name="jboss/container-2.1.jar">${JBOSS_SERVER}/lib/container-2.1.jar</copyfile>
+    <copyfile name="jboss/portlet-container-2.1.jar">${JBOSS_SERVER}/lib/portlet-container-2.1.jar</copyfile>
+    <copyfile name="jboss/portlet-api-2.0.jar">${JBOSS_SERVER}/lib/portlet-api-2.0.jar</copyfile>
+    <copyfile name="jboss/jtds-1.2.2.jar">${JBOSS_SERVER}/lib/jtds-1.2.2.jar</copyfile>
+    <copyfile name="jboss/postgresql-9.0-801.jdbc4.jar">${JBOSS_SERVER}/lib/postgresql-9.0-801.jdbc4.jar</copyfile>
+  </fileset>
+
   <fileset root="${SILVERPEAS_HOME}/">
     <textfile name="${JBOSS_CONF}">
       <parameter key="-Xms[0-9]+m" use-regex="true">-Xms${RAM_MIN}m</parameter>
