@@ -53,15 +53,11 @@
       </includes>
     </fileSet>
     <fileSet>
-      <outputDirectory>setup</outputDirectory>
-      <directory>src/main/config</directory>
+      <outputDirectory>setup/appserver</outputDirectory>
+      <directory>src/main/config/appserver/${server.distribution}</directory>
       <includes>
         <include>**/*.xml</include>
       </includes>
-      <excludes>
-        <exclude>**/windows/*.xml</exclude>
-        <exclude>**/linux/*.xml</exclude>
-      </excludes>
     </fileSet>
   </fileSets>
   <dependencySets>
