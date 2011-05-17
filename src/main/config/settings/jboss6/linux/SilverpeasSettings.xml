@@ -35,7 +35,7 @@
 
     <!-- INSTALLED DIRECTORIES -->
     <var name="JAR_HOME" value="${SILVERPEAS_HOME}/jar"/>
-    <var name="TEMP_HOME" value="${SILVERPEAS_HOME}/temp"/>
+    <var name="TEMP_HOME" value="${SILVERPEAS_DATA_HOME}/temp"/>
     <var name="LOG_HOME" value="${SILVERPEAS_HOME}/log"/>
   </global-vars>
 
