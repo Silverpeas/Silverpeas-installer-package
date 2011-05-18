@@ -92,7 +92,7 @@
 
     <configfile name="survey/surveySettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/survey/</parameter>
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/survey/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/survey/</parameter>
     </configfile>
 
   </fileset>
@@ -195,7 +195,7 @@
     
     <configfile name="infoLetter/settings/infoLetterSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/infoLetter/</parameter>
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/infoLetter/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/infoLetter/</parameter>
     </configfile>
 
   </fileset>
@@ -255,12 +255,12 @@
     </configfile>
     
     <configfile name="classifieds/settings/classifiedsSettings.properties">
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/classifieds/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/classifieds/</parameter>
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/classifieds/</parameter>
     </configfile>
 
     <configfile name="webpages/settings/webPagesSettings.properties">
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/webpages/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/webpages/</parameter>
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/webpages/</parameter>
     </configfile>
 
@@ -274,7 +274,7 @@
 
     <configfile name="questionReply/settings/questionReplySettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/question-reply/</parameter>
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/question-reply/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/question-reply/</parameter>
     </configfile>
     
     <configfile name="whitePages/settings/template.properties">
@@ -293,7 +293,7 @@
     
     <configfile name="blog/settings/blogSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/blog/</parameter>
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/blog/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/blog/</parameter>
     </configfile>
   </fileset>
 
