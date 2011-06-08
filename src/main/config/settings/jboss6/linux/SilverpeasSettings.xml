@@ -35,7 +35,7 @@
 
     <!-- INSTALLED DIRECTORIES -->
     <var name="JAR_HOME" value="${SILVERPEAS_HOME}/jar"/>
-    <var name="TEMP_HOME" value="${SILVERPEAS_HOME}/temp"/>
+    <var name="TEMP_HOME" value="${SILVERPEAS_DATA_HOME}/temp"/>
     <var name="LOG_HOME" value="${SILVERPEAS_HOME}/log"/>
   </global-vars>
 
@@ -65,6 +65,7 @@
       <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/data/workspaces</parameter>
       <parameter key="uploadsIndexPath">${SILVERPEAS_DATA_HOME}/data/index</parameter>
       <parameter key="tempPath">${TEMP_HOME}</parameter>
+      <parameter key="exportTemplatePath">${SILVERPEAS_DATA_HOME}/data/template-export</parameter>
     </configfile>
 
     <configfile name="beans/admin/admin.properties">
