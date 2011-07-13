@@ -4,13 +4,13 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>parent</artifactId>
-    <version>19-SNAPSHOT</version>
+    <version>20-SNAPSHOT</version>
   </parent>
 
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
-  <version>5.6-SNAPSHOT</version>
+  <version>5.7-SNAPSHOT</version>
   <name>Silverpeas Installation Package</name>
   <description>Builds the Silverpeas installation package</description>
 
@@ -49,7 +49,7 @@
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>dbbuilder</artifactId>
-      <version>1.5</version>
+      <version>1.6-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.silverpeas.builder</groupId>

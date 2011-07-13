@@ -56,14 +56,14 @@
 
     <configfile name="util/jcr.properties">
       <parameter key="jcr.configuration.persistence.manager">${JACKRABBIT_PERSIST}</parameter>
-      <parameter key="jcr.home.dir.url">file:///${SILVERPEAS_DATA_HOME}/data/jackrabbit</parameter>
+      <parameter key="jcr.home.dir.url">file:///${SILVERPEAS_DATA_HOME}/jackrabbit</parameter>
       <parameter key="schema">${JACKRABBIT_SCHEMA}</parameter>
     </configfile>
 
     <configfile name="general.properties">
       <parameter key="ApplicationURL">/silverpeas</parameter>
-      <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/data/workspaces</parameter>
-      <parameter key="uploadsIndexPath">${SILVERPEAS_DATA_HOME}/data/index</parameter>
+      <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/workspaces</parameter>
+      <parameter key="uploadsIndexPath">${SILVERPEAS_DATA_HOME}/index</parameter>
       <parameter key="tempPath">${TEMP_HOME}</parameter>
     </configfile>
 
@@ -88,7 +88,7 @@
 
     <configfile name="kmelia/settings/kmeliaSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/kmelia/</parameter>
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/kmelia/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/kmelia/</parameter>
     </configfile>
 
     <configfile name="survey/surveySettings.properties">
@@ -170,7 +170,7 @@
     </configfile>
 
     <!-- <configfile name="formcommon/settings/formcommonSettings.properties">
-            <parameter key="pathFormRepository">${SILVERPEAS_DATA_HOME}/data/formRepository</parameter>
+            <parameter key="pathFormRepository">${SILVERPEAS_DATA_HOME}/formRepository</parameter>
      </configfile> -->
 
     <configfile name="dbBuilder/settings/dbBuilderSettings.properties">
@@ -180,7 +180,7 @@
     </configfile>
 
     <configfile name="silverstatistics/SilverStatistics.properties">
-      <parameter key="SilverPeasDataPath0">${SILVERPEAS_DATA_HOME}/data</parameter>
+      <parameter key="SilverPeasDataPath0">${SILVERPEAS_DATA_HOME}</parameter>
     </configfile>
 
 
@@ -216,11 +216,11 @@
     </configfile>
 
     <configfile name="publicationTemplate/settings/template.properties">
-      <parameter key="templateDir">${SILVERPEAS_DATA_HOME}/data/templateRepository/</parameter>
+      <parameter key="templateDir">${SILVERPEAS_DATA_HOME}/templateRepository/</parameter>
     </configfile>
 
     <configfile name="whitePages/settings/template.properties">
-      <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/data/templateRepository/</parameter>
+      <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/templateRepository/</parameter>
     </configfile>
 
 		<!-- Variable à modifier par le client -->
@@ -266,11 +266,11 @@
     </configfile>
 
     <configfile name="portlets/portletsSettings.properties">
-      <parameter key="portlets.configDir">${SILVERPEAS_DATA_HOME}/data/portlets</parameter>
+      <parameter key="portlets.configDir">${SILVERPEAS_DATA_HOME}/portlets</parameter>
     </configfile>
 
     <configfile name="communicationUser/settings/communicationUserSettings.properties">
-      <parameter key="pathDiscussions">${SILVERPEAS_DATA_HOME}/data/imRepository/</parameter>
+      <parameter key="pathDiscussions">${SILVERPEAS_DATA_HOME}/imRepository/</parameter>
     </configfile>
 
     <configfile name="questionReply/settings/questionReplySettings.properties">
@@ -279,17 +279,17 @@
     </configfile>
     
     <configfile name="whitePages/settings/template.properties">
-      <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/data/templateRepository</parameter>
+      <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/templateRepository</parameter>
     </configfile>
     
     <configfile name="jobDomainPeas/settings/jobDomainPeasSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/</parameter>
     </configfile>
     
     <configfile name="directory/settings/DirectorySettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/directory</parameter>
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/directory</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/directory</parameter>
     </configfile>
     
     <configfile name="blog/settings/blogSettings.properties">
@@ -347,7 +347,7 @@
  <!-- Website Designer -->
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/webSites/settings/">
     <configfile name="webSiteSettings.properties">
-      <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/data/</parameter>
+      <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/</parameter>
     </configfile>
   </fileset>
 
@@ -373,10 +373,10 @@
  <!-- Chat settings
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/silverpeas/">
     <configfile name="chat/settings/chatSettings.properties">
-      <parameter key="xmlConfigLocation">${SILVERPEAS_DATA_HOME}/data/chat/jchatbox.xml</parameter>
+      <parameter key="xmlConfigLocation">${SILVERPEAS_DATA_HOME}/chat/jchatbox.xml</parameter>
     </configfile>
   </fileset>
-  <fileset root="${SILVERPEAS_DATA_HOME}/data/chat/">
+  <fileset root="${SILVERPEAS_DATA_HOME}/chat/">
     <textfile name="jchatbox.xml">
       <parameter key="&lt;!DOCTYPE[^&gt;]*&gt;" use-regex="true"> </parameter>
     </textfile>

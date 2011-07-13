@@ -3,7 +3,7 @@
   <global-vars>
     <!-- INSTALLATION DIRECTORY -->
     <var name="SILVERPEAS_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
-    <var name="SILVERPEAS_DATA_HOME" value="${SILVERPEAS_HOME}"/>
+    <var name="SILVERPEAS_DATA_HOME" value="${SILVERPEAS_HOME}/data"/>
     <var name="SILVERPEAS_DATA_HOME_DEPENDANT" value="${SILVERPEAS_HOME}"/>
 
     <var name="JBOSS_LISTEN_PORT" value="8000"/>
