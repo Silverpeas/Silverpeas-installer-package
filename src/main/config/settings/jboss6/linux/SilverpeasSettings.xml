@@ -358,7 +358,7 @@
  <!-- Website Designer -->
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/webSites/settings/">
     <configfile name="webSiteSettings.properties">
-      <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/data/</parameter>
+      <parameter key="uploadsPath">${SILVERPEAS_DATA_WEB}/website.war/</parameter>
     </configfile>
   </fileset>
 
