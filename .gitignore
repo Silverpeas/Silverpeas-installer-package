@@ -1,1 +1,3 @@
 /target/
+src/main/resources/filters/LinuxClasspath.properties
+src/main/resources/filters/WindowsClasspath.properties

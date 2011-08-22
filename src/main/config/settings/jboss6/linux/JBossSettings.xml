@@ -150,7 +150,7 @@
     </xmlfile>
   </fileset>
 
-  <fileset root="${SILVERPEAS_HOME}/data/portlets/config/">
+  <fileset root="${SILVERPEAS_DATA_HOME}/portlets/config/">
     <configfile name="pcenv.conf">
       <parameter key="TOMCAT_WEBAPPS_DIR">${JBOSS_SERVER}/deploy</parameter>
       <parameter key="TOMCAT_HOME">${JBOSS_SERVER}/deploy/jbossweb.sar</parameter>

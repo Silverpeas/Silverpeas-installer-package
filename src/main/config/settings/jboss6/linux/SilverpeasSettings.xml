@@ -230,11 +230,11 @@
     </configfile>
 
     <configfile name="workflow/engine/castorSettings.properties">
-      <parameter key="CastorJDOFastDatabaseFileURL">${SILVERPEAS_HOME_DEPENDANT}\resources\instanceManager\fast_database.xml</parameter>
-      <parameter key="CastorJDODatabaseFileURL">${SILVERPEAS_HOME_DEPENDANT}\\resources\instanceManager\database.xml</parameter>
-      <parameter key="CastorJDOLogFileURL">${SILVERPEAS_HOME_DEPENDANT}\log\castor.log</parameter>
-      <parameter key="CastorXMLMappingFileURL">${SILVERPEAS_HOME_DEPENDANT}\resources\modelManager\mapping.xml</parameter>
-      <parameter key="ProcessModelDir">${SILVERPEAS_DATA_HOME_DEPENDANT}\data\workflowRepository\</parameter>
+      <parameter key="CastorJDOFastDatabaseFileURL">${SILVERPEAS_HOME_DEPENDANT}/resources/instanceManager/fast_database.xml</parameter>
+      <parameter key="CastorJDODatabaseFileURL">${SILVERPEAS_HOME_DEPENDANT}/resources/instanceManager/database.xml</parameter>
+      <parameter key="CastorJDOLogFileURL">${SILVERPEAS_HOME_DEPENDANT}/log/castor.log</parameter>
+      <parameter key="CastorXMLMappingFileURL">${SILVERPEAS_HOME_DEPENDANT}/resources/modelManager/mapping.xml</parameter>
+      <parameter key="ProcessModelDir">${SILVERPEAS_DATA_HOME_DEPENDANT}/workflowRepository/</parameter>
     </configfile>
 
 		<!-- Variable modifiable par le client -->
