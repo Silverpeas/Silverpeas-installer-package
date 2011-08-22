@@ -233,7 +233,7 @@
       <parameter key="CastorJDODatabaseFileURL">${SILVERPEAS_HOME_DEPENDANT}\resources\instanceManager\database.xml</parameter>
       <parameter key="CastorJDOLogFileURL">${SILVERPEAS_HOME_DEPENDANT}\log\castor.log</parameter>
       <parameter key="CastorXMLMappingFileURL">${SILVERPEAS_HOME_DEPENDANT}\resources\modelManager\mapping.xml</parameter>
-      <parameter key="ProcessModelDir">${SILVERPEAS_DATA_HOME_DEPENDANT}\workflowRepository\</parameter>
+      <parameter key="ProcessModelDir">${SILVERPEAS_DATA_HOME}\workflowRepository\</parameter>
     </configfile>
 
 		<!-- Variable modifiable par le client -->
@@ -306,7 +306,7 @@
     <configfile name="dbBuilder.bat">
       <parameter key="set SILVERPEAS_HOME">${SILVERPEAS_HOME_DEPENDANT}</parameter>
       <parameter key="set SRV_SERVERTYPE">${DB_SERVERTYPE}</parameter>
-      <parameter key="set SILVERPEAS_DATA">${SILVERPEAS_DATA_HOME_DEPENDANT}</parameter>
+      <parameter key="set SILVERPEAS_DATA">${SILVERPEAS_HOME_DEPENDANT}</parameter>
     </configfile>
   </fileset>
 
