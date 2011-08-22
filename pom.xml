@@ -4,21 +4,13 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>parent</artifactId>
-<<<<<<< HEAD
     <version>20</version>
-=======
-    <version>20-SNAPSHOT</version>
->>>>>>> 77ac31c8e4d1c70d98b973fb3912c3b7d33f6c95
   </parent>
 
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
-<<<<<<< HEAD
-  <version>5.8-SNAPSHOT</version>
-=======
   <version>5.7-SNAPSHOT</version>
->>>>>>> 77ac31c8e4d1c70d98b973fb3912c3b7d33f6c95
   <name>Silverpeas Installation Package</name>
   <description>Builds the Silverpeas installation package</description>
 
