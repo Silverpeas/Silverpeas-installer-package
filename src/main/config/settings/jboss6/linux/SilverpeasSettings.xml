@@ -35,7 +35,7 @@
 
     <!-- INSTALLED DIRECTORIES -->
     <var name="JAR_HOME" value="${SILVERPEAS_HOME}/jar"/>
-    <var name="TEMP_HOME" value="${SILVERPEAS_HOME}/temp"/>
+    <var name="TEMP_HOME" value="${SILVERPEAS_DATA_HOME}/temp"/>
     <var name="LOG_HOME" value="${SILVERPEAS_HOME}/log"/>
   </global-vars>
 
@@ -65,6 +65,7 @@
       <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/workspaces</parameter>
       <parameter key="uploadsIndexPath">${SILVERPEAS_DATA_HOME}/index</parameter>
       <parameter key="tempPath">${TEMP_HOME}</parameter>
+      <parameter key="exportTemplatePath">${SILVERPEAS_DATA_HOME}/data/template-export</parameter>
     </configfile>
 
     <configfile name="beans/admin/admin.properties">
@@ -96,6 +97,11 @@
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/survey/</parameter>
     </configfile>
 
+    <configfile name="almanach/settings/almanachSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/almanach/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/almanach/</parameter>
+    </configfile>
+	
   </fileset>
 
 		<!-- 2) COM/STRATELIA/SILVERPEAS : -->
@@ -300,7 +306,17 @@
     <configfile name="rssAgregator/settings/rssAgregatorSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/rssaggregator/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/rssaggregator/</parameter>
+    </configfile>
+
+    <configfile name="socialNetwork/settings/socialNetworkSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/core/socialNetwork/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/core/socialNetwork/</parameter>
     </configfile> 
+    
+	<configfile name="delegatednews/settings/DelegatedNewsSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/delegatednews/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/delegatednews/</parameter>
+    </configfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/bin/">
@@ -347,7 +363,7 @@
  <!-- Website Designer -->
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/webSites/settings/">
     <configfile name="webSiteSettings.properties">
-      <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/</parameter>
+      <parameter key="uploadsPath">${SILVERPEAS_DATA_WEB}/website.war/</parameter>
     </configfile>
   </fileset>
 

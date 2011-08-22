@@ -1,3 +1,8 @@
 /target/
+<<<<<<< HEAD
 src/main/resources/filters/LinuxClasspath.properties
 src/main/resources/filters/WindowsClasspath.properties
+=======
+/.settings
+/.project
+>>>>>>> 77ac31c8e4d1c70d98b973fb3912c3b7d33f6c95

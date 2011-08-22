@@ -13,9 +13,9 @@
     <!-- JBOSS APPLICATION SERVER SETTINGS -->
     <var name="JBOSS_LISTEN_PORT" value="8000"/>
     <var name="JBOSS_SERVER_PROFILE" value="default"/>
-    <var name="RAM_MIN" value="1024"/>
-    <var name="RAM_MAX" value="2048"/>
-    <var name="PERMSIZE_MAX" value="512"/>
+    <var name="RAM_MIN" value="512"/>
+    <var name="RAM_MAX" value="768"/>
+    <var name="PERMSIZE_MAX" value="256"/>
     <var name="JBOSS_VERSION" value="6.0"/>
 
     <!-- STORED PASSWORDS FORMATS CONSTANTS -->
