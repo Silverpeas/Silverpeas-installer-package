@@ -112,6 +112,12 @@
       <parameter key="/datasources/local-tx-datasource/password">
         <value>${DB_PASSWD}</value>
       </parameter>
+      <parameter key="/datasources/local-tx-datasource/min-pool-size">
+        <value>${MIN_POOL_SIZE}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/max-pool-size">
+        <value>${MAX_POOL_SIZE}</value>
+      </parameter>
     </xmlfile>
   </fileset>
 
