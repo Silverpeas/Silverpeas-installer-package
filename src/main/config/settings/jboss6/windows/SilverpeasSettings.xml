@@ -16,10 +16,10 @@
     <var name="DB_URL" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${DB_URL_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${DB_URL_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${DB_URL_H2}";else value="${DB_URL_ORACLE}";}}'/>
 
     <var name="HIBERNATE_DIALECT_MSSQL" value="org.hibernate.dialect.SQLServerDialect"/>
-    <var name="HIBERNATE_DIALECT_H2" value="org.hibernate.dialect.SQLServerDialect"/>
+    <var name="HIBERNATE_DIALECT_H2" value="org.hibernate.dialect.H2Dialect"/>
     <var name="HIBERNATE_DIALECT_ORACLE" value="org.hibernate.dialect.OracleDialect"/>
     <var name="HIBERNATE_DIALECT_POSTGRES" value="org.hibernate.dialect.PostgreSQLDialect"/>
-    <var name="HIBERNATE_DIALECT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${HIBERNATE_DIALECT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${HIBERNATE_DIALECT_POSTGRES}"; else value="${HIBERNATE_DIALECT_ORACLE}";}}'/>
+    <var name="HIBERNATE_DIALECT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${HIBERNATE_DIALECT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${HIBERNATE_DIALECT_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${HIBERNATE_DIALECT_H2}"; else value="${HIBERNATE_DIALECT_ORACLE}";}}'/>
 
     <var name="JACKRABBIT_PERSIST_H2" value="org.apache.jackrabbit.core.persistence.bundle.H2PersistenceManager"/>
     <var name="JACKRABBIT_PERSIST_MSSQL" value="org.apache.jackrabbit.core.persistence.bundle.MSSqlPersistenceManager"/>
