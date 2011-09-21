@@ -134,7 +134,7 @@
           <dependency>
             <groupId>com.silverpeas</groupId>
             <artifactId>assembly</artifactId>
-            <version>1.3-SNAPSHOT</version>
+            <version>1.3</version>
           </dependency>
         </dependencies>
         <executions>
@@ -220,6 +220,7 @@
         <server.distribution>jboss6</server.distribution>
       </properties>
     </profile>
+    <!--
     <profile>
       <id>jboss4</id>
       <activation>
@@ -229,5 +230,6 @@
         <server.distribution>jboss4</server.distribution>
       </properties>
     </profile>
+    -->
   </profiles>
 </project>
