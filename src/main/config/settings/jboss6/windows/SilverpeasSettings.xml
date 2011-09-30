@@ -64,7 +64,7 @@
       <parameter key="uploadsPath">${SILVERPEAS_DATA_HOME}/workspaces</parameter>
       <parameter key="uploadsIndexPath">${SILVERPEAS_DATA_HOME}/index</parameter>
       <parameter key="tempPath">${TEMP_HOME}</parameter>
-      <parameter key="exportTemplatePath">${SILVERPEAS_DATA_HOME}/data/template-export</parameter>
+      <parameter key="exportTemplatePath">${SILVERPEAS_DATA_HOME}/template-export</parameter>
     </configfile>
 
     <configfile name="beans/admin/admin.properties">
@@ -98,7 +98,7 @@
 
     <configfile name="almanach/settings/almanachSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/almanach/</parameter>
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/almanach/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/almanach/</parameter>
     </configfile>
 
   </fileset>
@@ -314,7 +314,7 @@
     
     <configfile name="delegatednews/settings/DelegatedNewsSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/delegatednews/</parameter>
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/data/StringTemplates/components/delegatednews/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/delegatednews/</parameter>
     </configfile>  
 
   </fileset>
@@ -380,6 +380,15 @@
       <parameter key="jspwiki.workDir">${SILVERPEAS_DATA_HOME}/temp/wiki/indexes</parameter>
       <parameter key="jspwiki.basicAttachmentProvider.storageDir">${SILVERPEAS_DATA_HOME}/temp/wiki/</parameter>
       <parameter key="jspwiki.fileSystemProvider.pageDir">${SILVERPEAS_DATA_HOME}/temp/wiki/pages</parameter>
+    </configfile>
+  </fileset>
+
+
+  <!-- Silverpeas utility core component (comment, ...) -->
+  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/util/">
+    <configfile name="comment/Comment.properties">
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/</parameter>
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
     </configfile>
   </fileset>
 

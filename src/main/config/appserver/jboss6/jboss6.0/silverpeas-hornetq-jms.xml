@@ -28,5 +28,9 @@
     <entry name="queue/statisticsQueue"/>
   </queue>
 
+  <topic name="comments">
+    <entry name="topic/comment"/>
+  </topic>
+
 </configuration>
 
