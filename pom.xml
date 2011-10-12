@@ -92,6 +92,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.3</version>
         <executions>
           <execution>
             <id>prepare-classpath-windows</id>
@@ -100,7 +101,7 @@
               <goal>build-classpath</goal>
             </goals>
             <configuration>
-              <prefix>%SILVERPEAS_HOME%\\bin\\jar\</prefix>
+              <prefix>%SILVERPEAS_HOME%\\bin\\jar</prefix>
               <pathSeparator>;</pathSeparator>
               <fileSeparator>\\</fileSeparator>
               <outputFile>${windows.classpath}</outputFile>
