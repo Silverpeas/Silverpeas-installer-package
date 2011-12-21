@@ -317,6 +317,11 @@
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/delegatednews/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/delegatednews/</parameter>
     </configfile>
+	
+	<configfile name="components/scheduleevent/settings/ScheduleEventSettings.properties">
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/scheduleevent/</parameter>
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/scheduleevent/</parameter>
+    </configfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/bin/">

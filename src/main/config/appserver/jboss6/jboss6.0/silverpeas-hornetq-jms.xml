@@ -32,5 +32,13 @@
     <entry name="topic/comment"/>
   </topic>
 
+  <topic name="nodes">
+    <entry name="topic/node"/>
+  </topic>
+  
+  <topic name="admin">
+    <entry name="topic/admin"/>
+  </topic>
+
 </configuration>
 
