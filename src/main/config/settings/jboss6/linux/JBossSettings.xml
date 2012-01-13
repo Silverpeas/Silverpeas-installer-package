@@ -31,6 +31,9 @@
     <copyfile name="silverpeas-ds.xml">
             ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-ds.xml
     </copyfile>
+    <copyfile name="jackrabbit-ds.xml">
+            ${JBOSS_SERVER}/deploy/silverpeas/jackrabbit-ds.xml
+    </copyfile>
   </fileset>
 
   <!-- tunes the memory allocation of the JBoss server for silverpeas -->
@@ -115,6 +118,20 @@
       </parameter>
       <parameter key="/datasources/local-tx-datasource/max-pool-size">
         <value>${MAX_POOL_SIZE}</value>
+      </parameter>
+    </xmlfile>
+    <xmlfile name="silverpeas/jackrabbit-ds.xml">
+      <parameter key="/datasources/local-tx-datasource/connection-url">
+        <value>${DB_URL}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/driver-class">
+        <value>${DB_DRIVER}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/user-name">
+        <value>${DB_USER}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/password">
+        <value>${DB_PASSWD}</value>
       </parameter>
     </xmlfile>
   </fileset>
