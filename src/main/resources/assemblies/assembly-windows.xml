@@ -46,6 +46,15 @@
       </includes>
     </fileSet>
     <fileSet>
+      <outputDirectory>bin/scripts</outputDirectory>
+      <directory>src/main/scripts/groovy</directory>
+      <filtered>true</filtered>
+      <fileMode>775</fileMode>
+      <includes>
+        <include>**/*.groovy</include>
+      </includes>
+    </fileSet>
+    <fileSet>
       <outputDirectory>bin</outputDirectory>
       <directory>src/main/silverpeas/${server.distribution}</directory>
       <includes>

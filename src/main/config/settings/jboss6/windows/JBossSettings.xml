@@ -10,6 +10,9 @@
     <var name="DATASOURCE"     value="Silverpeas"/>
     <var name="KEY_APPURIS"    value='$eval{{if(new String("${INSTALL_CONTEXT}").equals("install")) value="applicationURIs"; else value="";}}' />
   </global-vars>
+  
+  <!-- secure JBoss server -->
+  <script name="securejboss.groovy" />
 
   <!-- copy the silverpeas EAR built by maven into the JBoss server deployment repository -->
   <fileset root="${JAR_HOME}/">

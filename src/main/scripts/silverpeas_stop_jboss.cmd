@@ -2,6 +2,9 @@
 
 cd "%JBOSS_HOME%/bin"
 
-call shutdown.bat -S
+set username=
+set password=
+
+call shutdown.bat -u %username% -p %password% -S
 
 if ERRORLEVEL 1 pause
