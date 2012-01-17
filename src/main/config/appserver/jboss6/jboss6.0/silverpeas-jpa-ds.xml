@@ -8,7 +8,7 @@
 
 <datasources>
   <local-tx-datasource>
-    <jndi-name>Silverpeas</jndi-name>
+    <jndi-name>jpa/Silverpeas</jndi-name>
     <use-java-context>false</use-java-context>
     <connection-url>jdbc:postgresql://localhost:5432/SilverpeasV5</connection-url>
     <driver-class>org.postgresql.Driver</driver-class>
