@@ -31,8 +31,11 @@
     <copyfile name="silverpeas-ds.xml">
             ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-ds.xml
     </copyfile>
-    <copyfile name="jackrabbit-ds.xml">
-            ${JBOSS_SERVER}/deploy/silverpeas/jackrabbit-ds.xml
+    <copyfile name="silverpeas-jpa-ds.xml">
+            ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-jpa-ds.xml
+    </copyfile>
+        <copyfile name="jackrabbit-ds.xml">
+      ${JBOSS_SERVER}/deploy/silverpeas/jackrabbit-ds.xml
     </copyfile>
   </fileset>
 
@@ -101,6 +104,46 @@
       </parameter>
     </xmlfile>
     <xmlfile name="silverpeas/silverpeas-ds.xml">
+      <parameter key="/datasources/local-tx-datasource/connection-url">
+        <value>${DB_URL}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/driver-class">
+        <value>${DB_DRIVER}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/user-name">
+        <value>${DB_USER}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/password">
+        <value>${DB_PASSWD}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/min-pool-size">
+        <value>${MIN_POOL_SIZE}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/max-pool-size">
+        <value>${MAX_POOL_SIZE}</value>
+      </parameter>
+      <!-- XA Datasource 
+      <parameter key="/datasources/xa-datasource/xa-datasource-class">
+        <value>${XA_DRIVER}</value>
+      </parameter>
+      <parameter key="/datasources/xa-datasource/xa-datasource-property[@name='URL']">
+        <value>${DB_URL}</value>
+      </parameter>
+      <parameter key="/datasources/xa-datasource/xa-datasource-property[@name='User']">
+        <value>${DB_USER}</value>
+      </parameter>
+      <parameter key="/datasources/xa-datasource/xa-datasource-property[@name='Password']">
+        <value>${DB_PASSWD}</value>
+      </parameter>
+      <parameter key="/datasources/xa-datasource/user-name">
+        <value>${DB_USER}</value>
+      </parameter>
+      <parameter key="/datasources/xa-datasource/password">
+        <value>${DB_PASSWD}</value>
+      </parameter>
+      -->
+    </xmlfile>
+    <xmlfile name="silverpeas/silverpeas-jpa-ds.xml">
       <parameter key="/datasources/local-tx-datasource/connection-url">
         <value>${DB_URL}</value>
       </parameter>
