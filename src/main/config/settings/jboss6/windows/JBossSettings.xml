@@ -17,24 +17,27 @@
   <!-- copy the silverpeas EAR built by maven into the JBoss server deployment repository -->
   <fileset root="${JAR_HOME}/">
     <copyfile name="silverpeas.ear">
-            ${JBOSS_SERVER}/deploy/silverpeas/silverpeas.ear
+      ${JBOSS_SERVER}/deploy/silverpeas/silverpeas.ear
     </copyfile>
   </fileset>
 
   <!-- copy dependencies shared with sites to the JBoss server lib directory -->
   <fileset root="${SILVERPEAS_HOME}/repository/">
     <copyfile name="jboss">
-            ${JBOSS_SERVER}/lib
+      ${JBOSS_SERVER}/lib
     </copyfile>
   </fileset>
 
   <!-- copy the data source and JMS configuration for silverpeas in the silverpeas EAR directory -->
   <fileset root="${SILVERPEAS_HOME}/setup/appserver/jboss${JBOSS_VERSION}/">
     <copyfile name="silverpeas-hornetq-jms.xml">
-            ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-hornetq-jms.xml
+      ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-hornetq-jms.xml
     </copyfile>
     <copyfile name="silverpeas-ds.xml">
-            ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-ds.xml
+      ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-ds.xml
+    </copyfile>
+    <copyfile name="silverpeas-jpa-ds.xml">
+      ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-jpa-ds.xml
     </copyfile>
   </fileset>
 
@@ -121,10 +124,29 @@
       <parameter key="/datasources/local-tx-datasource/max-pool-size">
         <value>${MAX_POOL_SIZE}</value>
       </parameter>
+    </xmlfile>    
+    <xmlfile name="silverpeas/silverpeas-jpa-ds.xml">
+      <parameter key="/datasources/local-tx-datasource/connection-url">
+        <value>${DB_URL}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/driver-class">
+        <value>${DB_DRIVER}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/user-name">
+        <value>${DB_USER}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/password">
+        <value>${DB_PASSWD}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/min-pool-size">
+        <value>${MIN_POOL_SIZE}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/max-pool-size">
+        <value>${MAX_POOL_SIZE}</value>
+      </parameter>
     </xmlfile>
   </fileset>
 
-<!-- V4.0 : nouveau -->
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/util/">
     <configfile name="jndi.properties">
       <parameter key="SILVERSTATISTICS_JMS_QUEUE">queue/statisticsQueue</parameter>
