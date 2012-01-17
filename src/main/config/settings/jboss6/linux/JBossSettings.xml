@@ -31,6 +31,9 @@
     <copyfile name="silverpeas-ds.xml">
             ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-ds.xml
     </copyfile>
+    <copyfile name="silverpeas-jpa-ds.xml">
+            ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-jpa-ds.xml
+    </copyfile>
   </fileset>
 
   <!-- tunes the memory allocation of the JBoss server for silverpeas -->

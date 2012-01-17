@@ -144,7 +144,6 @@
     </xmlfile>
   </fileset>
 
-<!-- V4.0 : nouveau -->
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/util/">
     <configfile name="jndi.properties">
       <parameter key="SILVERSTATISTICS_JMS_QUEUE">queue/statisticsQueue</parameter>
