@@ -2,7 +2,7 @@
 # ------ silverpeas_stop_jboss.sh -----------
 cd $JBOSS_HOME/bin
 
-username=
-password=
+username=admin
+password=admin
 
 sh shutdown.sh -u $username -p $password -S
