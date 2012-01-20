@@ -28,7 +28,8 @@ import groovy.xml.StreamingMarkupBuilder ;
  */
 def String jbossConfigFile =  JBOSS_CONF + '/bootstrap/profile.xml';
 
-System.out.println(jbossConfigFile);
+//System.out.println(jbossConfigFile);
+
 def root = new XmlSlurper().parse(jbossConfigFile);
 def propertyTag = root.bean.find { it.@name == 'UserProfileFactory' }.property.find {it.@name == 'applicationURIs' };
 def listTag = propertyTag.list.find {it.@elementClass == 'java.net.URI'};
