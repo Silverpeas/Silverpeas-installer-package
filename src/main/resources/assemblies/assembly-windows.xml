@@ -16,15 +16,15 @@
       <outputDirectory>bin</outputDirectory>
       <filtered>true</filtered>
     </file>
-     <file>
+    <file>
       <source>src/main/scripts/dbBuilder.bat</source>
       <outputDirectory>bin</outputDirectory>
       <filtered>true</filtered>
     </file>
-     <file>
+    <file>
       <outputDirectory>setup/settings</outputDirectory>
       <source>src/main/config/settings/${server.distribution}/windows/SilverpeasSettings.xml</source>
-       <filtered>false</filtered>
+      <filtered>false</filtered>
     </file>
     <file>
       <outputDirectory>setup/settings</outputDirectory>
@@ -34,11 +34,6 @@
     <file>
       <outputDirectory>setup/settings</outputDirectory>
       <source>src/main/config/settings/${server.distribution}/windows/sample_config.properties</source>
-      <filtered>false</filtered>
-    </file>
-    <file>
-      <outputDirectory>bin/jar</outputDirectory>
-      <source>src/main/config/settings/${server.distribution}/windows/default_config.properties</source>
       <filtered>false</filtered>
     </file>
   </files>
