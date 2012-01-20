@@ -2,5 +2,5 @@
 
 set SETUP_ROOT=%SILVERPEAS_HOME%/setup/settings
 
-java -classpath "${classpath}" -Dsilverpeas.home="%SILVERPEAS_HOME%" com.silverpeas.SilverpeasSettings.SilverpeasSettings
+java -classpath "${classpath}" -Dsilverpeas.home="%SILVERPEAS_HOME%" org.silverpeas.SilverpeasSettings.SilverpeasSettings
 pause

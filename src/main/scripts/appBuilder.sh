@@ -13,4 +13,4 @@ export LIB_ROOT
 CLASSPATH=${classpath}
 export CLASSPATH
 
-exec $JAVA_HOME/bin/java -classpath $CLASSPATH -Dsilverpeas.home=$SILVERPEAS_HOME com.silverpeas.applicationbuilder.ApplicationBuilder -r ext_repository $1
+exec $JAVA_HOME/bin/java -classpath $CLASSPATH -Dsilverpeas.home=$SILVERPEAS_HOME org.silverpeas.applicationbuilder.ApplicationBuilder -r ext_repository $1

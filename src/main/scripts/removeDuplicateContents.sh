@@ -12,4 +12,4 @@ export CLASSPATH
 
 echo $CLASSPATH
 
-exec $JAVA_HOME/bin/java -classpath $CLASSPATH -Ddbbuilder.home=$SILVERPEAS_HOME com.silverpeas.migration.contentmanagement.DuplicateContentRemovingApplication 
+exec $JAVA_HOME/bin/java -classpath $CLASSPATH -Ddbbuilder.home=$SILVERPEAS_HOME org.silverpeas.migration.contentmanagement.DuplicateContentRemovingApplication 

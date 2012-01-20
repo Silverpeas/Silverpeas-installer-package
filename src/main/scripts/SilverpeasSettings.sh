@@ -12,4 +12,4 @@ SETUP_ROOT=$SILVERPEAS_HOME/setup/settings
 CLASSPATH=${classpath}
 export CLASSPATH
 
-exec $JAVA_HOME/bin/java -classpath $CLASSPATH -Dsilverpeas.home=$SILVERPEAS_HOME com.silverpeas.SilverpeasSettings.SilverpeasSettings
+exec $JAVA_HOME/bin/java -classpath $CLASSPATH -Dsilverpeas.home=$SILVERPEAS_HOME org.silverpeas.SilverpeasSettings.SilverpeasSettings
