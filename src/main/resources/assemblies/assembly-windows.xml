@@ -33,7 +33,12 @@
     </file>
     <file>
       <outputDirectory>setup/settings</outputDirectory>
-      <source>src/main/config/settings/${server.distribution}/windows/config.xml</source>
+      <source>src/main/config/settings/${server.distribution}/windows/sample_config.properties</source>
+      <filtered>false</filtered>
+    </file>
+    <file>
+      <outputDirectory>bin/jar</outputDirectory>
+      <source>src/main/config/settings/${server.distribution}/windows/default_config.properties</source>
       <filtered>false</filtered>
     </file>
   </files>
