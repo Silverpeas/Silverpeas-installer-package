@@ -27,10 +27,10 @@
     <var name="HIBERNATE_DIALECT_POSTGRES" value="org.hibernate.dialect.PostgreSQLDialect"/>
     <var name="HIBERNATE_DIALECT" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${HIBERNATE_DIALECT_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${HIBERNATE_DIALECT_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${HIBERNATE_DIALECT_H2}"; else value="${HIBERNATE_DIALECT_ORACLE}";}}'/>
 
-    <var name="JACKRABBIT_PERSIST_H2" value="org.apache.jackrabbit.core.persistence.bundle.H2PersistenceManager"/>
-    <var name="JACKRABBIT_PERSIST_MSSQL" value="org.apache.jackrabbit.core.persistence.bundle.MSSqlPersistenceManager"/>
-    <var name="JACKRABBIT_PERSIST_ORACLE" value="org.apache.jackrabbit.core.persistence.bundle.OraclePersistenceManager"/>
-    <var name="JACKRABBIT_PERSIST_POSTGRES" value="org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager"/>
+    <var name="JACKRABBIT_PERSIST_H2" value="org.apache.jackrabbit.core.persistence.pool.H2PersistenceManager"/>
+    <var name="JACKRABBIT_PERSIST_MSSQL" value="org.apache.jackrabbit.core.persistence.pool.MSSqlPersistenceManager"/>
+    <var name="JACKRABBIT_PERSIST_ORACLE" value="org.apache.jackrabbit.core.persistence.pool.OraclePersistenceManager"/>
+    <var name="JACKRABBIT_PERSIST_POSTGRES" value="org.apache.jackrabbit.core.persistence.pool.PostgreSQLPersistenceManager"/>
     <var name="JACKRABBIT_PERSIST" value='$eval{{if(new String("${DB_SERVERTYPEU}").equals("MSSQL")) value="${JACKRABBIT_PERSIST_MSSQL}"; else if(new String("${DB_SERVERTYPEU}").equals("POSTGRES")) value="${JACKRABBIT_PERSIST_POSTGRES}"; else if(new String("${DB_SERVERTYPEU}").equals("H2")) value="${JACKRABBIT_PERSIST_H2}";else value="${JACKRABBIT_PERSIST_ORACLE}";}}'/>
 
     <var name="JACKRABBIT_SCHEMA_H2" value="h2"/>
@@ -106,10 +106,9 @@
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/almanach/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/almanach/</parameter>
     </configfile>
-
   </fileset>
-
-		<!-- 2) COM/STRATELIA/SILVERPEAS : -->
+  
+  <!-- 2) COM/STRATELIA/SILVERPEAS : -->
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/silverpeas/">
 
     <configfile name="domains/domainSP.properties">
@@ -233,8 +232,8 @@
     <configfile name="whitePages/settings/template.properties">
       <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/templateRepository/</parameter>
     </configfile>
-
-		<!-- Variable à modifier par le client -->
+    
+    <!-- Variable à modifier par le client -->
     <configfile name="jobManagerPeas/settings/jobManagerPeasSettings.properties">
       <parameter key="IsKMVisible">true</parameter>
       <parameter key="IsToolsVisible">true</parameter>
@@ -247,8 +246,8 @@
       <parameter key="CastorXMLMappingFileURL">${SILVERPEAS_HOME_DEPENDANT}\resources\modelManager\mapping.xml</parameter>
       <parameter key="ProcessModelDir">${SILVERPEAS_DATA_HOME}\workflowRepository\</parameter>
     </configfile>
-
-		<!-- Variable modifiable par le client -->
+    
+    <!-- Variable modifiable par le client -->
     <configfile name="workflow/engine/schedulerSettings.properties">
       <parameter key="timeoutSchedule">* 0,4,8,12,16,20 * * *</parameter>
     </configfile>
@@ -337,9 +336,8 @@
       <parameter key="set SILVERPEAS_DATA">${SILVERPEAS_HOME_DEPENDANT}</parameter>
     </configfile>
   </fileset>
-
-    <!-- workflowEngine settings -->
-
+  
+  <!-- workflowEngine settings -->
   <fileset root="${SILVERPEAS_HOME}/resources/instanceManager/">
     <textfile name="database.xml">
       <parameter key="&lt;!DOCTYPE[^&gt;]*&gt;" use-regex="true"> </parameter>
@@ -394,6 +392,32 @@
     </configfile>
   </fileset>  
   
+  <!-- Jackrabbit -->
+  <fileset root="${SILVERPEAS_HOME}/jar/silverpeas.ear/war-ic.war/WEB-INF/">
+    <xmlfile name="classes/repository.xml">
+      <parameter key="//Workspaces" mode="update">
+        <value location="@defaultWorkspace">jackrabbit</value>
+      </parameter>
+      <parameter key="//Workspace/PersistenceManager" mode="update">
+        <value location="@class">${JACKRABBIT_PERSIST}</value>
+      </parameter>
+      <parameter key="//Workspace/PersistenceManager/param[@name='schema']" mode="update">
+        <value location="@value">${JACKRABBIT_SCHEMA}</value>
+      </parameter>
+       <parameter key="//Workspace/FileSystem" mode="update">
+        <value location="@class">org.apache.jackrabbit.core.fs.local.LocalFileSystem</value>
+      </parameter> 
+       <parameter key="//Versioning/PersistenceManager" mode="update">
+        <value location="@class">${JACKRABBIT_PERSIST}</value>
+      </parameter>
+      <parameter key="//Versioning/PersistenceManager/param[@name='schema']" mode="update">
+        <value location="@value">${JACKRABBIT_SCHEMA}</value>
+      </parameter>
+      <parameter key="//Versioning/FileSystem" mode="update">
+        <value location="@class">org.apache.jackrabbit.core.fs.local.LocalFileSystem</value>
+      </parameter> 
+    </xmlfile>
+  </fileset>
 
   <!-- Silverpeas utility core component (comment, ...) -->
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/util/">
