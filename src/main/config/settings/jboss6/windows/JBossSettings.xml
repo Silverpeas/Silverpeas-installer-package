@@ -10,7 +10,7 @@
     <var name="DATASOURCE"     value="Silverpeas"/>
   </global-vars>
   
-   <script name="computeInstallationContext.groovy" />
+  <script name="computeInstallationContext.groovy" />
   
   <!-- secure JBoss server -->
   <script name="securejboss.groovy" />

@@ -9,7 +9,7 @@
   </global-vars>
   
   
-   <script name="computeInstallationContext.groovy" />
+  <script name="computeInstallationContext.groovy" />
   
   
   <!-- secure JBoss server -->
@@ -18,27 +18,27 @@
   <!-- copy the silverpeas EAR built by maven into the JBoss server deployment repository -->
   <fileset root="${JAR_HOME}/">
     <copyfile name="silverpeas.ear">
-            ${JBOSS_SERVER}/deploy/silverpeas/silverpeas.ear
+      ${JBOSS_SERVER}/deploy/silverpeas/silverpeas.ear
     </copyfile>
   </fileset>
 
   <!-- copy dependencies shared with sites to the JBoss server lib directory -->
   <fileset root="${SILVERPEAS_HOME}/repository/">
     <copyfile name="jboss">
-            ${JBOSS_SERVER}/lib
+      ${JBOSS_SERVER}/lib
     </copyfile>
   </fileset>
 
   <!-- copy the data source and JMS configuration for silverpeas in the silverpeas EAR directory -->
   <fileset root="${SILVERPEAS_HOME}/setup/appserver/jboss${JBOSS_VERSION}/">
     <copyfile name="silverpeas-hornetq-jms.xml">
-            ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-hornetq-jms.xml
+      ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-hornetq-jms.xml
     </copyfile>
     <copyfile name="silverpeas-ds.xml">
-            ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-ds.xml
+      ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-ds.xml
     </copyfile>
     <copyfile name="silverpeas-jpa-ds.xml">
-            ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-jpa-ds.xml
+      ${JBOSS_SERVER}/deploy/silverpeas/silverpeas-jpa-ds.xml
     </copyfile>
     <copyfile name="jackrabbit-ds.xml">
       ${JBOSS_SERVER}/deploy/silverpeas/jackrabbit-ds.xml
@@ -119,26 +119,6 @@
       <parameter key="/datasources/local-tx-datasource/max-pool-size">
         <value>${MAX_POOL_SIZE}</value>
       </parameter>
-      <!-- XA Datasource 
-      <parameter key="/datasources/xa-datasource/xa-datasource-class">
-        <value>${XA_DRIVER}</value>
-      </parameter>
-      <parameter key="/datasources/xa-datasource/xa-datasource-property[@name='URL']">
-        <value>${DB_URL}</value>
-      </parameter>
-      <parameter key="/datasources/xa-datasource/xa-datasource-property[@name='User']">
-        <value>${DB_USER}</value>
-      </parameter>
-      <parameter key="/datasources/xa-datasource/xa-datasource-property[@name='Password']">
-        <value>${DB_PASSWD}</value>
-      </parameter>
-      <parameter key="/datasources/xa-datasource/user-name">
-        <value>${DB_USER}</value>
-      </parameter>
-      <parameter key="/datasources/xa-datasource/password">
-        <value>${DB_PASSWD}</value>
-      </parameter>
-      -->
     </xmlfile>
     <xmlfile name="silverpeas/silverpeas-jpa-ds.xml">
       <parameter key="/datasources/local-tx-datasource/connection-url">

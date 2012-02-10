@@ -396,7 +396,7 @@
   <fileset root="${SILVERPEAS_HOME}/jar/silverpeas.ear/war-ic.war/WEB-INF/">
     <xmlfile name="classes/repository.xml">
       <parameter key="//Workspaces" mode="update">
-        <value location="@defaultWorkspace">jackrabbit</value>
+        <value location="@defaultWorkspace">${webdav.workspace}</value>
       </parameter>
       <parameter key="//Workspace/PersistenceManager" mode="update">
         <value location="@class">${JACKRABBIT_PERSIST}</value>
@@ -404,10 +404,10 @@
       <parameter key="//Workspace/PersistenceManager/param[@name='schema']" mode="update">
         <value location="@value">${JACKRABBIT_SCHEMA}</value>
       </parameter>
-       <parameter key="//Workspace/FileSystem" mode="update">
+      <parameter key="//Workspace/FileSystem" mode="update">
         <value location="@class">org.apache.jackrabbit.core.fs.local.LocalFileSystem</value>
       </parameter> 
-       <parameter key="//Versioning/PersistenceManager" mode="update">
+      <parameter key="//Versioning/PersistenceManager" mode="update">
         <value location="@class">${JACKRABBIT_PERSIST}</value>
       </parameter>
       <parameter key="//Versioning/PersistenceManager/param[@name='schema']" mode="update">
