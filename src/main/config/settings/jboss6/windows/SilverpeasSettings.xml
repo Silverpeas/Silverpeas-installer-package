@@ -331,6 +331,13 @@
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/scheduleevent/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/scheduleevent/</parameter>
     </configfile>
+	
+	<configfile name="util/stringtemplate.properties">
+	  <parameter key="template.dir.core.default">${SILVERPEAS_HOME}/resources/StringTemplates/core</parameter>
+      <parameter key="template.dir.core.custom">${SILVERPEAS_DATA_HOME}/StringTemplates/core</parameter>
+      <parameter key="template.dir.components.default">${SILVERPEAS_HOME}/resources/StringTemplates/components</parameter>
+      <parameter key="template.dir.components.custom">${SILVERPEAS_DATA_HOME}/StringTemplates/components</parameter> 
+    </configfile>
 
   </fileset>
 
