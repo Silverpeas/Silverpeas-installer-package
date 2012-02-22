@@ -21,23 +21,23 @@
   </connection-factory>
 
   <queue name="notificationsQueue">
-    <entry name="queue/notificationsQueue" />
+    <entry name="java:/queue/notificationsQueue" />
   </queue>
 
   <queue name="statisticsQueue">
-    <entry name="queue/statisticsQueue"/>
+    <entry name="java:/queue/statisticsQueue"/>
   </queue>
 
   <topic name="comments">
-    <entry name="topic/comment"/>
+    <entry name="java:/topic/comment"/>
   </topic>
 
   <topic name="nodes">
-    <entry name="topic/node"/>
+    <entry name="java:/topic/node"/>
   </topic>
   
   <topic name="admin">
-    <entry name="topic/admin"/>
+    <entry name="java:/topic/admin"/>
   </topic>
 
 </configuration>
