@@ -5,7 +5,7 @@
     <var name="JBOSS_CONF"     value="${JBOSS_SERVER}/conf"/>
     <var name="JBOSS_START"    value="silverpeas_start_jboss.sh"/>
     <var name="JBOSS_DEBUG"    value="silverpeas_debug_jboss.sh"/>
-    <var name="DATASOURCE"     value="Silverpeas"/>
+    <var name="DATASOURCE"     value="java:/datasources/silverpeas-jdbc"/>
   </global-vars>
   
   
