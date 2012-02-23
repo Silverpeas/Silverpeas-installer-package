@@ -15,7 +15,6 @@
     <user-name>postgres</user-name>
     <password>postgres</password>
     <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
-    <check-valid-connection-sql>select 1</check-valid-connection-sql>
     <max-pool-size>15</max-pool-size>
     <min-pool-size>3</min-pool-size>
     <prefill>true</prefill>
