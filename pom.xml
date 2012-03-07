@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
-  <version>5.8.1-SNAPSHOT</version>
+  <version>5.8.1</version>
   <name>Silverpeas Installation Package</name>
   <description>Builds the Silverpeas installation package</description>
 
