@@ -7,7 +7,7 @@
 <!-- ===================================================================== -->
 
 <datasources>
-  <local-tx-datasource>
+  <no-tx-datasource>
     <jndi-name>/datasources/DocumentStoreDS</jndi-name>
     <use-java-context>true</use-java-context>
     <connection-url>jdbc:postgresql://localhost:5432/SilverpeasV5</connection-url>
@@ -22,5 +22,5 @@
     <blocking-timeout-millis>60000</blocking-timeout-millis>
     <background-validation>false</background-validation>
     <track-statements>warn</track-statements>
-  </local-tx-datasource>
+  </no-tx-datasource>
 </datasources>
