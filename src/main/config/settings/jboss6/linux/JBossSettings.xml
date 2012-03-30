@@ -161,7 +161,6 @@
       </parameter>
     </xmlfile>
   </fileset>
-  </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/util/">
     <configfile name="jndi.properties">
