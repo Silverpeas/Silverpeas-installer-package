@@ -119,6 +119,12 @@
       <parameter key="/datasources/local-tx-datasource/max-pool-size">
         <value>${MAX_POOL_SIZE}</value>
       </parameter>
+      <parameter key="/datasources/local-tx-datasource/idle-timeout-minutes">
+        <value>${IDLE_TIMEOUT}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/prepared-statement-cache-size">
+        <value>${STATEMENT_CACHE_SIZE}</value>
+      </parameter>
     </xmlfile>    
     <xmlfile name="silverpeas/jackrabbit-ds.xml">
       <parameter key="/datasources/no-tx-datasource/connection-url">
@@ -158,6 +164,12 @@
       </parameter>
       <parameter key="/datasources/local-tx-datasource/max-pool-size">
         <value>${MAX_POOL_SIZE}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/idle-timeout-minutes">
+        <value>${IDLE_TIMEOUT}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/prepared-statement-cache-size">
+        <value>${STATEMENT_CACHE_SIZE}</value>
       </parameter>
     </xmlfile>
   </fileset>
