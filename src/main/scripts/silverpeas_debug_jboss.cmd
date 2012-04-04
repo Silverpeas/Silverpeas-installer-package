@@ -20,6 +20,6 @@ SET ADDITIONAL_JAVA_OPTS=
 SET JAVA_OPTS=-server %HEAP_MIN_SIZE% %HEAP_MAX_SIZE% -XX:MaxPermSize=256m -Dorg.jboss.logging.Log4jService.catchSystemOut=false -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=5000,suspend=n,server=y %ADDITIONAL_JAVA_OPTS%
 
 SET PROFILE=default
-call run.bat -c %PROFILE%
+call run.bat -b 0.0.0.0 -c %PROFILE% 
 
 if ERRORLEVEL 1 pause

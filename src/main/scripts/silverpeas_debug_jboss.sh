@@ -16,4 +16,4 @@ export JAVA_OPTS="-server $HEAP_MAX_SIZE $HEAP_MIN_SIZE -XX:MaxPermSize=512m -Do
 # export JBOSS_CLASSPATH
 
 PROFILE=default
-sh run.sh -c $PROFILE &
+sh run.sh -b 0.0.0.0 -c $PROFILE &
