@@ -48,15 +48,15 @@
   <!-- tunes the memory allocation of the JBoss server for silverpeas -->
   <fileset root="${SILVERPEAS_HOME}/bin/">
     <textfile name="${JBOSS_START}">
-      <parameter key="-Xms[0-9]+m" use-regex="true">-Xms${RAM_MIN}m</parameter>
-      <parameter key="-Xmx[0-9]+m" use-regex="true">-Xmx${RAM_MAX}m</parameter>
+      <parameter key="HEAP_SIZE=\d*" use-regex="true">HEAP_SIZE=${RAM_MAX}</parameter>
       <parameter key="-XX:MaxPermSize=[0-9]+m" use-regex="true">-XX:MaxPermSize=${PERMSIZE_MAX}m</parameter>
+      <parameter key="ADDITIONAL_JAVA_OPTS=.*" use-regex="true">ADDITIONAL_JAVA_OPTS=${JAVA_OPTS}</parameter>
       <parameter key="PROFILE=[a-zA-Z]+" use-regex="true">PROFILE=${JBOSS_SERVER_PROFILE}</parameter>
     </textfile>
     <textfile name="${JBOSS_DEBUG}">
-      <parameter key="-Xms[0-9]+m" use-regex="true">-Xms${RAM_MIN}m</parameter>
-      <parameter key="-Xmx[0-9]+m" use-regex="true">-Xmx${RAM_MAX}m</parameter>
+      <parameter key="HEAP_SIZE=\d*" use-regex="true">HEAP_SIZE=${RAM_MAX}</parameter>
       <parameter key="-XX:MaxPermSize=[0-9]+m" use-regex="true">-XX:MaxPermSize=${PERMSIZE_MAX}m</parameter>
+      <parameter key="ADDITIONAL_JAVA_OPTS=.*" use-regex="true">ADDITIONAL_JAVA_OPTS=${JAVA_OPTS}</parameter>
       <parameter key="PROFILE=[a-zA-Z]+" use-regex="true">PROFILE=${JBOSS_SERVER_PROFILE}</parameter>
     </textfile>
   </fileset>
@@ -119,6 +119,12 @@
       <parameter key="/datasources/local-tx-datasource/max-pool-size">
         <value>${MAX_POOL_SIZE}</value>
       </parameter>
+      <parameter key="/datasources/local-tx-datasource/idle-timeout-minutes">
+        <value>${IDLE_TIMEOUT}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/prepared-statement-cache-size">
+        <value>${STATEMENT_CACHE_SIZE}</value>
+      </parameter>
     </xmlfile>    
     <xmlfile name="silverpeas/jackrabbit-ds.xml">
       <parameter key="/datasources/no-tx-datasource/connection-url">
@@ -158,6 +164,12 @@
       </parameter>
       <parameter key="/datasources/local-tx-datasource/max-pool-size">
         <value>${MAX_POOL_SIZE}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/idle-timeout-minutes">
+        <value>${IDLE_TIMEOUT}</value>
+      </parameter>
+      <parameter key="/datasources/local-tx-datasource/prepared-statement-cache-size">
+        <value>${STATEMENT_CACHE_SIZE}</value>
       </parameter>
     </xmlfile>
   </fileset>
