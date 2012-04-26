@@ -200,13 +200,6 @@
             </configuration>
           </execution>
         </executions>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.wagon</groupId>
-            <artifactId>wagon-ssh</artifactId>
-            <version>${wagon.version}</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
