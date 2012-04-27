@@ -63,7 +63,7 @@
     </fileSet>
     <fileSet>
       <outputDirectory>setup/appserver</outputDirectory>
-      <directory>src/main/config/appserver/${server.distribution}</directory>
+      <directory>src/main/config/appserver</directory>
       <includes>
         <include>**/*.xml</include>
       </includes>

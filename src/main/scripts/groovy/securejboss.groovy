@@ -85,9 +85,10 @@ def checkVersion(String serverHome) {
   }
 }
 
+
 def secureServer(String serverHome) {
   println "Working on ServerHome=$serverHome"
-
+  
   checkVersion(serverHome);
 
   secureDomainJMXConsole(serverHome)
@@ -194,6 +195,26 @@ def secureHttpInvoker(String serverHome) {
     println "$serverHome/deploy/httpha-invoker.sar or $serverHome/deploy/http-invoker.sar doesn't exist,  nothing to secure."
   }
 
+}
+
+def updateSilverpeasStoppingScript(String serverHome, String silverpeasHome) {
+  String f = "$silverpeasHome/bin/silverpeas_stop_jboss.sh"
+  String jmxUsers = "$serverHome/conf/props/jmx-console-users.properties"
+  String jmxRoles = "$serverHome/conf/props/jmx-console-roles.properties"
+  def users = []
+  def props = new Properties()
+  props.load(new FileInputStream(jmxRoles))
+  props.each { user, role ->
+    if (role == 'HttpInvoker')
+      users << user
+  }
+  props = new Properties()
+  props.load(new FileInputStream(jmxUsers))
+  users.each { user ->
+    if (props[user] != null) {
+      setParams(f, ['username':user, 'password':props[user]])
+    }
+  }
 }
 
 def generateUsername() {
@@ -398,4 +419,6 @@ def setParams(String file, def params) {
 if (INSTALL_CONTEXT == 'install') {
   checkServerHome(JBOSS_SERVER)
   secureServer(JBOSS_SERVER)
+} else {
+  updateSilverpeasStoppingScript(JBOSS_SERVER, SILVERPEAS_HOME)
 }

@@ -54,7 +54,7 @@
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>silverpeas-settings</artifactId>
-      <version>1.10-SNAPSHOT</version>
+      <version>1.11-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>postgresql</groupId>
@@ -182,7 +182,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>wagon-maven-plugin</artifactId>
-        <version>1.0-beta-3</version>
+        <version>1.0-beta-4</version>
         <executions>
           <execution>
             <id>upload-packages</id>
@@ -212,15 +212,6 @@
       </activation>
       <properties>
         <server.distribution>jboss6</server.distribution>
-      </properties>
-    </profile>
-    <profile>
-      <id>jboss4</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-      <properties>
-        <server.distribution>jboss4</server.distribution>
       </properties>
     </profile>
   </profiles>
