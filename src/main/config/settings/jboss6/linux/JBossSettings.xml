@@ -11,9 +11,11 @@
   
   <script name="computeInstallationContext.groovy" />
   
-  
   <!-- secure JBoss server -->
   <script name="securejboss.groovy" />
+  
+   <!-- configure HornetQ JMS -->
+  <script name="configHornetq.groovy" />
 
   <!-- copy the silverpeas EAR built by maven into the JBoss server deployment repository -->
   <fileset root="${JAR_HOME}/">

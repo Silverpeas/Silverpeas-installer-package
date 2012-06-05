@@ -10,16 +10,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="urn:hornetq /schema/hornetq-jms.xsd">
 
-  <connection-factory name="SilverpeasConnectionFactory">
-    <connectors>
-      <connector-ref connector-name="netty" />
-    </connectors>
-    <entries>
-      <entry name="java:/XAConnectionFactory"/>
-      <entry name="java:/ConnectionFactory"/>
-    </entries>
-  </connection-factory>
-
   <queue name="notificationsQueue">
     <entry name="java:/queue/notificationsQueue" />
   </queue>
