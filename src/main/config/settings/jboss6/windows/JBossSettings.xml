@@ -179,10 +179,6 @@
 
   <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/util/">
     <configfile name="jndi.properties">
-      <parameter key="SILVERSTATISTICS_JMS_QUEUE">java:/queue/statisticsQueue</parameter>
-      <parameter key="SILVERSTATISTICS_JMS_FACTORY">java:/XAConnectionFactory</parameter>
-      <parameter key="JMS_QUEUE">java:/queue/notificationsQueue</parameter>
-      <parameter key="JMS_FACTORY">java:/XAConnectionFactory</parameter>
       <parameter key="ATTACHMENT_DATASOURCE">${DATASOURCE}</parameter>
       <parameter key="CONTAINERMANAGER_DATASOURCE">${DATASOURCE}</parameter>
       <parameter key="CONTENTMANAGER_DATASOURCE">${DATASOURCE}</parameter>
