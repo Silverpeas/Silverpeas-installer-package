@@ -197,9 +197,22 @@
               <excludes>pom.xml</excludes>
               <url>scp://www.silverpeas.org</url>
               <toDir>/var/www/files</toDir>
+              <optimize>true</optimize>
             </configuration>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-ssh</artifactId>
+            <version>${wagon.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.46</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
