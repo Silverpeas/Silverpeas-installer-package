@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>parent</artifactId>
-    <version>23-SNAPSHOT</version>
+    <version>23</version>
   </parent>
 
   <packaging>pom</packaging>
@@ -39,22 +39,22 @@
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>application-builder</artifactId>
-      <version>1.8-SNAPSHOT</version>
+      <version>1.8</version>
     </dependency>
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>fileutil</artifactId>
-      <version>1.7-SNAPSHOT</version>
+      <version>1.7</version>
     </dependency>
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>dbbuilder</artifactId>
-      <version>1.10-SNAPSHOT</version>
+      <version>1.10</version>
     </dependency>
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>silverpeas-settings</artifactId>
-      <version>1.11-SNAPSHOT</version>
+      <version>1.11</version>
     </dependency>
     <dependency>
       <groupId>postgresql</groupId>
