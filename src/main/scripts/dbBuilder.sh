@@ -22,6 +22,4 @@ for jarlib in `ls $JARDIR`; do
 done
 export CLASSPATH
 
-echo $CLASSPATH
-
 exec $JAVA_HOME/bin/java -classpath $CLASSPATH -Ddbbuilder.home=$SILVERPEAS_HOME -Ddbbuilder.data=$SILVERPEAS_DATA org.silverpeas.dbbuilder.DBBuilder $LINEARGS
