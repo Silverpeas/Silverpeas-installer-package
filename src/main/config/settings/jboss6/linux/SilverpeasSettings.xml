@@ -58,7 +58,7 @@
   </fileset>
   
   <!-- 1) COM/STRATELIA/WEBACTIV : -->
-  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/">
+  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
 
     <configfile name="util/jcr.properties">
       <parameter key="jcr.configuration.persistence.manager">${JACKRABBIT_PERSIST}</parameter>
@@ -110,7 +110,7 @@
   </fileset>
   
   <!-- 2) COM/STRATELIA/SILVERPEAS : -->
-  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/silverpeas/">
+  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
 
     <configfile name="domains/domainSP.properties">
       <parameter key="database.SQLJDBCUrl">${DB_URL}</parameter>
@@ -213,7 +213,7 @@
   </fileset>
 
   <!-- 3) COM/SILVERPEAS : -->
-  <fileset root="${SILVERPEAS_HOME}/properties/com/silverpeas/">
+  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
     <configfile name="importExport/settings/mapping.properties">
       <parameter key="mappingDir">file:///${SILVERPEAS_HOME}/resources/importExport/</parameter>
     </configfile>
@@ -377,14 +377,14 @@
   </fileset>
 
  <!-- Website Designer -->
-  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/webSites/settings/">
+  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/webSites/settings/">
     <configfile name="webSiteSettings.properties">
       <parameter key="uploadsPath">${SILVERPEAS_DATA_WEB}/website.war/</parameter>
     </configfile>
   </fileset>
 
   <!-- importExport -->
-  <fileset root="${SILVERPEAS_HOME}/properties/com/silverpeas/importExport/settings/">
+  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/importExport/settings/">
     <configfile name="importSettings.properties">
       <parameter key="importRepository">${SILVERPEAS_DATA_HOME}/import/</parameter>
     </configfile>
@@ -427,7 +427,7 @@
   </fileset>
 
   <!-- Silverpeas utility core component (comment, ...) -->
-  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/util/">
+  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/util/">
     <configfile name="comment/Comment.properties">
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/</parameter>
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
@@ -436,7 +436,7 @@
 
 
  <!-- Chat settings
-  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/silverpeas/">
+  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
     <configfile name="chat/settings/chatSettings.properties">
       <parameter key="xmlConfigLocation">${SILVERPEAS_DATA_HOME}/chat/jchatbox.xml</parameter>
     </configfile>
