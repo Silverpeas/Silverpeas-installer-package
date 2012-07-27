@@ -174,7 +174,7 @@
     </xmlfile>
   </fileset>
 
-  <fileset root="${SILVERPEAS_HOME}/properties/com/stratelia/webactiv/util/">
+  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/util/">
     <configfile name="jndi.properties">
       <parameter key="SILVERSTATISTICS_JMS_QUEUE">java:/queue/statisticsQueue</parameter>
       <parameter key="SILVERSTATISTICS_JMS_FACTORY">java:/XAConnectionFactory</parameter>
