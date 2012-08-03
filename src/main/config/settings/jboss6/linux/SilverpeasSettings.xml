@@ -57,7 +57,6 @@
     </configfile>
   </fileset>
   
-  <!-- 1) COM/STRATELIA/WEBACTIV : -->
   <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
 
     <configfile name="util/jcr.properties">
@@ -106,11 +105,7 @@
     <configfile name="almanach/settings/almanachSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/almanach/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/almanach/</parameter>
-    </configfile>	
-  </fileset>
-  
-  <!-- 2) COM/STRATELIA/SILVERPEAS : -->
-  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
+    </configfile>
 
     <configfile name="domains/domainSP.properties">
       <parameter key="database.SQLJDBCUrl">${DB_URL}</parameter>
@@ -180,10 +175,6 @@
       <parameter key="pathInitialize">${SILVERPEAS_HOME}/initialize</parameter>
     </configfile>
 
-    <!-- <configfile name="formcommon/settings/formcommonSettings.properties">
-            <parameter key="pathFormRepository">${SILVERPEAS_DATA_HOME}/formRepository</parameter>
-     </configfile> -->
-
     <configfile name="dbBuilder/settings/dbBuilderSettings.properties">
       <parameter key="ADMINLOGIN">${ADMIN_LOGIN}</parameter>
       <parameter key="ADMINPASSWD">${ADMIN_PASSWD}</parameter>
@@ -194,8 +185,6 @@
       <parameter key="SilverPeasDataPath0">${SILVERPEAS_DATA_HOME}</parameter>
     </configfile>
 
-
-    <!--Modifiable par le client -->
     <configfile name="multipart/multipart.properties">
       <parameter key="MultipartParserMaxSize">10485760</parameter>
     </configfile>
@@ -210,10 +199,6 @@
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/infoLetter/</parameter>
     </configfile>
 
-  </fileset>
-
-  <!-- 3) COM/SILVERPEAS : -->
-  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
     <configfile name="importExport/settings/mapping.properties">
       <parameter key="mappingDir">file:///${SILVERPEAS_HOME}/resources/importExport/</parameter>
     </configfile>
@@ -234,7 +219,6 @@
       <parameter key="templateDir">file:///${SILVERPEAS_DATA_HOME}/templateRepository/</parameter>
     </configfile>
 
-		<!-- Variable à modifier par le client -->
     <configfile name="jobManagerPeas/settings/jobManagerPeasSettings.properties">
       <parameter key="IsKMVisible">true</parameter>
       <parameter key="IsToolsVisible">true</parameter>
@@ -248,7 +232,6 @@
       <parameter key="ProcessModelDir">${SILVERPEAS_DATA_HOME}/workflowRepository/</parameter>
     </configfile>
 
-		<!-- Variable modifiable par le client -->
     <configfile name="workflow/engine/schedulerSettings.properties">
       <parameter key="timeoutSchedule">* 0,4,8,12,16,20 * * *</parameter>
     </configfile>
@@ -334,6 +317,20 @@
       <parameter key="template.dir.components.default">${SILVERPEAS_HOME}/resources/StringTemplates/components</parameter>
       <parameter key="template.dir.components.custom">${SILVERPEAS_DATA_HOME}/StringTemplates/components</parameter> 
     </configfile>
+	
+	<configfile name="webSites/settings/webSiteSettings.properties">
+      <parameter key="uploadsPath">${SILVERPEAS_DATA_WEB}/website.war/</parameter>
+    </configfile>
+	
+    <configfile name="importExport/settings/importSettings.properties">
+      <parameter key="importRepository">${SILVERPEAS_DATA_HOME}/import/</parameter>
+    </configfile>
+	
+    <configfile name="util/comment/Comment.properties">
+      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/</parameter>
+      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
+    </configfile>
+  
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/bin/">
@@ -376,20 +373,7 @@
     </xmlfile>
   </fileset>
 
- <!-- Website Designer -->
-  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/webSites/settings/">
-    <configfile name="webSiteSettings.properties">
-      <parameter key="uploadsPath">${SILVERPEAS_DATA_WEB}/website.war/</parameter>
-    </configfile>
-  </fileset>
-
-  <!-- importExport -->
-  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/importExport/settings/">
-    <configfile name="importSettings.properties">
-      <parameter key="importRepository">${SILVERPEAS_DATA_HOME}/import/</parameter>
-    </configfile>
-  </fileset>
-
+ 
   <!-- wiki -->
   <fileset root="${SILVERPEAS_HOME}/jar/silverpeas.ear/war-ic.war/WEB-INF/">
     <configfile name="jspwiki.properties">
@@ -425,15 +409,6 @@
       </parameter> 
     </xmlfile>
   </fileset>
-
-  <!-- Silverpeas utility core component (comment, ...) -->
-  <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/util/">
-    <configfile name="comment/Comment.properties">
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/</parameter>
-      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/</parameter>
-    </configfile>
-  </fileset>
-
 
  <!-- Chat settings
   <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
