@@ -199,6 +199,9 @@ def secureHttpInvoker(String serverHome) {
 
 def updateSilverpeasStoppingScript(String serverHome, String silverpeasHome) {
   String f = "$silverpeasHome/bin/silverpeas_stop_jboss.sh"
+  if (System.properties['os.name'].toLowerCase().contains('windows')) {
+    f = "$silverpeasHome/bin/silverpeas_stop_jboss.cmd"
+  }
   String jmxUsers = "$serverHome/conf/props/jmx-console-users.properties"
   String jmxRoles = "$serverHome/conf/props/jmx-console-roles.properties"
   def users = []
