@@ -1,11 +1,11 @@
 @echo off
 
-cd "%JBOSS_HOME%\server\default\deploy\silverpeas"
+cd /d "%JBOSS_HOME%\server\default\deploy\silverpeas"
 del silverpeas.ear.bak*
 del silverpeas-ds.xml.bak*
 del silverpeas-hornetq-jms.xml.bak*
 
-cd "%JBOSS_HOME%/bin"
+cd /d "%JBOSS_HOME%/bin"
 
 set HEAP_SIZE=
 if defined HEAP_SIZE (

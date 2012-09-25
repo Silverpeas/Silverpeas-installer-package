@@ -1,6 +1,6 @@
 @echo off
 
-cd "%JBOSS_HOME%/bin"
+cd /d "%JBOSS_HOME%/bin"
 
 set username=admin
 set password=admin
