@@ -29,6 +29,9 @@
   <topic name="admin">
     <entry name="java:/topic/admin"/>
   </topic>
+  
+  <topic name="attachment">
+    <entry name="java:/topic/attachment"/>
+  </topic>
 
 </configuration>
-
