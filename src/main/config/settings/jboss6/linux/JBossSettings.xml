@@ -11,9 +11,11 @@
   
   <script name="computeInstallationContext.groovy" />
   
-  
   <!-- secure JBoss server -->
   <script name="securejboss.groovy" />
+  
+   <!-- configure HornetQ JMS -->
+  <script name="configHornetq.groovy" />
 
   <!-- copy the silverpeas EAR built by maven into the JBoss server deployment repository -->
   <fileset root="${JAR_HOME}/">
@@ -176,10 +178,6 @@
 
   <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/util/">
     <configfile name="jndi.properties">
-      <parameter key="SILVERSTATISTICS_JMS_QUEUE">java:/queue/statisticsQueue</parameter>
-      <parameter key="SILVERSTATISTICS_JMS_FACTORY">java:/XAConnectionFactory</parameter>
-      <parameter key="JMS_QUEUE">java:/queue/notificationsQueue</parameter>
-      <parameter key="JMS_FACTORY">java:/XAConnectionFactory</parameter>
       <parameter key="ATTACHMENT_DATASOURCE">${DATASOURCE}</parameter>
       <parameter key="CONTAINERMANAGER_DATASOURCE">${DATASOURCE}</parameter>
       <parameter key="CONTENTMANAGER_DATASOURCE">${DATASOURCE}</parameter>
