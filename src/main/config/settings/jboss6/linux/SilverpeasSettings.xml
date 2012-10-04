@@ -45,6 +45,8 @@
     <var name="LOG_HOME" value="${SILVERPEAS_HOME}/log"/>
   </global-vars>
 
+  <script name="updateJCRWorkspaceConfig.groovy"/>
+
   <!-- PROPERTIES CONFIGURATION -->
   <fileset root="${SILVERPEAS_HOME}/initialize/">
     <configfile name="systemSettings.properties">
