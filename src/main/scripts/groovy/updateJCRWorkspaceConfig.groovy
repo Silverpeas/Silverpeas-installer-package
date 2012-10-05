@@ -1,9 +1,14 @@
 import groovy.xml.*
 
 String workspaceConfPath = SILVERPEAS_DATA_HOME + "/jackrabbit/workspaces/jackrabbit/workspace.xml"
+def workspaceConf = null
 def slurper = new XmlSlurper()
 slurper.setKeepWhitespace(true)
-def workspaceConf = slurper.parse(new File(workspaceConfPath))
+try {
+  workspaceConf = slurper.parse(new File(workspaceConfPath))
+} catch (Exception ex) {
+  return 1;
+}
 def jdbcDriverByJNDI = workspaceConf.'**'.grep { it.@value.text() == 'javax.naming.InitialContext' }
 
 println()
@@ -22,6 +27,4 @@ if (jdbcDriverByJNDI.isEmpty()) {
 } else {
   println "The JCR workspace configuration is up to date"
 }
-
-
 
