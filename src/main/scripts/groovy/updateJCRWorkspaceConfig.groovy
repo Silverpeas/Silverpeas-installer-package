@@ -7,7 +7,6 @@ if(jcrConfigFile.exists() && jcrConfigFile.isFile()) {
   slurper.setKeepWhitespace(true)
   def workspaceConf = slurper.parse(jcrConfigFile)
   def jdbcDriverByJNDI = workspaceConf.'**'.grep { it.@value.text() == 'javax.naming.InitialContext' }
-
   println()
   if (jdbcDriverByJNDI.isEmpty()) {
     println "Old JCR workspace configuration detected! => Update it..."
