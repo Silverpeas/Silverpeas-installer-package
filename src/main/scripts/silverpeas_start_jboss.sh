@@ -9,7 +9,7 @@ if [ "Z${HEAP_SIZE}" != "Z" ]; then
 fi
 
 ADDITIONAL_JAVA_OPTS=
-export JAVA_OPTS="-server $HEAP_MAX_SIZE $HEAP_MIN_SIZE -XX:MaxPermSize=512m -Dorg.jboss.logging.Log4jService.catchSystemOut=false -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 $ADDITIONAL_JAVA_OPTS"
+export JAVA_OPTS="-server -Dapp=silverpeas $HEAP_MAX_SIZE $HEAP_MIN_SIZE -XX:MaxPermSize=512m -Dorg.jboss.logging.Log4jService.catchSystemOut=false -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 $ADDITIONAL_JAVA_OPTS"
 # Add Silverpeas Properties root repository to path
 #JBOSS_CLASSPATH=$SILVERPEAS_HOME/properties
 #export JBOSS_CLASSPATH
