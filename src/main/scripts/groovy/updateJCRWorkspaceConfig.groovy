@@ -10,8 +10,26 @@ if(jcrConfigFile.exists() && jcrConfigFile.isFile()) {
   println()
   if (jdbcDriverByJNDI.isEmpty()) {
     println "Old JCR workspace configuration detected! => Update it..."
+    def persistenceManager
+    switch(DB_SERVERTYPE) {
+      case "POSTGRES":
+        persistenceManager = "org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager"
+        break;
+      case "MSSQL":
+        persistenceManager = "org.apache.jackrabbit.core.persistence.bundle.MSSqlPersistenceManager"
+        break;
+      case "ORACLE":
+        persistenceManager = "org.apache.jackrabbit.core.persistence.bundle.OraclePersistenceManager"
+        break;
+      case "H2":
+        persistenceManager = "org.apache.jackrabbit.core.persistence.bundle.H2PersistenceManager"
+        break;
+      default:
+        println("Error: the following DB type isn't supported: " + DB_SERVERTYPE)
+        return 1
+    }
     workspaceConf.PersistenceManager.replaceNode {
-        PersistenceManager(class: "org.apache.jackrabbit.core.persistence.bundle.PostgreSQLPersistenceManager") {
+        PersistenceManager(class: persistenceManager) {
             param(name: "driver", value: "javax.naming.InitialContext")
             param(name: "url", value: "java:/datasources/DocumentStoreDS")
             param(name: "schema", value: JACKRABBIT_SCHEMA)
