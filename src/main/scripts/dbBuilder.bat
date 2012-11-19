@@ -11,7 +11,7 @@ set LINEARGS=-T %SRV_SERVERTYPE% %ACTIONPARAM% %VERBOSEPARAM%
 
 set LIB_ROOT=%SILVERPEAS_HOME%/bin/jar
 
-set CLASSPATH=${classpath}
+set CLASSPATH=%SILVERPEAS_HOME%\bin\jar\*
 
 java -classpath "%CLASSPATH%" -Ddbbuilder.home="%SILVERPEAS_HOME%" -Ddbbuilder.data="%SILVERPEAS_DATA%" org.silverpeas.dbbuilder.DBBuilder %LINEARGS%
 
