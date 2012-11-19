@@ -2,12 +2,12 @@ import groovy.xml.*
 
 String workspaceConfPath = SILVERPEAS_DATA_HOME + "/jackrabbit/workspaces/jackrabbit/workspace.xml"
 def jcrConfigFile = new File(workspaceConfPath)
+println()
 if(jcrConfigFile.exists() && jcrConfigFile.isFile()) {
   def slurper = new XmlSlurper()
   slurper.setKeepWhitespace(true)
   def workspaceConf = slurper.parse(jcrConfigFile)
   def jdbcDriverByJNDI = workspaceConf.'**'.grep { it.@value.text() == 'javax.naming.InitialContext' }
-  println()
   if (jdbcDriverByJNDI.isEmpty()) {
     println "Old JCR workspace configuration detected! => Update it..."
     def persistenceManager
@@ -42,5 +42,5 @@ if(jcrConfigFile.exists() && jcrConfigFile.isFile()) {
     println "The JCR workspace configuration is up to date"
   } 
 } else {
-  println "No JCR workspace configuration to configure"
+  println "No JCR workspace configuration"
 }

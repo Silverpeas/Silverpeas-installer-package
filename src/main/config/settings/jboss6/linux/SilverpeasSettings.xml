@@ -427,4 +427,6 @@
     </xmlfile>
   </fileset>
   -->
+  
+  <script name="createTickers.groovy"/>
 </silverpeas-settings>
