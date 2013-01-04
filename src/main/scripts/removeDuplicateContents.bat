@@ -1,6 +1,6 @@
 @echo off
 
-set CLASSPATH=${classpath}
+set CLASSPATH=%SILVERPEAS_HOME%\bin\jar\*
 
 java -classpath "%CLASSPATH%" -Ddbbuilder.home="%SILVERPEAS_HOME%" org.silverpeas.migration.contentmanagement.DuplicateContentRemovingApplication
 

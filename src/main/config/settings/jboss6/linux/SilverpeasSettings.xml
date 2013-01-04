@@ -46,6 +46,7 @@
   </global-vars>
 
   <script name="updateJCRWorkspaceConfig.groovy"/>
+   <script name="configureJCRMigrationConfig.groovy"/>
 
   <!-- PROPERTIES CONFIGURATION -->
   <fileset root="${SILVERPEAS_HOME}/initialize/">

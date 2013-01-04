@@ -9,7 +9,7 @@
     <fileSet>
       <outputDirectory>bin</outputDirectory>
       <directory>src/main/scripts</directory>
-      <filtered>true</filtered>
+      <filtered>false</filtered>
       <fileMode>775</fileMode>
       <includes>
         <include>**/*.sh</include>
@@ -37,12 +37,17 @@
       <includes>
         <include>**/*.xml</include>
       </includes>
-    </fileSet>
+    </fileSet>   
   </fileSets>
   <files>
     <file>
       <outputDirectory>setup/settings</outputDirectory>
       <source>src/main/config/settings/${server.distribution}/linux/SilverpeasSettings.xml</source>
+      <filtered>false</filtered>
+    </file>
+    <file>
+      <outputDirectory>setup/jackrabbit</outputDirectory>
+      <source>src/main/config/settings/jackrabbit/repository.xml</source>
       <filtered>false</filtered>
     </file>
     <file>

@@ -46,6 +46,7 @@
   </global-vars>
   
   <script name="updateJCRWorkspaceConfig.groovy"/>
+   <script name="configureJCRMigrationConfig.groovy"/>
 
   <!-- PROPERTIES CONFIGURATION -->
   <fileset root="${SILVERPEAS_HOME}/initialize/">
@@ -60,7 +61,6 @@
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/">
-
     <configfile name="util/jcr.properties">
       <parameter key="jcr.configuration.persistence.manager">${JACKRABBIT_PERSIST}</parameter>
       <parameter key="jcr.home.dir.url">file:///${SILVERPEAS_DATA_HOME}/jackrabbit</parameter>

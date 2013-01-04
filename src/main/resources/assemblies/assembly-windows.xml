@@ -9,17 +9,22 @@
     <file>
       <source>src/main/scripts/SilverpeasSettings.bat</source>
       <outputDirectory>bin</outputDirectory>
-      <filtered>true</filtered>
+      <filtered>false</filtered>
     </file>
     <file>
       <source>src/main/scripts/appBuilder.bat</source>
       <outputDirectory>bin</outputDirectory>
-      <filtered>true</filtered>
+      <filtered>false</filtered>
     </file>
     <file>
       <source>src/main/scripts/dbBuilder.bat</source>
       <outputDirectory>bin</outputDirectory>
-      <filtered>true</filtered>
+      <filtered>false</filtered>
+    </file>
+    <file>
+      <outputDirectory>setup/jackrabbit</outputDirectory>
+      <source>src/main/config/settings/jackrabbit/repository.xml</source>
+      <filtered>false</filtered>
     </file>
     <file>
       <outputDirectory>setup/settings</outputDirectory>
