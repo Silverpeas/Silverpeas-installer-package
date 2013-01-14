@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
-  <version>5.12-SNAPSHOT</version>
+  <version>5.11.1-SNAPSHOT</version>
   <name>Silverpeas Installation Package</name>
   <description>Builds the Silverpeas installation package</description>
 
@@ -40,7 +40,7 @@
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>configuration</artifactId>
-      <version>5.12-SNAPSHOT</version>
+      <version>5.11</version>
     </dependency>
     <dependency>
       <groupId>postgresql</groupId>
