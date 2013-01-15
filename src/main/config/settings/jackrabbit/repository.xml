@@ -28,19 +28,14 @@
 <!DOCTYPE Repository PUBLIC "-//The Apache Software Foundation//DTD Jackrabbit 2.0//EN"
           "http://jackrabbit.apache.org/dtd/repository-2.0.dtd">
 <Repository>
-  <!--
-    virtual file system where the repository stores global state (e.g. registered namespaces, custom node types, etc.)
-  -->
   <FileSystem class="org.apache.jackrabbit.core.fs.local.LocalFileSystem">
     <param name="path" value="${rep.home}/repository" />
   </FileSystem>
-
-  <!--
-    security configuration
-  -->
   <Security appName="Jackrabbit">
-    <AccessManager class="com.silverpeas.jcrutil.security.ProxyAccessManager" />
-    <LoginModule class="com.silverpeas.jcrutil.security.ProxyLoginModule">
+    <AccessManager class="org.apache.jackrabbit.core.security.SimpleAccessManager"/>
+    <LoginModule class="org.apache.jackrabbit.core.security.simple.SimpleLoginModule">
+      <param name="anonymousId" value="anonymous"/>
+      <param name="adminId" value="admin"/>
     </LoginModule>
   </Security>
 
@@ -54,10 +49,8 @@
       <param name="path" value="${wsp.home}" />
     </FileSystem>
     <PersistenceManager class="${jcr.configuration.persistence.manager}">
-      <param name="url" value="${WaProductionDb}" />
-      <param name="password" value="${WaProductionPswd}" />
-      <param name="user" value="${WaProductionUser}" />
-      <param name="driver" value="${AdminDBDriver}" />
+      <param name="driver" value="javax.naming.InitialContext"/>
+      <param name="url" value="java:/datasources/DocumentStoreDS"/>
       <param name="schema" value="${schema}" />
       <param name="schemaObjectPrefix" value="JCR_" />
     </PersistenceManager>
@@ -66,8 +59,8 @@
       <param name="extractorPoolSize" value="2" />
       <param name="supportHighlighting" value="true" />
       <param name="enableConsistencyCheck" value="true"/>
-    <param name="forceConsistencyCheck" value="true"/>
-    <param name="autoRepair" value="true"/>
+      <param name="forceConsistencyCheck" value="true"/>
+      <param name="autoRepair" value="true"/>
     </SearchIndex>
   </Workspace>
 
@@ -77,10 +70,8 @@
       <param name="path" value="${rep.home}/version" />
     </FileSystem>
     <PersistenceManager class="jcr.configuration.persistence.manager">
-      <param name="url" value="${WaProductionDb}" />
-      <param name="password" value="${WaProductionPswd}" />
-      <param name="user" value="${WaProductionUser}" />
-      <param name="driver" value="${AdminDBDriver}" />
+      <param name="driver" value="javax.naming.InitialContext"/>
+      <param name="url" value="java:/datasources/DocumentStoreDS"/>
       <param name="schema" value="${schema}" />
       <param name="schemaObjectPrefix" value="version_" />
     </PersistenceManager>

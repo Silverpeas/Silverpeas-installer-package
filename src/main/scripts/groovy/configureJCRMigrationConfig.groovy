@@ -7,7 +7,7 @@ if(repositoryConfigFile.exists() && repositoryConfigFile.isFile()) {
   def slurper = new XmlSlurper()
   slurper.setKeepWhitespace(true)
   def repositoryConf = slurper.parse(repositoryConfigFile)
-  println "JCR filesystem not properly configured! => Update it..."
+  println "JCR is being configured for migration"
   def persistenceManager
     switch(DB_SERVERTYPE) {
       case "POSTGRES":
@@ -28,10 +28,8 @@ if(repositoryConfigFile.exists() && repositoryConfigFile.isFile()) {
     }
     repositoryConf.Workspace.PersistenceManager.replaceNode {
         PersistenceManager(class: persistenceManager) {
-            param(name: "driver", value: DB_DRIVER)
-            param(name: "url", value: DB_URL)
-            param(name: "user", value: DB_USER)
-            param(name: "password", value: DB_PASSWD)
+            param(name: "driver", value: "javax.naming.InitialContext")
+            param(name: "url", value: "java:/datasources/DocumentStoreDS")
             param(name: "schema", value: JACKRABBIT_SCHEMA)
             param(name: "schemaObjectPrefix", value: "JCR_")            
             param(name: "consistencyCheck", value: "true")
@@ -40,10 +38,8 @@ if(repositoryConfigFile.exists() && repositoryConfigFile.isFile()) {
     }
     repositoryConf.Versioning.PersistenceManager.replaceNode {
         PersistenceManager(class: persistenceManager) {
-            param(name: "driver", value: DB_DRIVER)
-            param(name: "url", value: DB_URL)
-            param(name: "user", value: DB_USER)
-            param(name: "password", value: DB_PASSWD)
+             param(name: "driver", value: "javax.naming.InitialContext")
+            param(name: "url", value: "java:/datasources/DocumentStoreDS")
             param(name: "schema", value: JACKRABBIT_SCHEMA)
             param(name: "schemaObjectPrefix", value: "version_")            
             param(name: "consistencyCheck", value: "true")
@@ -51,7 +47,7 @@ if(repositoryConfigFile.exists() && repositoryConfigFile.isFile()) {
         }
     }
     XmlUtil.serialize(repositoryConf, new File(repositoryConfPath).newWriter())
-    println "JCR workspace configuration update done"
+    println "JCR migration configuration update done"
 } else {
   println "No JCR workspace configuration"
 }
