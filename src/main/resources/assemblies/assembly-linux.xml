@@ -37,7 +37,14 @@
       <includes>
         <include>**/*.xml</include>
       </includes>
-    </fileSet>   
+    </fileSet>
+    <fileSet>
+      <outputDirectory>bin/jar/</outputDirectory>
+      <directory>src/main/upgrades</directory>
+      <includes>
+        <include>*/*</include>
+      </includes>
+    </fileSet>
   </fileSets>
   <files>
     <file>

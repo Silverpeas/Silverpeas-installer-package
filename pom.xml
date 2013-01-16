@@ -11,7 +11,7 @@
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
   <version>5.12-SNAPSHOT</version>
-  <name>Silverpeas Installation Package</name>
+  <name>Silverpeas Installation Package - ${project.version}</name>
   <description>Builds the Silverpeas installation package</description>
 
   <scm>
