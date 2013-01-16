@@ -14,6 +14,9 @@
   
   <!-- secure JBoss server -->
   <script name="securejboss.groovy" />
+
+  <!-- upgrade HornetQ in JBoss if old version -->
+  <script name="upgradeHornetq.groovy" />
   
   <!-- configure HornetQ JMS -->
   <script name="configHornetq.groovy" />
