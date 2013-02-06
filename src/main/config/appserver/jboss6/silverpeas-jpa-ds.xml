@@ -7,6 +7,23 @@
 <!-- ===================================================================== -->
 
 <datasources>
+  <no-tx-datasource>
+    <jndi-name>/datasources/silverpeas</jndi-name>
+    <use-java-context>true</use-java-context>
+    <connection-url>jdbc:postgresql://localhost:5432/SilverpeasV5</connection-url>
+    <driver-class>org.postgresql.Driver</driver-class>
+    <user-name>postgres</user-name>
+    <password>postgres</password>
+    <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+    <max-pool-size>200</max-pool-size>
+    <min-pool-size>5</min-pool-size>
+    <prefill>true</prefill>
+    <idle-timeout-minutes>15</idle-timeout-minutes>
+    <blocking-timeout-millis>60000</blocking-timeout-millis>
+    <background-validation>false</background-validation>
+    <track-statements>warn</track-statements>
+  </no-tx-datasource>
+  <!--
   <local-tx-datasource>
     <jndi-name>/datasources/silverpeas</jndi-name>
     <use-java-context>true</use-java-context>
@@ -21,14 +38,14 @@
     <track-statements>warn</track-statements>
     <prepared-statement-cache-size>0</prepared-statement-cache-size>
   </local-tx-datasource>
-  <!--
+  -->
+  <!-- Attention update max_prepared_transaction in Postgrsql configuration
   <xa-datasource>
     <jndi-name>xa-silverpeas</jndi-name>
     <use-java-context>false</use-java-context>
     <track-connection-by-tx></track-connection-by-tx>
     <isSameRM-override-value>false</isSameRM-override-value>
     <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
-    <xa-datasource-property name="URL">jdbc:postgresql://localhost:5432/SilverpeasV5</xa-datasource-property>
     <xa-datasource-property name="ServerName">localhost</xa-datasource-property>
     <xa-datasource-property name="PortNumber">5432</xa-datasource-property>
     <xa-datasource-property name="DatabaseName">Silverpeas</xa-datasource-property>
@@ -36,7 +53,7 @@
     <xa-datasource-property name="Password">postgres</xa-datasource-property>        
     <user-name>postgres</user-name>
     <password>postgres</password>
-    <no-tx-separate-pools></no-tx-separate-pools>
+    <no-tx-separate-pools/>
   </xa-datasource>
   -->
 </datasources>

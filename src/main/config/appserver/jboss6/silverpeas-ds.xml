@@ -21,14 +21,13 @@
     <track-statements>warn</track-statements>
     <prepared-statement-cache-size>0</prepared-statement-cache-size>
   </local-tx-datasource>
-  <!--
+  <!-- Attention update max_prepared_transaction in Postgrsql configuration
   <xa-datasource>
     <jndi-name>xa-silverpeas</jndi-name>
     <use-java-context>false</use-java-context>
     <track-connection-by-tx></track-connection-by-tx>
     <isSameRM-override-value>false</isSameRM-override-value>
     <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
-    <xa-datasource-property name="URL">jdbc:postgresql://localhost:5432/SilverpeasV5</xa-datasource-property>
     <xa-datasource-property name="ServerName">localhost</xa-datasource-property>
     <xa-datasource-property name="PortNumber">5432</xa-datasource-property>
     <xa-datasource-property name="DatabaseName">Silverpeas</xa-datasource-property>
@@ -36,7 +35,7 @@
     <xa-datasource-property name="Password">postgres</xa-datasource-property>        
     <user-name>postgres</user-name>
     <password>postgres</password>
-    <no-tx-separate-pools></no-tx-separate-pools>
+    <no-tx-separate-pools/>
   </xa-datasource>
   -->
 </datasources>

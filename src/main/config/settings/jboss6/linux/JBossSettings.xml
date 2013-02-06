@@ -17,7 +17,7 @@
   <!-- upgrade HornetQ in JBoss if old version -->
   <script name="upgradeHornetq.groovy" />
   
-   <!-- configure HornetQ JMS -->
+  <!-- configure HornetQ JMS -->
   <script name="configHornetq.groovy" />
 
   <!-- copy the silverpeas EAR built by maven into the JBoss server deployment repository -->
@@ -150,31 +150,37 @@
       <parameter key="/datasources/no-tx-datasource/max-pool-size">
         <value>${MAX_POOL_SIZE}</value>
       </parameter>
-    </xmlfile>
-    <xmlfile name="silverpeas/silverpeas-jpa-ds.xml">
-      <parameter key="/datasources/local-tx-datasource/connection-url">
-        <value>${DB_URL}</value>
-      </parameter>
-      <parameter key="/datasources/local-tx-datasource/driver-class">
-        <value>${DB_DRIVER}</value>
-      </parameter>
-      <parameter key="/datasources/local-tx-datasource/user-name">
-        <value>${DB_USER}</value>
-      </parameter>
-      <parameter key="/datasources/local-tx-datasource/password">
-        <value>${DB_PASSWD}</value>
-      </parameter>
-      <parameter key="/datasources/local-tx-datasource/min-pool-size">
+      <parameter key="/datasources/no-tx-datasource/min-pool-size">
         <value>${MIN_POOL_SIZE}</value>
       </parameter>
-      <parameter key="/datasources/local-tx-datasource/max-pool-size">
-        <value>${MAX_POOL_SIZE}</value>
-      </parameter>
-      <parameter key="/datasources/local-tx-datasource/idle-timeout-minutes">
+      <parameter key="/datasources/no-tx-datasource/idle-timeout-minutes">
         <value>${IDLE_TIMEOUT}</value>
       </parameter>
-      <parameter key="/datasources/local-tx-datasource/prepared-statement-cache-size">
-        <value>${STATEMENT_CACHE_SIZE}</value>
+    </xmlfile>
+    <xmlfile name="silverpeas/silverpeas-jpa-ds.xml">
+      <parameter key="/datasources/no-tx-datasource/connection-url">
+        <value>${DB_URL}</value>
+      </parameter>
+      <parameter key="/datasources/no-tx-datasource/driver-class">
+        <value>${DB_DRIVER}</value>
+      </parameter>
+      <parameter key="/datasources/no-tx-datasource/user-name">
+        <value>${DB_USER}</value>
+      </parameter>
+      <parameter key="/datasources/no-tx-datasource/password">
+        <value>${DB_PASSWD}</value>
+      </parameter>
+      <parameter key="/datasources/no-tx-datasource/min-pool-size">
+        <value>${MIN_POOL_SIZE}</value>
+      </parameter>
+      <parameter key="/datasources/no-tx-datasource/max-pool-size">
+        <value>${MAX_POOL_SIZE}</value>
+      </parameter>
+      <parameter key="/datasources/no-tx-datasource/min-pool-size">
+        <value>${MIN_POOL_SIZE}</value>
+      </parameter>
+      <parameter key="/datasources/no-tx-datasource/idle-timeout-minutes">
+        <value>${IDLE_TIMEOUT}</value>
       </parameter>
     </xmlfile>
   </fileset>
