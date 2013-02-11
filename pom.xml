@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>parent</artifactId>
-    <version>24</version>
+    <version>25-SNAPSHOT</version>
   </parent>
 
   <packaging>pom</packaging>
@@ -56,67 +56,12 @@
     </dependency>
   </dependencies>
 
-  <properties>
-    <linux.classpath>${project.basedir}/src/main/resources/filters/LinuxClasspath.properties</linux.classpath>
-    <windows.classpath>${project.basedir}/src/main/resources/filters/WindowsClasspath.properties</windows.classpath>
-  </properties>
-
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-clean-plugin</artifactId>
-        <configuration>
-          <fileset>
-            <directory>/src/main/resources/filters</directory>
-            <includes>
-              <include>WindowsClasspath.properties</include>
-              <include>LinuxClasspath.properties</include>
-            </includes>
-          </fileset>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.4</version>
-        <executions>
-          <execution>
-            <id>prepare-classpath-windows</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>build-classpath</goal>
-            </goals>
-            <configuration>
-              <prefix>%SILVERPEAS_HOME%\\bin\\jar</prefix>
-              <pathSeparator>;</pathSeparator>
-              <fileSeparator>\\</fileSeparator>
-              <outputFile>${windows.classpath}</outputFile>
-              <outputFilterFile>true</outputFilterFile>
-              <stripVersion>true</stripVersion>
-              <regenerateFile>true</regenerateFile>
-            </configuration>
-          </execution>
-          <execution>
-            <id>prepare-classpath-linux</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>build-classpath</goal>
-            </goals>
-            <configuration>
-              <prefix>$SILVERPEAS_HOME/bin/jar</prefix>
-              <pathSeparator>:</pathSeparator>
-              <fileSeparator>/</fileSeparator>
-              <outputFile>${linux.classpath}</outputFile>
-              <outputFilterFile>true</outputFilterFile>
-              <stripVersion>true</stripVersion>
-              <regenerateFile>true</regenerateFile>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.4</version>
         <dependencies>
           <dependency>
             <groupId>com.silverpeas</groupId>
@@ -132,12 +77,10 @@
               <goal>single</goal>
             </goals>
             <configuration>
-              <filters>
-                <filter>${linux.classpath}</filter>
-              </filters>
               <descriptors>
                 <descriptor>${project.basedir}/src/main/resources/assemblies/assembly-linux.xml</descriptor>
               </descriptors>
+              <escapeString>''</escapeString>
               <appendAssemblyId>false</appendAssemblyId>
               <attach>false</attach>
               <skipAssembly>false</skipAssembly>
@@ -151,12 +94,10 @@
               <goal>single</goal>
             </goals>
             <configuration>
-              <filters>
-                <filter>${windows.classpath}</filter>
-              </filters>
               <descriptors>
                 <descriptor>${project.basedir}/src/main/resources/assemblies/assembly-windows.xml</descriptor>
               </descriptors>
+              <escapeString>''</escapeString>
               <appendAssemblyId>false</appendAssemblyId>
               <attach>false</attach>
               <skipAssembly>false</skipAssembly>

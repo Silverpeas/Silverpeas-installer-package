@@ -9,17 +9,17 @@
     <file>
       <source>src/main/scripts/SilverpeasSettings.bat</source>
       <outputDirectory>bin</outputDirectory>
-      <filtered>true</filtered>
+      <filtered>false</filtered>
     </file>
     <file>
       <source>src/main/scripts/appBuilder.bat</source>
       <outputDirectory>bin</outputDirectory>
-      <filtered>true</filtered>
+      <filtered>false</filtered>
     </file>
     <file>
       <source>src/main/scripts/dbBuilder.bat</source>
       <outputDirectory>bin</outputDirectory>
-      <filtered>true</filtered>
+      <filtered>false</filtered>
     </file>
     <file>
       <outputDirectory>setup/settings</outputDirectory>
@@ -57,6 +57,7 @@
     <fileSet>
       <outputDirectory>bin</outputDirectory>
       <directory>src/main/silverpeas/${server.distribution}</directory>
+      <filtered>true</filtered>
       <includes>
         <include>**/pom.xml</include>
       </includes>
