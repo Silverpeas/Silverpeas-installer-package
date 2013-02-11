@@ -9,7 +9,7 @@
     <fileSet>
       <outputDirectory>bin</outputDirectory>
       <directory>src/main/scripts</directory>
-      <filtered>true</filtered>
+      <filtered>false</filtered>
       <fileMode>775</fileMode>
       <includes>
         <include>**/*.sh</include>
@@ -27,6 +27,7 @@
     <fileSet>
       <outputDirectory>bin</outputDirectory>
       <directory>src/main/silverpeas/${server.distribution}</directory>
+      <filtered>true</filtered>
       <includes>
         <include>**/pom.xml</include>
       </includes>
