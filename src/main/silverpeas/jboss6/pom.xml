@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>assembly-silverpeas</artifactId>
-    <version>5.12-SNAPSHOT</version>
+    <version>${project.version}</version>
   </parent>
 
   <packaging>pom</packaging>
@@ -15,7 +15,7 @@
 
 
   <properties>
-    <silverpeas.home>${env.SILVERPEAS_HOME}</silverpeas.home>
+    <silverpeas.home>''${env.SILVERPEAS_HOME}</silverpeas.home>
   </properties>
   
   <!--

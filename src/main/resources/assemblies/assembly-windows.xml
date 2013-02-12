@@ -62,6 +62,7 @@
     <fileSet>
       <outputDirectory>bin</outputDirectory>
       <directory>src/main/silverpeas/${server.distribution}</directory>
+      <filtered>true</filtered>
       <includes>
         <include>**/pom.xml</include>
       </includes>

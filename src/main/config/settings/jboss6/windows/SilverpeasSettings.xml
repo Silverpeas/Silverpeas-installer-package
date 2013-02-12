@@ -113,7 +113,6 @@
       <parameter key="database.SQLJDBCUrl">${DB_URL}</parameter>
       <parameter key="database.SQLAccessLogin">${DB_USER}</parameter>
       <parameter key="database.SQLAccessPasswd">${DB_PASSWD}</parameter>
-      <parameter key="database.SQLPasswordEncryption">${STORED_PASSWD_ENCRYPTION}</parameter>
     </configfile>
 
     <configfile name="authentication/domains.properties">
@@ -129,7 +128,6 @@
       <parameter key="autServer1.SQLAccessLogin">${DB_USER}</parameter>
       <parameter key="autServer1.SQLAccessPasswd">${DB_PASSWD}</parameter>
       <parameter key="autServer1.SQLDriverClass">${DB_DRIVER}</parameter>
-      <parameter key="autServer1.SQLPasswordEncryption">${STORED_PASSWD_ENCRYPTION}</parameter>
       <parameter key="autServer2.enabled">${NT_AUTHENT_ENABLED}</parameter>
       <parameter key="autServer2.NTRISPort">${NTRIS_PORT}</parameter>
       <parameter key="autServer2.NTRISHost">${NTRIS_SERVER}</parameter>
@@ -290,11 +288,6 @@
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/admin</parameter>
     </configfile>
 
-    <configfile name="directory/settings/DirectorySettings.properties">
-      <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/directory</parameter>
-      <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/directory</parameter>
-    </configfile>
-
     <configfile name="blog/settings/blogSettings.properties">
       <parameter key="templatePath">${SILVERPEAS_HOME}/resources/StringTemplates/components/blog/</parameter>
       <parameter key="customersTemplatePath">${SILVERPEAS_DATA_HOME}/StringTemplates/components/blog/</parameter>
@@ -429,5 +422,6 @@
   -->
 
   <script name="createTickers.groovy"/>
+  <script name="updateAuthProperties.groovy"/>
 
 </silverpeas-settings>

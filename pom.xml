@@ -56,16 +56,12 @@
     </dependency>
   </dependencies>
 
-  <properties>
-    <linux.classpath>${project.basedir}/src/main/resources/filters/LinuxClasspath.properties</linux.classpath>
-    <windows.classpath>${project.basedir}/src/main/resources/filters/WindowsClasspath.properties</windows.classpath>
-  </properties>
-
   <build>
-    <plugins>      
+    <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.4</version>
         <dependencies>
           <dependency>
             <groupId>com.silverpeas</groupId>
@@ -80,10 +76,11 @@
             <goals>
               <goal>single</goal>
             </goals>
-            <configuration>              
+            <configuration>
               <descriptors>
                 <descriptor>${project.basedir}/src/main/resources/assemblies/assembly-linux.xml</descriptor>
               </descriptors>
+              <escapeString>''</escapeString>
               <appendAssemblyId>false</appendAssemblyId>
               <attach>false</attach>
               <skipAssembly>false</skipAssembly>
@@ -100,6 +97,7 @@
               <descriptors>
                 <descriptor>${project.basedir}/src/main/resources/assemblies/assembly-windows.xml</descriptor>
               </descriptors>
+              <escapeString>''</escapeString>
               <appendAssemblyId>false</appendAssemblyId>
               <attach>false</attach>
               <skipAssembly>false</skipAssembly>
