@@ -10,6 +10,16 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="urn:hornetq /schema/hornetq-jms.xsd">
 
+  <!--
+    By convention the name of the queue or of the topic has to be the
+    same name of the deepest node in its JNDI name.
+    For example: the topic node must be registered with the JNDI name
+    java:/topic/node
+
+    By this way, it will be easer to retreive the JNDI name from the
+    name of the queue or of the topic in a recovery mechanism.
+  -->
+
   <queue name="notificationsQueue">
     <entry name="java:/queue/notificationsQueue" />
   </queue>
@@ -18,11 +28,11 @@
     <entry name="java:/queue/statisticsQueue"/>
   </queue>
 
-  <topic name="comments">
+  <topic name="comment">
     <entry name="java:/topic/comment"/>
   </topic>
 
-  <topic name="nodes">
+  <topic name="node">
     <entry name="java:/topic/node"/>
   </topic>
   
