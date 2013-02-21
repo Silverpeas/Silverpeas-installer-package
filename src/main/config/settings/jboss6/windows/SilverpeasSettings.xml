@@ -43,8 +43,11 @@
     <var name="JAR_HOME" value="${SILVERPEAS_HOME}/jar"/>
     <var name="TEMP_HOME" value="${SILVERPEAS_DATA_HOME}/temp"/>
     <var name="LOG_HOME" value="${SILVERPEAS_HOME}/log"/>
+
+    <var name="HIDDEN_SILVERPEAS_DIR" value="${SILVERPEAS_DATA_HOME}/.silverpeas"/>
   </global-vars>
   
+  <script name="setupSilverpeas.groovy"/>
   <script name="updateJCRWorkspaceConfig.groovy"/>
 
   <!-- PROPERTIES CONFIGURATION -->
@@ -73,6 +76,7 @@
       <parameter key="uploadsIndexPath">${SILVERPEAS_DATA_HOME}/index</parameter>
       <parameter key="tempPath">${TEMP_HOME}</parameter>
       <parameter key="exportTemplatePath">${SILVERPEAS_DATA_HOME}/template-export</parameter>
+      <parameter key="securityPath">${HIDDEN_SILVERPEAS_DIR}</parameter>
     </configfile>
 
     <configfile name="beans/admin/admin.properties">
