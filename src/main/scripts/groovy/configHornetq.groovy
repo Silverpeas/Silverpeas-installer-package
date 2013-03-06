@@ -37,11 +37,32 @@ def checkVersion(String serverHome) {
 }
 
 def configureHornetQ(String serverHome) {
+  println "Configure HornetQ..."
+  setUpInetAddress(serverHome)
   autoSessionReattachment(serverHome)
+  println "... configured."
+}
+
+def setUpInetAddress(String serverHome) {
+  String hornetqJMSConfigPath = serverHome + "/deploy/hornetq/hornetq-configuration.xml"
+  def slurper = new XmlSlurper()
+  slurper.setKeepWhitespace(true)
+  def configuration = slurper.parse(new File(hornetqJMSConfigPath))
+  def hostParams = configuration.'**'.grep { it.@value.text() == '${jboss.bind.address:localhost}' }
+  if (!hostParams.empty) {
+    println "setting up the listening addesss at localhost for HornetQ..."
+    hostParams.each { it.@value = 'localhost' }
+
+    new StreamingMarkupBuilder(useDoubleQuotes: true).bind {
+      namespaces << ["": "urn:hornetq"]
+      out << configuration
+    }.writeTo(new File(hornetqJMSConfigPath).newWriter())
+    println 'done'
+  }
 }
 
 def autoSessionReattachment(String serverHome) {
-  println "setting up the auto session reattachment..."
+  println "setting up the auto session reattachment in HornetQ..."
   String hornetqJMSConfigPath = serverHome + "/deploy/hornetq/hornetq-jms.xml"
   def slurper = new XmlSlurper()
   slurper.setKeepWhitespace(true)
@@ -62,4 +83,6 @@ if (INSTALL_CONTEXT == 'install') {
   checkServerHome(JBOSS_SERVER)
   checkVersion(JBOSS_SERVER)
   configureHornetQ(JBOSS_SERVER)
+} else {
+  setUpInetAddress(JBOSS_SERVER)
 }
