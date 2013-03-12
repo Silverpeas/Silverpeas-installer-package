@@ -177,6 +177,7 @@
       <parameter key="/datasources/no-tx-datasource/idle-timeout-minutes">
         <value>${IDLE_TIMEOUT}</value>
       </parameter>
+    </xmlfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/util/">
