@@ -24,7 +24,7 @@
 import groovy.xml.StreamingMarkupBuilder ;
 
 /**
- * Determine if JBoss has already been patched by Silverpeas or not.
+ * Determine if JBoss has already been configured for Silverpeas or not.
  */
 def String jbossConfigFile =  JBOSS_CONF + '/bootstrap/profile.xml';
 
@@ -44,3 +44,4 @@ if(children.size() == 1) {
   gestionVariables.addVariable('INSTALL_CONTEXT', 'update');
   gestionVariables.addVariable('KEY_APPURIS', '');
 }
+
