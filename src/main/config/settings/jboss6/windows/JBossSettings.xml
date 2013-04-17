@@ -17,6 +17,9 @@
 
   <!-- upgrade HornetQ in JBoss if old version -->
   <script name="upgradeHornetq.groovy" />
+
+  <!-- upgrade Hibernate in JBoss if old version -->
+  <script name="upgradeHibernate.groovy" />
   
   <!-- configure HornetQ JMS -->
   <script name="configHornetq.groovy" />
