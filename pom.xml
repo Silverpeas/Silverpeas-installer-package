@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>parent</artifactId>
-    <version>25-SNAPSHOT</version>
+    <version>25</version>
   </parent>
 
   <packaging>pom</packaging>
@@ -40,7 +40,7 @@
     <dependency>
       <groupId>com.silverpeas.builder</groupId>
       <artifactId>configuration</artifactId>
-      <version>5.12-SNAPSHOT</version>
+      <version>5.12</version>
     </dependency>
     <dependency>
       <groupId>postgresql</groupId>
