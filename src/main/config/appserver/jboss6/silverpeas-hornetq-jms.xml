@@ -35,13 +35,18 @@
   <topic name="node">
     <entry name="java:/topic/node"/>
   </topic>
-  
-  <topic name="admin">
-    <entry name="java:/topic/admin"/>
+
+  <topic name="admin/space">
+	<entry name="java:/topic/admin/space"/>
   </topic>
-  
+
   <topic name="attachment">
     <entry name="java:/topic/attachment"/>
   </topic>
 
+  <topic name="admin/component">
+    <entry name="java:/topic/admin/component"/>
+  </topic>
+
 </configuration>
+
