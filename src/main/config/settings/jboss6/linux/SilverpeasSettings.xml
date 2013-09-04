@@ -190,10 +190,6 @@
       <parameter key="SilverPeasDataPath0">${SILVERPEAS_DATA_HOME}</parameter>
     </configfile>
 
-    <configfile name="multipart/multipart.properties">
-      <parameter key="MultipartParserMaxSize">10485760</parameter>
-    </configfile>
-
     <configfile name="peasCore/SessionManager.properties">
       <parameter key="scheduledSessionManagementTimeStamp">2</parameter>
       <parameter key="userSessionTimeout">10</parameter>
