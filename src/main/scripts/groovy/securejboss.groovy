@@ -88,7 +88,7 @@ def checkVersion(String serverHome) {
 
 def secureServer(String serverHome) {
   println "Working on ServerHome=$serverHome"
-  
+
   checkVersion(serverHome);
 
   secureDomainJMXConsole(serverHome)
@@ -117,7 +117,7 @@ def secureDomainJMXConsole(String serverHome) {
     } else {
       setParams(env['SILVERPEAS_HOME'] + "/bin/silverpeas_stop_jboss.sh", ["username":username, "password":password])
     }
-        
+
     println "Done"
   }
   else {
@@ -209,7 +209,7 @@ def updateSilverpeasStoppingScript(String serverHome, String silverpeasHome) {
   props.load(new FileInputStream(jmxRoles))
   props.each { user, role ->
     if (role == 'HttpInvoker')
-      users << user
+    users << user
   }
   props = new Properties()
   props.load(new FileInputStream(jmxUsers))
@@ -395,7 +395,7 @@ def comment(String file, String line1, String line2, String commentBegin, String
 }
 
 def addProps(String file, String propertyKey, String propertyValue) {
-  new File(file).withWriterAppend { 
+  new File(file).withWriterAppend {
     it << "$propertyKey=$propertyValue"
   }
 }

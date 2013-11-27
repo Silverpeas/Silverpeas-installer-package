@@ -9,9 +9,9 @@
     <var name="JBOSS_DEBUG"    value="silverpeas_debug_jboss.cmd"/>
     <var name="DATASOURCE"     value="java:/datasources/silverpeas-jdbc" />
   </global-vars>
-  
+
   <script name="computeInstallationContext.groovy" />
-  
+
   <!-- secure JBoss server -->
   <script name="securejboss.groovy" />
 
@@ -20,7 +20,7 @@
 
   <!-- upgrade Hibernate in JBoss if old version -->
   <script name="upgradeHibernate.groovy" />
-  
+
   <!-- configure HornetQ JMS -->
   <script name="configHornetq.groovy" />
 
@@ -108,6 +108,9 @@
       <parameter key="/Server/Service[@name='jboss.web']/Connector[@protocol='HTTP/1.1']" mode="update">
         <value location="@URIEncoding">UTF-8</value>
       </parameter>
+      <parameter key="/Server/Service[@name='jboss.web']/Connector[@protocol='HTTP/1.1']" mode="update">
+        <value location="@server">none</value>
+      </parameter>
     </xmlfile>
     <xmlfile name="silverpeas/silverpeas-ds.xml">
       <parameter key="/datasources/local-tx-datasource/connection-url">
@@ -134,7 +137,7 @@
       <parameter key="/datasources/local-tx-datasource/prepared-statement-cache-size">
         <value>${STATEMENT_CACHE_SIZE}</value>
       </parameter>
-    </xmlfile>    
+    </xmlfile>
     <xmlfile name="silverpeas/jackrabbit-ds.xml">
       <parameter key="/datasources/no-tx-datasource/connection-url">
         <value>${DB_URL}</value>
@@ -181,6 +184,9 @@
         <value>${IDLE_TIMEOUT}</value>
       </parameter>
     </xmlfile>
+    <configfile name="jbossweb.sar/catalina.properties">
+      <parameter key="org.apache.catalina.connector.X_POWERED_BY">false</parameter>
+    </configfile>
   </fileset>
 
   <fileset root="${SILVERPEAS_HOME}/properties/org/silverpeas/util/">
