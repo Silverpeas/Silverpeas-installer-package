@@ -49,7 +49,7 @@
   
   <script name="setupSilverpeas.groovy"/>
   <script name="updateJCRWorkspaceConfig.groovy"/>
-   <script name="configureJCRMigrationConfig.groovy"/>
+  <script name="configureJCRMigrationConfig.groovy"/>
 
   <!-- PROPERTIES CONFIGURATION -->
   <fileset root="${SILVERPEAS_HOME}/initialize/">

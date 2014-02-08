@@ -24,6 +24,9 @@
   <!-- configure HornetQ JMS -->
   <script name="configHornetq.groovy" />
 
+  <!-- configure Spnego -->
+  <script name="configureSpnego.groovy"/>
+
   <!-- copy the silverpeas EAR built by maven into the JBoss server deployment repository -->
   <fileset root="${JAR_HOME}/">
     <copyfile name="silverpeas.ear">
