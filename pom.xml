@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
   <groupId>com.silverpeas</groupId>
   <artifactId>installation</artifactId>
-  <version>5.13.4-SNAPSHOT</version>
+  <version>5.13.4</version>
   <name>Silverpeas Installation Package - ${project.version}</name>
   <description>Builds the Silverpeas installation package</description>
 
@@ -18,7 +18,7 @@
     <developerConnection>scm:git:git@github.com:Silverpeas/Silverpeas-installer-package.git</developerConnection>
     <connection>scm:git:git@github.com:Silverpeas/Silverpeas-installer-package.git</connection>
     <url>http://github.com/Silverpeas/Silverpeas-installer-package</url>
-    <tag>installation-5.13</tag>
+    <tag>installation-5.13.4</tag>
   </scm>
 
   <repositories>
