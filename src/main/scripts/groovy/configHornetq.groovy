@@ -62,27 +62,38 @@ def setUpInetAddress(String serverHome) {
 }
 
 def autoSessionReattachment(String serverHome) {
-  println "setting up the auto session reattachment in HornetQ..."
+  print "    - setting up the auto session reattachment in HornetQ..."
   String hornetqJMSConfigPath = serverHome + "/deploy/hornetq/hornetq-jms.xml"
   def slurper = new XmlSlurper()
   slurper.setKeepWhitespace(true)
   def configuration = slurper.parse(new File(hornetqJMSConfigPath))
   def connectionFactories = configuration.'connection-factory'
-  connectionFactories.appendNode {
-    'confirmation-window-size'(10000000)
+  def isConfirmationWindowSizeAlreadySet = (connectionFactories.'confirmation-window-size'.size() > 0)
+  if (!isConfirmationWindowSizeAlreadySet) {
+    connectionFactories.appendNode {
+      'confirmation-window-size'(10000000)
+    }
+  }
+  def isPreAcknowledgeAlreadySet = (connectionFactories.'pre-acknowledge'.size() > 0)
+  if (!isPreAcknowledgeAlreadySet) {
+    connectionFactories.appendNode {
+      'pre-acknowledge'(true)
+    }
   }
 
-  new StreamingMarkupBuilder(useDoubleQuotes: true).bind {
-    namespaces << ["": "urn:hornetq"]
-    out << configuration
-  }.writeTo(new File(hornetqJMSConfigPath).newWriter())
-  println 'done'
+  if (!isConfirmationWindowSizeAlreadySet || !isPreAcknowledgeAlreadySet) {
+    new StreamingMarkupBuilder(useDoubleQuotes: true).bind {
+      namespaces << ["": "urn:hornetq"]
+      out << configuration
+    }.writeTo(new File(hornetqJMSConfigPath).newWriter())
+  } else {
+    print ' already'
+  }
+  println ' done'
 }
 
 if (INSTALL_CONTEXT == 'install') {
   checkServerHome(JBOSS_SERVER)
   checkVersion(JBOSS_SERVER)
-  configureHornetQ(JBOSS_SERVER)
-} else {
-  setUpInetAddress(JBOSS_SERVER)
 }
+configureHornetQ(JBOSS_SERVER)
