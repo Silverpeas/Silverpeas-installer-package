@@ -47,6 +47,9 @@
   <topic name="admin/component">
     <entry name="java:/topic/admin/component"/>
   </topic>
+  
+  <topic name="publication">
+    <entry name="java:/topic/publication"/>
+  </topic>
 
 </configuration>
-
