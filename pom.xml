@@ -18,7 +18,7 @@
     <developerConnection>scm:git:git@github.com:Silverpeas/Silverpeas-installer-package.git</developerConnection>
     <connection>scm:git:git@github.com:Silverpeas/Silverpeas-installer-package.git</connection>
     <url>http://github.com/Silverpeas/Silverpeas-installer-package</url>
-    <tag>installation-5.15.6</tag>
+    <tag>installation-5.15.8</tag>
   </scm>
 
   <repositories>
