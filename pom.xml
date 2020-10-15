@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.silverpeas</groupId>
     <artifactId>parent</artifactId>
-    <version>29</version>
+    <version>29.1</version>
   </parent>
 
   <packaging>pom</packaging>
@@ -17,7 +17,7 @@
   <scm>
     <developerConnection>scm:git:git@github.com:Silverpeas/Silverpeas-installer-package.git</developerConnection>
     <connection>scm:git:git@github.com:Silverpeas/Silverpeas-installer-package.git</connection>
-    <url>http://github.com/Silverpeas/Silverpeas-installer-package</url>
+    <url>https://github.com/Silverpeas/Silverpeas-installer-package</url>
     <tag>HEAD</tag>
   </scm>
 
@@ -26,7 +26,7 @@
       <id>Silverpeas</id>
       <layout>default</layout>
       <name>Silverpeas Repository</name>
-      <url>http://www.silverpeas.org/nexus/content/groups/silverpeas</url>
+      <url>https://www.silverpeas.org/nexus/content/groups/silverpeas</url>
       <releases>
         <enabled>true</enabled>
       </releases>
